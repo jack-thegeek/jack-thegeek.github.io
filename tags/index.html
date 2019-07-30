@@ -88,9 +88,13 @@
 					<nav class="header-menu">
 						<ul>
 						
-							<li><a href="/">主页</a></li>
-				        
 							<li><a href="/archives">归档</a></li>
+				        
+							<li><a href="/categories/技术">技术</a></li>
+				        
+							<li><a href="/categories/读书">读书</a></li>
+				        
+							<li><a href="/categories/杂乱">杂乱</a></li>
 				        
 							<li><a href="/about">关于</a></li>
 				        
@@ -108,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/技术/" style="font-size: 10px;">技术</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
+						<a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a>
 					</div>
 				</section>
 				
@@ -158,9 +162,13 @@
 			<nav class="header-menu">
 				<ul>
 				
-					<li><a href="/">主页</a></li>
-		        
 					<li><a href="/archives">归档</a></li>
+		        
+					<li><a href="/categories/技术">技术</a></li>
+		        
+					<li><a href="/categories/读书">读书</a></li>
+		        
+					<li><a href="/categories/杂乱">杂乱</a></li>
 		        
 					<li><a href="/about">关于</a></li>
 		        
@@ -226,23 +234,30 @@
 
 
 
-    <section id="comments">
+    <section id="comments" style="margin:2%;padding:5%;background:#fff;">
       <div id="vcomment" class="comment"></div> 
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
   var notify = 'false' == true ? true : false;
   var verify = 'false' == true ? true : false;
-    
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
     window.onload = function() {
         new Valine({
             el: '.comment',
             notify: notify,
             verify: verify,
+
             app_id: "Q9AnfILoWvdHz8KyBMYT7C7a-gzGzoHsz",
             app_key: "rDc18ASqCfjwWAHWBnPfnS46",
-            placeholder: "友情提醒，留下正确的邮箱地址可以第一时间获取评论反馈",
-            avatar:"mm"
+            placeholder: "来玩耍呀(●’◡’●)ﾉ",
+            guest_info: guest_info.length == 0 ? GUEST_INFO: guest_info,
+            avatar:"",
+            avatar_cdn:"https://www.gravatar.com/avatar/",
+            pageSize: "10"
         });
     }
 </script>
