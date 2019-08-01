@@ -202,7 +202,7 @@ a {
   display: none;
 }
 #container #mobile-nav .overlay {
-  height: 30px;
+  height: 110px;
   position: absolute;
   width: 100%;
   background: #38598b;
@@ -529,7 +529,7 @@ a {
   cursor: pointer;
   text-transform: uppercase;
   float: none;
-  height: 150px;
+  height: 200px;
   margin-left: -12px;
   text-align: center;
   display: -webkit-box;
