@@ -200,11 +200,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-temp" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-教训" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/08/01/temp/" class="article-date">
-  	<time datetime="2019-08-01T13:04:46.000Z" itemprop="datePublished">2019-08-01</time>
+      <a href="/2019/08/02/教训/" class="article-date">
+  	<time datetime="2019-08-02T14:20:42.000Z" itemprop="datePublished">2019-08-02</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/01/temp/">temp</a>
+      <a class="article-title" href="/2019/08/02/教训/">教训</a>
     </h1>
   
 
@@ -227,61 +227,9 @@
 	  
 		
 		
-        <h1 id="temp"><a href="#temp" class="headerlink" title="temp"></a>temp</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: UTF-8 -*-</span><br><span class="line">import xlsxwriter</span><br><span class="line">import datetime</span><br><span class="line">import time</span><br><span class="line">import requests</span><br><span class="line">import json</span><br><span class="line">all=0</span><br><span class="line">fail=0</span><br><span class="line">ok=0</span><br><span class="line">#with open(&apos;article.txt&apos;,&apos;r&apos;,encoding=&apos;UTF-8&apos;) as f: F:\项目\自研NLP服务器\正式服务器地址测试\餐厅地图</span><br><span class="line">fileName=&quot;一般控制指令&quot;</span><br><span class="line">xls2 = xlsxwriter.Workbook(&apos;F:/项目/自研NLP服务器/用户数据7.4/&apos;+fileName+&apos;/result..xls&apos;)</span><br><span class="line">sht1 = xls2.add_worksheet(&quot;ok&quot;)</span><br><span class="line">sht2 = xls2.add_worksheet(&quot;failed&quot;)</span><br><span class="line">#添加字段</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for line in open(&quot;F:\\项目\\自研NLP服务器\\用户数据7.4\\&quot;+fileName+&quot;\\query.txt&quot;,&apos;r&apos;,encoding=&apos;UTF-8&apos;):</span><br><span class="line">    </span><br><span class="line">    print(all)</span><br><span class="line">    print(line)</span><br><span class="line">    query = line.strip()</span><br><span class="line">    print(query)</span><br><span class="line">    #pinjie=&quot;有什么歌&quot;</span><br><span class="line">    #query=query+&quot;&quot;+pinjie</span><br><span class="line">    #print(query) F:\项目\自研NLP服务器\query\股票http://39.108.253.33:8091/brain/api/nli?query=%E6%B3%A1%E6%B2%AB&amp;query_id=q&amp;key=3</span><br><span class="line">    #测试服务器地址：http://39.108.253.33:8091 正式服务器地址：http://control.tclking.com</span><br><span class="line">    get_url=&apos;http://control.tclking.com/brain/api/nli?query=%s&amp;query_id=q&amp;key=3&apos;%(query)</span><br><span class="line">    response_get=requests.get(get_url)</span><br><span class="line">    print(response_get.text)</span><br><span class="line">    aaa = json.loads(response_get.text)</span><br><span class="line">    print(aaa)</span><br><span class="line">    #print(aaa[&apos;data&apos;][&apos;json&apos;][&apos;intents&apos;])</span><br><span class="line">    bbb=aaa[&apos;data&apos;]</span><br><span class="line">    print(type(bbb))</span><br><span class="line">    if(&apos;json&apos; in bbb):</span><br><span class="line">        result=list(aaa[&apos;data&apos;][&apos;json&apos;][&apos;intents&apos;])</span><br><span class="line">        if((result[0][&apos;domain&apos;]) == &quot;instruction&quot;  ):</span><br><span class="line">            print(&quot;ok&quot;)</span><br><span class="line">            ok=ok+1</span><br><span class="line">            sht1.write(all,0,query)</span><br><span class="line">            sht1.write(all,1,result[0][&apos;domain&apos;])</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">        else :</span><br><span class="line">            print(&quot;failed_1&quot;)</span><br><span class="line">            sht1.write(all,0,query)</span><br><span class="line">            sht1.write(all,1,result[0][&apos;domain&apos;])</span><br><span class="line">            fail=fail+1</span><br><span class="line">    else :</span><br><span class="line">        print(&quot;failed_2&quot;)</span><br><span class="line">        sht1.write(all,0,query)</span><br><span class="line">        sht1.write(all,1,result[0][&apos;domain&apos;])</span><br><span class="line">        fail=fail+1</span><br><span class="line">    #time.sleep(1)</span><br><span class="line">    all=all+1</span><br><span class="line"></span><br><span class="line">xls2.close()</span><br><span class="line"></span><br><span class="line">print(&quot;ok&quot;+str(ok))</span><br><span class="line">print(&quot;fail&quot;+str(fail))</span><br><span class="line">print(&quot;all&quot;+str(all))</span><br><span class="line">print(ok/all)</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-jstest" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/08/01/jstest/" class="article-date">
-  	<time datetime="2019-08-01T02:06:55.000Z" itemprop="datePublished">2019-08-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/01/jstest/">jstest</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">	
-      
-	  
-		
-		
-        <script type="text/javascript">document.write("javascript testing")</script>
-
-<script>
-    var i=2;
-    document.write(i);
-</script>
+        <p>搭建网站的时候按着教程来，跳过了git的学习，一直用<code>hexo d</code>来提交。那天替换文件的时候没睡醒，全部给换进去了，好在本地有个压缩的备份，差点这几天研究出来的都白瞎了。</p>
+<p>一直以为提交到托管的时候源代码也提交上去了，直到我打开自己的主页，没加载完我就反应过来了，提交的是渲染好的HTML文件，所有md文档还有配置全部都还在我的电脑上。</p>
+<p>备份真的很重要。</p>
 
       
     </div>
@@ -290,64 +238,6 @@
       
       
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/07/31/test/" class="article-date">
-  	<time datetime="2019-07-31T03:21:18.000Z" itemprop="datePublished">2019-07-31</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/31/test/">test</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">	
-      
-        <h1 id="pic-testing"><a href="#pic-testing" class="headerlink" title="pic testing"></a>pic testing</h1><div align="center">
-    <img src="https://pic1.superbed.cn/item/5d411cad451253d178ecb6c6.jpg" alt="加载不出图片显示字样" title="鼠标悬停显示字样" width="25%">
-</div>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2019/07/31/test/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
