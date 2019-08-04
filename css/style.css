@@ -2227,6 +2227,7 @@ pre .javascript .function {
 }
 #viewer-box .viewer-box-l .viewer-title {
   line-height: 32px;
+  padding-top: 10px;
 }
 #viewer-box .viewer-box-l .viewer-title:before {
   content: "";
