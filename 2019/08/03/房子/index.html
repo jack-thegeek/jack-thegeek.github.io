@@ -13,10 +13,12 @@
 <meta property="og:site_name" content="无名小站">
 <meta property="og:description" content="住了二十几年的房子，当真要被拆掉的那一刻，其实心里并没有什么感慨">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-04T09:57:48.937Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/05/egpFlF.jpg">
+<meta property="og:updated_time" content="2019-08-05T02:01:50.957Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="房子">
 <meta name="twitter:description" content="住了二十几年的房子，当真要被拆掉的那一刻，其实心里并没有什么感慨">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/05/egpFlF.jpg">
   
     <link rel="alternative" href="/atom.xml" title="无名小站" type="application/atom+xml">
   
@@ -124,7 +126,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/magisk/" style="font-size: 10px;">magisk</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/流量/" style="font-size: 10px;">流量</a> <a href="/tags/生活/" style="font-size: 20px;">生活</a>
+						<a href="/tags/magisk/" style="font-size: 10px;">magisk</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/流量/" style="font-size: 10px;">流量</a> <a href="/tags/生活/" style="font-size: 15px;">生活</a>
 					</div>
 				</section>
 				
@@ -253,9 +255,11 @@
 <script type="text/javascript">
     function checkpassword(){
     var pwd="0804";
+    var imgs=document.getElementById("imgs");
     var inpwd=document.getElementById("password").value;
     if(pwd == inpwd){
-        window.location.href="temppage/房子plus.html";
+        //alert("correct!");
+        imgs.style.display="unset";
      }
     }
 </script>
@@ -269,6 +273,9 @@
 <div>
     password:<input type="password" id="password">
     <input type="submit" value="submit" onclick="checkpassword();">
+</div><br>
+<div align="center">
+    <img src="https://s2.ax1x.com/2019/08/05/egpFlF.jpg" width="70%" id="imgs" style="display: none;">
 </div>
 
 
