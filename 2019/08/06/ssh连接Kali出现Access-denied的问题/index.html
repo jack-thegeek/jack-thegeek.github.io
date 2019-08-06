@@ -3,19 +3,23 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>教训 | 无名小站</title>
+  <title>ssh连接Kali出现Access denied的问题 | 无名小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="除了ctrl+s，还要记得ctrl+c和ctrl+v">
+  <meta name="description" content="关于ssh连接Kali Linux时出现Access denied的解决方法">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="教训">
-<meta property="og:url" content="https://jack-thegeek.github.io/2019/08/02/教训/index.html">
+<meta property="og:title" content="ssh连接Kali出现Access denied的问题">
+<meta property="og:url" content="https://jack-thegeek.github.io/2019/08/06/ssh连接Kali出现Access-denied的问题/index.html">
 <meta property="og:site_name" content="无名小站">
-<meta property="og:description" content="除了ctrl+s，还要记得ctrl+c和ctrl+v">
+<meta property="og:description" content="关于ssh连接Kali Linux时出现Access denied的解决方法">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-03T12:22:33.445Z">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/Hdfcc5d93c1444305a64ab7cfa50a6f6cd.jpg">
+<meta property="og:image" content="https://ae01.alicdn.com/kf/Hc5a8835754b7431c99761666f3b5eb328.png">
+<meta property="og:updated_time" content="2019-08-06T14:24:29.212Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="教训">
-<meta name="twitter:description" content="除了ctrl+s，还要记得ctrl+c和ctrl+v">
+<meta name="twitter:title" content="ssh连接Kali出现Access denied的问题">
+<meta name="twitter:description" content="关于ssh连接Kali Linux时出现Access denied的解决方法">
+<meta name="twitter:image" content="https://ae01.alicdn.com/kf/Hdfcc5d93c1444305a64ab7cfa50a6f6cd.jpg">
   
     <link rel="alternative" href="/atom.xml" title="无名小站" type="application/atom+xml">
   
@@ -204,11 +208,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-教训" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ssh连接Kali出现Access-denied的问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/08/02/教训/" class="article-date">
-  	<time datetime="2019-08-02T14:20:42.000Z" itemprop="datePublished">2019-08-02</time>
+      <a href="/2019/08/06/ssh连接Kali出现Access-denied的问题/" class="article-date">
+  	<time datetime="2019-08-06T10:02:06.000Z" itemprop="datePublished">2019-08-06</time>
 </a>
     </div>
   
@@ -219,7 +223,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      教训
+      ssh连接Kali出现Access denied的问题
     </h1>
   
 
@@ -227,7 +231,15 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+	</div>
+
         
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/技术/">技术</a>
+	</div>
+
 
         <div class="clearfix"></div>
       </div>
@@ -238,12 +250,19 @@
 	  
 		
 		
-        <p><font color="#999999">除了ctrl+s，还要记得ctrl+c和ctrl+v</font></p>
+        <p><font color="#999999">关于ssh连接Kali Linux时出现Access denied的解决方法</font></p>
 <a id="more"></a>
 <hr>
-<p>搭建网站的时候按着教程来，跳过了git的学习，一直用<code>hexo d</code>来提交。那天替换文件的时候没睡醒，全部给换进去了，好在本地有个压缩的备份，差点这几天研究出来的都白瞎了。</p>
-<p>一直以为提交到托管的时候源代码也提交上去了，直到我打开自己的主页，没加载完我就反应过来了，提交的是渲染好的HTML文件，所有md文档还有配置全部都还在我的电脑上。</p>
-<p>备份真的很重要。</p>
+<p>网上的方法大同小异，无非是以root账户，修改ssh_config或者sshd_config,问题就出在这，网上的方法大多只有其中一个文件，参考了几个教程后才发现这是两个不同的文件。</p>
+<p>所以要分别更改不同的配置(黄色为更改部分)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@kali:/etc/ssh# vi ssh_config</span><br></pre></td></tr></table></figure>
+
+<img src="https://ae01.alicdn.com/kf/Hdfcc5d93c1444305a64ab7cfa50a6f6cd.jpg" width="50%">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@kali:/etc/ssh# vi sshd_config</span><br></pre></td></tr></table></figure>
+
+<img src="https://ae01.alicdn.com/kf/Hc5a8835754b7431c99761666f3b5eb328.png" width="50%">
+
+<p>然后就可以用putty连上去了啦</p>
 
       
     </div>
@@ -253,18 +272,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/08/02/白嫖100g流量/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/06/记第一次bug-fix/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          白嫖100g流量
+          记第一次bug-fix
         
       </div>
     </a>
   
   
-    <a href="/2019/07/30/缘起/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">缘起</div>
+    <a href="/2019/08/04/食用指南/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【置顶】食用指南</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
