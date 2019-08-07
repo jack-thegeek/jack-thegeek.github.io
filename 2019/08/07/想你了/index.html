@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="无名小站">
 <meta property="og:description" content="跟我一点关系都没有的七夕">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-07T10:17:38.949Z">
+<meta property="og:updated_time" content="2019-08-07T14:26:15.868Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="想你了">
 <meta name="twitter:description" content="跟我一点关系都没有的七夕">
@@ -257,7 +257,7 @@ var _hmt = _hmt || [];
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">字数: </span>
-        <span class="post-count">199字</span>
+        <span class="post-count">231字</span>
       </span>
     </span>
 
@@ -292,50 +292,15 @@ var _hmt = _hmt || [];
         <p><font color="#999999">跟我一点关系都没有的七夕</font></p>
 <a id="more"></a>
 <hr>
-<p>参考自：<br><a href="https://www.jianshu.com/p/37ff22decc62" target="_blank" rel="noopener">https://www.jianshu.com/p/37ff22decc62</a><br><a href="https://www.jb51.net/article/108077.htm" target="_blank" rel="noopener">https://www.jb51.net/article/108077.htm</a><br><a href="https://www.xmbkw.cn/10.html" target="_blank" rel="noopener">https://www.xmbkw.cn/10.html</a></p>
-<p><span class="element"></span></p>
-<p><button type="button" onclick="typing()"> GO </button></p>
-<div id="divTyping"></div>
-
-<p><button type="button" onclick="you()"> 试下另外的方法 </button></p>
-<div id="aa" class="saying"></div>
-<div style="display:none" id="w">
-    迢迢牵牛星，皎皎河汉女。
-    纤纤擢素手，札札弄机杼。
-    终日不成章，泣涕零如雨。
-    河汉清且浅，相去复几许？
-    盈盈一水间，脉脉不得语。</div>
+<script src="https://cdn.bootcss.com/typed.js/2.0.5/typed.js"></script>
 
 <style type="text/css">
-    #divTyping{
-        font-size: 16px;
-        text-align: center;
-        color: #696969;
-    }
+  #divTyping{
+    font-size: 16px;
+    text-align: center;
+    color: #696969;
+  }
 </style>
-
-<script src="https://cdn.bootcss.com/typed.js/2.0.5/typed.js"></script>
- <script>
-     alert("做个小效果玩下呗");
-    var typed = new Typed('.element', {
-      strings: ["点击下面的按钮", "测试下另外一个打字机的效果"," "], //输入内容, 支持html标签
-      typeSpeed: 100, //打字速度
-      backSpeed: 50 //回退速度
-    });
-
-   var str = '乞  巧<br/>七夕今宵看碧霄，<br/>牵牛织女渡河桥。<br/>家家乞巧望秋月，<br/>穿尽红丝几万条。';
-   var i = 0;
-   function typing(){
-    var divTyping = document.getElementById('divTyping');
-    if (i <= str.length) {
-     divTyping.innerHTML = str.slice(0, i++) + '_';
-     setTimeout('typing()', 200);//递归调用
-    }
-    else{
-     divTyping.innerHTML = str;//结束打字,移除 _ 光标
-    }
-   }
-</script>
 
 <style>
 .saying:after {
@@ -349,6 +314,48 @@ var _hmt = _hmt || [];
   animation: caret 500ms infinite;
 }
 </style>
+
+
+<p>一些打字机效果，参考自：<br><a href="https://www.jianshu.com/p/37ff22decc62" target="_blank" rel="noopener">https://www.jianshu.com/p/37ff22decc62</a><br><a href="https://www.jb51.net/article/108077.htm" target="_blank" rel="noopener">https://www.jb51.net/article/108077.htm</a><br><a href="https://www.xmbkw.cn/10.html" target="_blank" rel="noopener">https://www.xmbkw.cn/10.html</a></p>
+<p><span class="element"></span></p>
+<p><button type="button" onclick="typing()"> GO </button></p>
+<div id="divTyping"></div>
+
+<p><button type="button" onclick="you()"> 试下另外的方法 </button></p>
+<div id="aa" class="saying"></div>
+
+<div style="display:none" id="w">
+    迢迢牵牛星，皎皎河汉女。
+    纤纤擢素手，札札弄机杼。
+    终日不成章，泣涕零如雨。
+    河汉清且浅，相去复几许？
+    盈盈一水间，脉脉不得语。</div>
+
+
+
+<script>
+  alert("七夕快乐，祝你开心*.。(๑･∀･๑)*.。");
+    var typed = new Typed('.element', {
+      strings: ["点击下面的按钮", "测试另外一个打字机效果。"," "], //输入内容, 支持html标签
+      typeSpeed: 100, //打字速度
+      backSpeed: 50 //回退速度
+    });
+</script>
+
+<script>
+   var str = '乞 巧<br/>七夕今宵看碧霄，<br/>牵牛织女渡河桥。 <br/>家家乞巧望秋月，<br/>穿尽红丝几万条。';
+   var i = 0;
+   function typing(){
+    var divTyping = document.getElementById('divTyping');
+    if (i <= str.length) {
+     divTyping.innerHTML = str.slice(0, i++) + '_';
+     setTimeout('typing()', 200);//递归调用
+    }
+    else{
+     divTyping.innerHTML = str;//结束打字,移除 _ 光标
+    }
+   }
+  </script>
 <script language="javascript">
 var index=0;
 var word;
