@@ -3,23 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>白嫖100g流量 | 无名小站</title>
+  <title>图床的解决方案 | 无名小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一篇技术性文章，要有magisk使用基础，有时效性，姑且当做记录吧">
-<meta name="keywords" content="流量,magisk">
+  <meta name="description" content="jsDelivr的CDN加速是个好东西">
+<meta name="keywords" content="图床,github">
 <meta property="og:type" content="article">
-<meta property="og:title" content="白嫖100g流量">
-<meta property="og:url" content="https://jack-thegeek.github.io/2019/08/02/白嫖100g流量/index.html">
+<meta property="og:title" content="图床的解决方案">
+<meta property="og:url" content="https://jack-thegeek.github.io/2019/08/08/图床的解决方案/index.html">
 <meta property="og:site_name" content="无名小站">
-<meta property="og:description" content="第一篇技术性文章，要有magisk使用基础，有时效性，姑且当做记录吧">
+<meta property="og:description" content="jsDelivr的CDN加速是个好东西">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ae01.alicdn.com/kf/H0e381222dbee425bbefb6facbc96f5c8S.jpg">
-<meta property="og:image" content="https://ae01.alicdn.com/kf/H9335f3e51050466fa673a00d39061906v.jpg">
-<meta property="og:updated_time" content="2019-08-04T03:52:31.674Z">
+<meta property="og:updated_time" content="2019-08-08T04:02:58.574Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="白嫖100g流量">
-<meta name="twitter:description" content="第一篇技术性文章，要有magisk使用基础，有时效性，姑且当做记录吧">
-<meta name="twitter:image" content="https://ae01.alicdn.com/kf/H0e381222dbee425bbefb6facbc96f5c8S.jpg">
+<meta name="twitter:title" content="图床的解决方案">
+<meta name="twitter:description" content="jsDelivr的CDN加速是个好东西">
   
     <link rel="alternative" href="/atom.xml" title="无名小站" type="application/atom+xml">
   
@@ -220,11 +217,11 @@ var _hmt = _hmt || [];
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-白嫖100g流量" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-图床的解决方案" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/08/02/白嫖100g流量/" class="article-date">
-  	<time datetime="2019-08-02T15:30:40.000Z" itemprop="datePublished">2019-08-02</time>
+      <a href="/2019/08/08/图床的解决方案/" class="article-date">
+  	<time datetime="2019-08-08T03:29:05.000Z" itemprop="datePublished">2019-08-08</time>
 </a>
 
     </div>
@@ -236,7 +233,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      白嫖100g流量
+      图床的解决方案
     </h1>
   
 
@@ -261,7 +258,7 @@ var _hmt = _hmt || [];
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">字数: </span>
-        <span class="post-count">418字</span>
+        <span class="post-count">568字</span>
       </span>
     </span>
 
@@ -283,7 +280,7 @@ var _hmt = _hmt || [];
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/magisk/">magisk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/流量/">流量</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图床/">图床</a></li></ul>
 	</div>
 
         
@@ -301,35 +298,21 @@ var _hmt = _hmt || [];
 	  
 		
 		
-        <p><font color="#999999">第一篇技术性文章，要有magisk使用基础，有时效性，姑且当做记录吧</font></p>
+        <p><font color="#999999">jsDelivr的CDN加速是个好东西</font></p>
 <a id="more"></a>
 <hr>
-<p>说早点睡的我，本打算看完新闻就真的睡觉，毕竟已经几天晚睡早起+期末的学习状态。在吾爱看到个帖子，小米Max3可以白嫖100g云上网流量（好吧打算添加链接的我发现这个帖子已经被删了），睡着了也得起来……</p>
-<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>小米有个全球上网，功能跟虚拟SIM卡差不多，手机要支持全网通双4g，开启的时候会占用一个实体卡卡槽，好处是可以选运营商。</p>
-<h1 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h1><ul>
-<li>安卓9.0</li>
-<li>已root</li>
-<li>必须miui</li>
-</ul>
-<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>算是小米的官方活动，本来是小米Max3专享，但是通过改机型还有基带相关文件，可以骗过他的检测</p>
-<div align="center"><img src="https://ae01.alicdn.com/kf/H0e381222dbee425bbefb6facbc96f5c8S.jpg" width="30%"></div>
-
-
-<h1 id="需要的软件-amp-模块"><a href="#需要的软件-amp-模块" class="headerlink" title="需要的软件&amp;模块"></a>需要的软件&amp;模块</h1><ul>
-<li>全球上网云流量</li>
-<li>全球上网工具插件</li>
-<li>全球上网</li>
-<li>magisk模块：<a href="https://share.weiyun.com/5WZab6C" target="_blank" rel="noopener">云流量</a></li>
-</ul>
-<p>软件均可在miui商店下载</p>
-<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ol>
-<li>启动全球上网，右上角找到云流量</li>
-<li>点击启动，等待大概三分钟，中途会断网，可能会有卡顿</li>
-<li>成功后如图所示（看到两个4g图标觉得这东西还是蛮有意思的）<div align="center"><img src="https://ae01.alicdn.com/kf/H9335f3e51050466fa673a00d39061906v.jpg" width="30%"></div>
-
-</li>
-</ol>
-<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>这些天在搬家，暂住的地方没网。我的卡是跟家里的光纤绑一起的，由于旧的的套餐取消后就不能办理，新的套餐又太贵了，所以决定不换，反正也就放假才需要。这个流量的有效期是30天，刚好这个八月缺流量，可谓来得非常及时。</p>
+<p>参考自：<a href="https://blog.csdn.net/qq_36759224/article/details/98058240" target="_blank" rel="noopener">Github+jsDelivr+PicGo打造稳定快速、高效免费图床</a></p>
+<p>这些天都在寻找一个可靠的图床。</p>
+<p>微博图床虽然还能用，但是前不久的事件让我不敢用了。</p>
+<p><a href="https://www.superbed.cn/" target="_blank" rel="noopener">聚合图床</a>这个思路非常好，分发到不同的免费图床，万一出问题了还有个备份。这本来是最好的解决方案，但是看看只剩下三个免费的，对比网上的截图，以前起码六七个，我不免有些担忧。不管怎样也作为前面这些天的主力图床。</p>
+<p><a href="https://imgchr.com/" target="_blank" rel="noopener">路过图床</a>运行至今快十年了,一个付费+免费的产品活到现在可不容易，因此也纳入我的考虑范围。</p>
+<p><a href="https://sm.ms/" target="_blank" rel="noopener">SM.MS</a>是V2EX家的东西，本来挺可靠的，但是实际的访问速度让我不得不放弃他。</p>
+<p>然后就是来两个相对小众但是还蛮好的两个，<a href="https://www.tuchuang001.com/" target="_blank" rel="noopener">图床001</a>和<a href="https://www.picb.cc/" target="_blank" rel="noopener">PICB</a>，尤其后者，支持加入上传插件，具有更多的可玩性。我想，如果聚合图床能加上上述几个免费图床，那就稳了，可惜没有。</p>
+<p>想着自己折腾，无奈目前的能力不够，连一口气获得一个图片的多个地址都做不到，别说更复杂的了。</p>
+<p>回归到github的别样用法，用一个仓库来装图片，码云同样可以这么做，但是不支持大于1m的图片，多少不方便。但是github的访问速度太慢了，让我重新陷入困境。</p>
+<p>多少次想着跟代码直接传到托管上，这个文件夹会越来越大，万一要迁移这可不是好办法，何况coding只有125m的存储空间</p>
+<p>直到看到这篇文章，利用cnd加速来访问github上的图片，这思路想都没想过。</p>
+<p>操作非常简单，效果也很理想。如果某天这个加速没了其实也挺头疼的，但是相对来说，对比聚合图床还是这个比较可靠。所以目前的图床方案就采用Github+jsDelivr，本地当然要备份一份，规范命名，万一出问题批量修改图片的前缀就ok了。</p>
 
       
     </div>
@@ -339,18 +322,9 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2019/08/03/房子/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          房子
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/02/教训/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">教训</div>
+    <a href="/2019/08/07/想你了/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">想你了</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
