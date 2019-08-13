@@ -125,7 +125,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/magisk/" style="font-size: 10px;">magisk</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/流量/" style="font-size: 10px;">流量</a> <a href="/tags/生活/" style="font-size: 20px;">生活</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a>
+						<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/magisk/" style="font-size: 10px;">magisk</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/技术/" style="font-size: 15px;">技术</a> <a href="/tags/流量/" style="font-size: 10px;">流量</a> <a href="/tags/生活/" style="font-size: 15px;">生活</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a>
 					</div>
 				</section>
 				
@@ -460,6 +460,25 @@
     </div>
   </div>
 </footer>
+  <div id="foot">
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("07/29/2019 12:00:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行"+dnum+"天"; 
+        document.getElementById("times").innerHTML = hnum + "小时" + mnum + "分" + snum + "秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+</div>
 <!--增加不蒜子统计-->
 <script  async  src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
@@ -511,4 +530,24 @@ jQuery(document).ready(function($) {
 function delay() {
     $(".buryit").removeAttr("onclick");
 }
+</script>
+
+<!--浏览器搞笑标题-->
+<script>
+ var OriginTitle = document.title;
+ var titleTime;
+ document.addEventListener('visibilitychange', function () {
+     if (document.hidden) {
+         $('[rel="icon"]').attr('href', "/favicon.png");
+         document.title = 'ヽ(●-`Д´-)ノ你丑你就走！';
+         clearTimeout(titleTime);
+     }
+     else {
+         $('[rel="icon"]').attr('href', "/favicon.png");
+         document.title = 'ヾ(Ő∀Ő3)ノ你帅就回来！';
+         titleTime = setTimeout(function () {
+             document.title = OriginTitle;
+         }, 2000);
+     }
+ });
 </script>
