@@ -338,7 +338,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">字数: </span>
-        <span class="post-count">328字</span>
+        <span class="post-count">341字</span>
       </span>
     </span>
 
@@ -361,7 +361,14 @@
     
     <div class="article-entry" itemprop="articleBody">	
       
-        <p><font color="#999999">本站已经勉强运行14天</font></p>
+        <script language="javascript">
+    function copyit()
+    {
+    var v=document.getElementById("a").value;
+    window.clipboardData.setData("text",v);
+    }
+    </script>
+<p><font color="#999999">本站已经勉强运行14天</font></p>
       
     </div>
     
@@ -796,15 +803,16 @@ jQuery(document).ready(function($) {
             "top": y - 20,
             "left": x,
             "position": "absolute",
+            "font-size": "14px",
             //"font-weight": "bold",
-            "color": "#FF0000"
+            "color": "#FF4536"
         });
         $("body").append($i);
         $i.animate({
             "top": y - 180,
             "opacity": 0
         },
-      3000,
+      2000,
       function() {
           $i.remove();
       });

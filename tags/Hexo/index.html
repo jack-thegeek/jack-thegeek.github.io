@@ -418,15 +418,16 @@ jQuery(document).ready(function($) {
             "top": y - 20,
             "left": x,
             "position": "absolute",
+            "font-size": "14px",
             //"font-weight": "bold",
-            "color": "#FF0000"
+            "color": "#FF4536"
         });
         $("body").append($i);
         $i.animate({
             "top": y - 180,
             "opacity": 0
         },
-      3000,
+      2000,
       function() {
           $i.remove();
       });

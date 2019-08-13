@@ -5,18 +5,18 @@
   
   <title>添加网站运行时间 | 无名小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本站已经勉强运行14天">
+  <meta name="description" content="function copyit()     {     var v=document.getElementById(&quot;a&quot;).value;     window.clipboardData.setData(&quot;text&quot;,v);     }      本站已经勉强运行14天">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="添加网站运行时间">
 <meta property="og:url" content="https://jack-thegeek.github.io/2019/08/13/添加网站运行时间/index.html">
 <meta property="og:site_name" content="无名小站">
-<meta property="og:description" content="本站已经勉强运行14天">
+<meta property="og:description" content="function copyit()     {     var v=document.getElementById(&quot;a&quot;).value;     window.clipboardData.setData(&quot;text&quot;,v);     }      本站已经勉强运行14天">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-13T03:45:46.656Z">
+<meta property="og:updated_time" content="2019-08-13T04:26:03.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="添加网站运行时间">
-<meta name="twitter:description" content="本站已经勉强运行14天">
+<meta name="twitter:description" content="function copyit()     {     var v=document.getElementById(&quot;a&quot;).value;     window.clipboardData.setData(&quot;text&quot;,v);     }      本站已经勉强运行14天">
   
     <link rel="alternative" href="/atom.xml" title="无名小站" type="application/atom+xml">
   
@@ -246,7 +246,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">字数: </span>
-        <span class="post-count">328字</span>
+        <span class="post-count">341字</span>
       </span>
     </span>
 
@@ -287,7 +287,14 @@
 	  
 		
 		
-        <p><font color="#999999">本站已经勉强运行14天</font></p>
+        <script language="javascript">
+    function copyit()
+    {
+    var v=document.getElementById("a").value;
+    window.clipboardData.setData("text",v);
+    }
+    </script>
+<p><font color="#999999">本站已经勉强运行14天</font></p>
 <a id="more"></a>
 <hr>
 <h1 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h1><p><a href="https://blog.csdn.net/qq_36759224/article/details/85010191#font_colorFF0000___font_108" target="_blank" rel="noopener">添加网站运行时间</a></p>
@@ -296,7 +303,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"foot"</span>&gt;</span><br><span class="line">&lt;span id=<span class="string">"timeDate"</span>&gt;载入天数...&lt;<span class="regexp">/span&gt;&lt;span id="times"&gt;载入时分秒...&lt;/</span>span&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>(); </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">createtime</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">        <span class="keyword">var</span> grt= <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"07/29/2019 12:00:00"</span>);<span class="comment">//在此处修改你的建站时间</span></span><br><span class="line">        now.setTime(now.getTime()+<span class="number">250</span>); </span><br><span class="line">        days = (now - grt ) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> / <span class="number">24</span>; dnum = <span class="built_in">Math</span>.floor(days); </span><br><span class="line">        hours = (now - grt ) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> - (<span class="number">24</span> * dnum); hnum = <span class="built_in">Math</span>.floor(hours); </span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">String</span>(hnum).length ==<span class="number">1</span> )&#123;hnum = <span class="string">"0"</span> + hnum;&#125; minutes = (now - grt ) / <span class="number">1000</span> /<span class="number">60</span> - (<span class="number">24</span> * <span class="number">60</span> * dnum) - (<span class="number">60</span> * hnum); </span><br><span class="line">        mnum = <span class="built_in">Math</span>.floor(minutes); <span class="keyword">if</span>(<span class="built_in">String</span>(mnum).length ==<span class="number">1</span> )&#123;mnum = <span class="string">"0"</span> + mnum;&#125; </span><br><span class="line">        seconds = (now - grt ) / <span class="number">1000</span> - (<span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * dnum) - (<span class="number">60</span> * <span class="number">60</span> * hnum) - (<span class="number">60</span> * mnum); </span><br><span class="line">        snum = <span class="built_in">Math</span>.round(seconds); <span class="keyword">if</span>(<span class="built_in">String</span>(snum).length ==<span class="number">1</span> )&#123;snum = <span class="string">"0"</span> + snum;&#125; </span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"timeDate"</span>).innerHTML = <span class="string">"本站已安全运行 "</span>+dnum+<span class="string">" 天 "</span>; </span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"times"</span>).innerHTML = hnum + <span class="string">" 小时 "</span> + mnum + <span class="string">" 分 "</span> + snum + <span class="string">" 秒"</span>; </span><br><span class="line">    &#125; </span><br><span class="line">setInterval(<span class="string">"createtime()"</span>,<span class="number">250</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>响应式的处理：在footer.styl添加</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (max-width:<span class="number">400px</span>) &#123;</span><br><span class="line">	<span class="selector-id">#foot</span> &#123;</span><br><span class="line">	    <span class="attribute">font-size</span>: <span class="number">5px</span>;</span><br><span class="line">	    <span class="attribute">color</span>: <span class="number">#999999</span>;</span><br><span class="line">	    <span class="attribute">font-family</span>: Menlo, Monaco, <span class="string">"Andale Mono"</span>, <span class="string">"lucida console"</span>, <span class="string">"Courier New"</span>, monospace;</span><br><span class="line">	    <span class="attribute">text-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">#fff</span>;</span><br><span class="line">	    <span class="attribute">padding-top</span>: <span class="number">30px</span>;</span><br><span class="line">	    <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">40px</span> <span class="number">3px</span> <span class="number">40px</span>;</span><br><span class="line">	    <span class="attribute">text-align</span>: center;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#foot</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: Menlo, Monaco, <span class="string">"Andale Mono"</span>, <span class="string">"lucida console"</span>, <span class="string">"Courier New"</span>, monospace;</span><br><span class="line">    <span class="attribute">text-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">margin</span>: -<span class="number">15px</span> <span class="number">40px</span> <span class="number">10px</span> <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (max-width:<span class="number">400px</span>) &#123;</span><br><span class="line">	<span class="selector-id">#foot</span> &#123;</span><br><span class="line">	    <span class="attribute">font-size</span>: <span class="number">5px</span>;</span><br><span class="line">	    <span class="attribute">color</span>: <span class="number">#999999</span>;</span><br><span class="line">	    <span class="attribute">font-family</span>: Menlo, Monaco, <span class="string">"Andale Mono"</span>, <span class="string">"lucida console"</span>, <span class="string">"Courier New"</span>, monospace;</span><br><span class="line">	    <span class="attribute">text-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">#fff</span>;</span><br><span class="line">	    <span class="attribute">padding-top</span>: <span class="number">30px</span>;</span><br><span class="line">	    <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">40px</span> <span class="number">3px</span> <span class="number">40px</span>;</span><br><span class="line">	    <span class="attribute">text-align</span>: center;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#foot</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: Menlo, Monaco, <span class="string">"Andale Mono"</span>, <span class="string">"lucida console"</span>, <span class="string">"Courier New"</span>, monospace;</span><br><span class="line">    <span class="attribute">text-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">margin</span>: -<span class="number">15px</span> <span class="number">40px</span> <span class="number">10px</span> <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -437,15 +444,16 @@ jQuery(document).ready(function($) {
             "top": y - 20,
             "left": x,
             "position": "absolute",
+            "font-size": "14px",
             //"font-weight": "bold",
-            "color": "#FF0000"
+            "color": "#FF4536"
         });
         $("body").append($i);
         $i.animate({
             "top": y - 180,
             "opacity": 0
         },
-      3000,
+      2000,
       function() {
           $i.remove();
       });
