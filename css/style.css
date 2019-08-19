@@ -163,6 +163,7 @@ h6 {
   font-size: 1em;
 }
 a {
+  word-wrap: break-word;
   text-decoration: none;
   outline-width: 0;
   color: #258fb8;
@@ -585,9 +586,9 @@ a {
   *vertical-align: auto;
   zoom: 1;
   *display: inline;
-  text-indent: -9999px;
+/*text-indent:-9999px;*/
   margin: 0 8px 15px 8px;
-  opacity: 0.7;
+  opacity: 0.8;
   width: 28px;
   height: 28px;
   -webkit-transition: 0.3s;
@@ -601,82 +602,20 @@ a {
 #header .header-nav .social a:last-of-type {
   margin-right: 0;
 }
-#header .header-nav .social a.weibo {
-  background: url("/img/weibo.png") center no-repeat #aaf;
-  border: 1px solid #aaf;
+#header .header-nav .social i.fa-github {
+  color: #47484c;
 }
-#header .header-nav .social a.weibo:hover {
-  border: 1px solid #aaf;
+#header .header-nav .social i.fa-weixin {
+  color: #41b349;
 }
-#header .header-nav .social a.rss {
-  background: url("/img/rss.png") center no-repeat #ef7522;
-  border: 1px solid #ef7522;
+#header .header-nav .social i.fa-google {
+  color: #ee3f4d;
 }
-#header .header-nav .social a.rss:hover {
-  border: 1px solid #cf5d0f;
+#header .header-nav .social i.fa-envelope {
+  color: #ee3f4d;
 }
-#header .header-nav .social a.github {
-  background: url("/img/github.png") center no-repeat #afb6ca;
-  border: 1px solid #afb6ca;
-}
-#header .header-nav .social a.github:hover {
-  border: 1px solid #909ab6;
-}
-#header .header-nav .social a.facebook {
-  background: url("/img/facebook.png") center no-repeat #3b5998;
-  border: 1px solid #3b5998;
-}
-#header .header-nav .social a.facebook:hover {
-  border: 1px solid #2d4373;
-}
-#header .header-nav .social a.google {
-  background: url("/img/google.png") center no-repeat #c83d20;
-  border: 1px solid #c83d20;
-}
-#header .header-nav .social a.google:hover {
-  border: 1px solid #9c3019;
-}
-#header .header-nav .social a.twitter {
-  background: url("/img/twitter.png") center no-repeat #55cff8;
-  border: 1px solid #55cff8;
-}
-#header .header-nav .social a.twitter:hover {
-  border: 1px solid #24c1f6;
-}
-#header .header-nav .social a.linkedin {
-  background: url("/img/linkedin.png") center no-repeat #005a87;
-  border: 1px solid #005a87;
-}
-#header .header-nav .social a.linkedin:hover {
-  border: 1px solid #006b98;
-}
-#header .header-nav .social a.zhihu {
-  background: url("/img/zhihu.png") center no-repeat #0078d8;
-  border: 1px solid #0078d8;
-}
-#header .header-nav .social a.zhihu:hover {
-  border: 1px solid #0078d8;
-}
-#header .header-nav .social a.douban {
-  background: url("/img/douban.png") center no-repeat #06c611;
-  border: 1px solid #06c611;
-}
-#header .header-nav .social a.douban:hover {
-  border: 1px solid #06c611;
-}
-#header .header-nav .social a.mail {
-  background: url("/img/mail.png") center no-repeat #005a87;
-  border: 1px solid #005a87;
-}
-#header .header-nav .social a.mail:hover {
-  border: 1px solid #006b98;
-}
-#header .header-nav .social a.wechat {
-  background: url("/img/wechat.png") center no-repeat #85d761;
-  border: 1px solid #85d761;
-}
-#header .header-nav .social a.wechat:hover {
-  border: 1px solid #006b98;
+#header .header-nav .social i.fa-telegram {
+  color: #2474b5;
 }
 #header .switch-part {
   width: 100%;
@@ -794,6 +733,7 @@ a {
   background: none;
   text-align: right;
   width: auto;
+  margin-right: 25px;
 }
 .archive-article-inner .article-meta .article-date time {
   color: #aaa;
@@ -1119,7 +1059,7 @@ a {
   font-size: 14;
   text-align: center;
   position: absolute;
-  right: 10px;
+  right: 25px;
   top: 23px;
   text-align: center;
   z-index: 1;
@@ -1438,6 +1378,7 @@ a {
   background: none;
   text-align: right;
   width: auto;
+  margin-right: 25px;
 }
 .archive-article-inner .article-meta .article-date time {
   color: #aaa;
