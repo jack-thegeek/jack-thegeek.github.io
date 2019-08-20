@@ -3,25 +3,16 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>记第一次bug-fix | 无名小站</title>
+  <title>album | 无名小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="迟到的记录">
-<meta name="keywords" content="调试">
-<meta property="og:type" content="article">
-<meta property="og:title" content="记第一次bug-fix">
-<meta property="og:url" content="https://jack-thegeek.github.io/2019/08/06/记第一次bug-fix/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="album">
+<meta property="og:url" content="https://jack-thegeek.github.io/album/index.html">
 <meta property="og:site_name" content="无名小站">
-<meta property="og:description" content="迟到的记录">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ae01.alicdn.com/kf/Hb7011161f8464a45a6f171d90365eb6bt.jpg">
-<meta property="og:image" content="https://ae01.alicdn.com/kf/Ha84e3a767dc7441ca3a6f9f6d1937857K.jpg">
-<meta property="og:image" content="https://ae01.alicdn.com/kf/Hcd707afd4f47410199f3ede752f50079p.jpg">
-<meta property="og:image" content="https://ae01.alicdn.com/kf/H911e92ff89e64534bbaff94e2f4543bdH.jpg">
-<meta property="og:updated_time" content="2019-08-06T14:40:20.527Z">
+<meta property="og:updated_time" content="2019-08-19T15:18:01.854Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记第一次bug-fix">
-<meta name="twitter:description" content="迟到的记录">
-<meta name="twitter:image" content="https://ae01.alicdn.com/kf/Hb7011161f8464a45a6f171d90365eb6bt.jpg">
+<meta name="twitter:title" content="album">
   
     <link rel="alternative" href="/atom.xml" title="无名小站" type="application/atom+xml">
   
@@ -237,11 +228,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-记第一次bug-fix" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/08/06/记第一次bug-fix/" class="article-date">
-  	<time datetime="2019-08-06T10:12:00.000Z" itemprop="datePublished">2019-08-06</time>
+      <a href="/album/index.html" class="article-date">
+  	<time datetime="2019-08-19T15:18:01.000Z" itemprop="datePublished">2019-08-19</time>
 </a>
 
     </div>
@@ -253,7 +244,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      记第一次bug-fix
+      album
     </h1>
   
 
@@ -278,7 +269,7 @@
       <span class="post-meta-item-icon">
         <i class="fas fa-keyboard"></i>
         <span class="post-meta-item-text"> </span>
-        <span class="post-count">711字</span>
+        <span class="post-count">0字</span>
       </span>
     </span>
 
@@ -287,7 +278,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text"> </span>
-        <span class="post-count">2分</span>
+        <span class="post-count">1分</span>
       </span>
     </span>
   </font>
@@ -300,15 +291,7 @@
       
       <div class="article-info article-info-post">
         
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/调试/">调试</a></li></ul>
-	</div>
-
         
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
-
 
 
         <div class="clearfix"></div>
@@ -320,27 +303,7 @@
 	  
 		
 		
-        <p><font color="#999999">迟到的记录</font></p>
-<a id="more"></a>
-<hr>
-<p>第一次的bug在网站公布后没几分钟就遇到，并且几分钟内就解决了：Safari无法打开网页。<br>真没想到来得这么快，结束得也这么快。</p>
-<h1 id="遇到问题后的想法"><a href="#遇到问题后的想法" class="headerlink" title="遇到问题后的想法"></a>遇到问题后的想法</h1><p>怎么查原因呢，我自己直接在微信中打开没问题，在via中打开也没问题，手头上没有苹果设备，正当我一筹莫展的时候，想到在电脑上打开。而这个时候我才注意到，chrome访问的时候会提示有不安全的插件，我自然可以允许访问，但这没有从根本上解决问题，那问题很可能就在这上面。</p>
-<p>算是第一次用开发者工具进行真正的调试，按下F12后看到了三个错误。<br><a href="https://sm.ms/image/mFzUT1B7cZIOyEH" target="_blank"><img src="https://ae01.alicdn.com/kf/Hb7011161f8464a45a6f171d90365eb6bt.jpg"></a></p>
-<!--<img src="https://s2.ax1x.com/2019/08/06/ehTNZt.jpg" alt="ehTNZt.jpg" border="0" />-->
-
-<h1 id="sublime-text3-大显神通"><a href="#sublime-text3-大显神通" class="headerlink" title="sublime text3 大显神通"></a>sublime text3 大显神通</h1><p>第二第三个都是未定义的问题，涉及到安全的最可能就是第一个，即没有用HTTPS加载的问题。引入的是jquery库框架，这是我没有动过的部分，要在Hexo那一堆文件中找他出来可不容易，但是sublime text3有个很好用的功能，可以再文件夹中搜索所有文本类容，这样一搜只有一条。<br><a href="https://sm.ms/image/5HcTWjDgmCkiRw6" target="_blank"><img src="https://ae01.alicdn.com/kf/Ha84e3a767dc7441ca3a6f9f6d1937857K.jpg"></a></p>
-<!--<img src="https://s2.ax1x.com/2019/08/06/eh7lT0.jpg" alt="eh7lT0.jpg" border="0" />-->
-
-
-<p>双击一下搜索结果jquery.js就可以跳转到实际目录，用的百度的源，网址复制到浏览器，当时就抱着尝试下的心态，直接加个s上去看能不能打开，结果真可以，那就好办了，直接补个s，重新渲染html，提交，立马就可以访问了。</p>
-<h1 id="关于开发者调试模式"><a href="#关于开发者调试模式" class="headerlink" title="关于开发者调试模式"></a>关于开发者调试模式</h1><p>最初接触F12这个神奇的按钮，纯正是为了好玩，你可以看到整个网页的源码，可以修改网页上的任何东西，比方说下面这样的：<br><img src="https://ae01.alicdn.com/kf/Hcd707afd4f47410199f3ede752f50079p.jpg"></p>
-<p>后来用在下载图片上，有时候看到一张图，但是死活不能右击另存为，这时候可以试试调试工具，通常可以看到图片后缀。</p>
-<p>再后来是用在做题上。环境与资源这个<del>坑死我</del>强烈推荐的课，期末有个考题，简直帮你复习一遍物理化学生物地理。答题的网站不给复制，搜题就不容易了，但是调开开发者工具后，只要是文本，没有不能复制的，瞬间高效。</p>
-<p>这算是我正式学前端前的应用。</p>
-<p>现在呢，他正式用在我的开发调试上，算对得起这个工具了。</p>
-<p>前些天在想，不想装模拟器，手机端的实时预览怎么解决，总不能改一点点就提交吧？无意间看到调试工具上有个按钮，现在这个环境简直完美。<br><img src="https://ae01.alicdn.com/kf/H911e92ff89e64534bbaff94e2f4543bdH.jpg"></p>
-<p>更多功能，等着我去发现。</p>
-
+        
       
     </div>
     
@@ -351,25 +314,6 @@
 
   
     
-<nav id="article-nav">
-  
-    <a href="/2019/08/07/数据统计的添加/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          数据统计的添加
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/08/06/ssh连接Kali出现Access-denied的问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ssh连接Kali出现Access denied的问题</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
   
 </article>
 

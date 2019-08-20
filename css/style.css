@@ -530,7 +530,7 @@ a {
   cursor: pointer;
   text-transform: uppercase;
   float: none;
-  height: 200px;
+  height: 240px;
   margin-left: -12px;
   text-align: center;
   display: -webkit-box;
@@ -575,7 +575,7 @@ a {
 }
 #header .header-nav .social {
   margin-right: 15px;
-  margin-top: 25px;
+  margin-top: 15px;
   text-align: center;
 }
 #header .header-nav .social a {
@@ -622,6 +622,7 @@ a {
   position: absolute;
 }
 #header .switch-part1 {
+  height: auto;
   left: 0;
 }
 #header .switch-part2 {
@@ -783,6 +784,62 @@ a {
   max-width: 83px;
   padding-left: 8px;
   font-size: 12px;
+}
+.autobox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  padding: 30px 40px;
+}
+.sentence {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  margin: 15px;
+  position: relative;
+  border: 1px solid #ddd;
+  background: #fff;
+  -webkit-transition: all 0.2s ease-in;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  box-shadow: 5px 5px 5px #ccc;
+}
+.sentence p {
+  line-height: 2em;
+}
+.sentence .au {
+  margin-top: 10px;
+  color: #ccc;
+  text-align: right;
+}
+.sentence:hover {
+  -webkit-box-shadow: 8px 8px 10px #ccc;
+  box-shadow: 8px 8px 10px #ccc;
+}
+@media screen and (max-width: 400px) {
+  .autobox {
+    display: inline;
+    font-size: 14px;
+  }
+  .sentence {
+    width: auto;
+    padding: 20px;
+    margin: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
 }
 .article {
   margin: 30px 70px 30px 70px;
@@ -1788,7 +1845,7 @@ pre .javascript .function {
 }
 .switch-btn {
   margin-left: 74px;
-  margin-top: 23px;
+  margin-top: 5px;
   position: relative;
   width: 70px;
   text-align: center;
