@@ -304,7 +304,13 @@ a {
   #container .article-header {
     border-left: none;
     padding: 0;
-    border-bottom: 1px dotted #ddd;
+/*border-bottom: 1px dotted #ddd;*/
+/*.autobox{
+        max-width: 400px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }*/
   }
   #container .article-header h1 {
     margin-bottom: 10px;
@@ -339,15 +345,20 @@ a {
     padding-top: 10px;
   }
   #container .article .article-title {
+    text-align: left;
     font-size: 18px;
-    max-width: 185px;
+    max-width: 400px;
     display: block;
     margin: 0;
   }
+  #container .article .article-intitle {
+    margin-top: 15px;
+    text-align: center;
+  }
   #container .article .article-meta {
     width: auto;
-    height: 30px;
-    margin-top: -5px;
+    top: 15px;
+    right: 10px;
     position: ralative;
   }
   #container .article .article-meta .article-date {
@@ -365,6 +376,21 @@ a {
   #container .article .article-meta .article-date time {
     width: auto;
     float: right;
+    margin-right: -5px;
+  }
+  #container .article .article-meta .post-info {
+    padding: 10px 0px 0px 0px;
+    color: #aaa;
+    font-size: 12px;
+    z-index: 1;
+  }
+  #container .article .article-meta .post-info time {
+    color: #aaa;
+  }
+  #container .article .article-meta .post-info time:before {
+    color: #999;
+    content: "\f073";
+    font: 15px FontAwesome;
     margin-right: 10px;
   }
   #container .article .article-meta .article-tag-list {
@@ -804,6 +830,24 @@ a {
   justify-content: center;
   padding: 30px 40px;
 }
+.autobox-inline {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-box;
+  display: inline-flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
 .sentence {
   width: 100%;
   max-width: 400px;
@@ -827,19 +871,6 @@ a {
 .sentence:hover {
   -webkit-box-shadow: 8px 8px 10px #ccc;
   box-shadow: 8px 8px 10px #ccc;
-}
-@media screen and (max-width: 400px) {
-  .autobox {
-    display: inline;
-    font-size: 14px;
-  }
-  .sentence {
-    width: auto;
-    padding: 20px;
-    margin: 10px;
-    margin-bottom: 15px;
-    font-size: 14px;
-  }
 }
 .article {
   margin: 30px 70px 30px 70px;
@@ -929,11 +960,13 @@ a {
   color: #c8c8c8;
 }
 .article-title {
+/*text-align: left;*/
   color: #696969;
-  margin-left: 0px;
+  margin-top: 10px;
+/*margin-left: 0px;*/
+  margin-bottom: 5px;
   font-weight: 300;
   line-height: 35px;
-  margin-bottom: 5px;
   font-size: 26px;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
@@ -945,6 +978,10 @@ a {
 }
 .article-title:hover {
   color: #2b73af;
+}
+.article-intitle {
+  margin: 20px 0px;
+  text-align: center;
 }
 .article-inner {
   position: relative;
@@ -1063,7 +1100,7 @@ a {
 }
 .article-entry hr {
   height: 0;
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 20px;
   border-left: 0;
   border-right: 0;
@@ -1128,6 +1165,22 @@ a {
   color: #999;
   content: "\f073";
   font: 17px FontAwesome;
+  margin-right: 10px;
+}
+.post-info {
+  padding: 10px 0px 20px 0px;
+  color: #aaa;
+  font-size: 12px;
+/*height: 45px;*/
+  z-index: 1;
+}
+.post-info time {
+  color: #aaa;
+}
+.post-info time:before {
+  color: #999;
+  content: "\f073";
+  font: 15px FontAwesome;
   margin-right: 10px;
 }
 .article-more-link {
