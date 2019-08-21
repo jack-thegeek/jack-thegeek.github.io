@@ -230,7 +230,7 @@ a {
   cursor: default;
 }
 #container #mobile-nav #header .header-menu li {
-  display: inline-block;
+  display: inline;
   margin: 3px;
 }
 #container .left-col {
@@ -355,9 +355,24 @@ a {
     margin-top: 15px;
     text-align: center;
   }
+  #container .article .post-info {
+    padding: 10px 0px 0px 0px;
+    color: #aaa;
+    font-size: 12px;
+    z-index: 1;
+  }
+  #container .article .post-info time {
+    color: #aaa;
+  }
+  #container .article .post-info time:before {
+    color: #999;
+    content: "\f073";
+    font: 15px FontAwesome;
+    margin-right: 10px;
+  }
   #container .article .article-meta {
     width: auto;
-    top: 15px;
+    top: 10px;
     right: 10px;
     position: ralative;
   }
@@ -377,21 +392,6 @@ a {
     width: auto;
     float: right;
     margin-right: -5px;
-  }
-  #container .article .article-meta .post-info {
-    padding: 10px 0px 0px 0px;
-    color: #aaa;
-    font-size: 12px;
-    z-index: 1;
-  }
-  #container .article .article-meta .post-info time {
-    color: #aaa;
-  }
-  #container .article .article-meta .post-info time:before {
-    color: #999;
-    content: "\f073";
-    font: 15px FontAwesome;
-    margin-right: 10px;
   }
   #container .article .article-meta .article-tag-list {
     margin-top: 7px;
@@ -551,6 +551,7 @@ a {
   -webkit-box-orient: vertical;
 }
 #header .header-menu {
+  float: left;
   font-weight: 300;
   line-height: 31px;
   cursor: pointer;
@@ -565,6 +566,7 @@ a {
   -webkit-box-align: center;
 }
 #header .header-menu li {
+  display: inline;
   cursor: default;
 }
 #header .header-menu li a {
@@ -675,12 +677,6 @@ a {
   left: 300%;
   text-align: left;
   line-height: 30px;
-}
-.duoshuo {
-  padding: 0 40px;
-}
-#disqus_thread {
-  padding: 0 40px;
 }
 .archives-wrap {
   position: relative;
@@ -874,7 +870,7 @@ a {
 }
 .article {
   margin: 30px 70px 30px 70px;
-  border-radius: 5px;
+/*border-radius: 5px;*/
   position: relative;
   border: 1px solid #ddd;
   background: #fff;
@@ -978,6 +974,22 @@ a {
 }
 .article-title:hover {
   color: #2b73af;
+}
+.post-info {
+  padding: 10px 0px 20px 0px;
+  color: #aaa;
+  font-size: 12px;
+/*height: 45px;*/
+  z-index: 1;
+}
+.post-info time {
+  color: #aaa;
+}
+.post-info time:before {
+  color: #999;
+  content: "\f073";
+  font: 15px FontAwesome;
+  margin-right: 10px;
 }
 .article-intitle {
   margin: 20px 0px;
@@ -1165,22 +1177,6 @@ a {
   color: #999;
   content: "\f073";
   font: 17px FontAwesome;
-  margin-right: 10px;
-}
-.post-info {
-  padding: 10px 0px 20px 0px;
-  color: #aaa;
-  font-size: 12px;
-/*height: 45px;*/
-  z-index: 1;
-}
-.post-info time {
-  color: #aaa;
-}
-.post-info time:before {
-  color: #999;
-  content: "\f073";
-  font: 15px FontAwesome;
   margin-right: 10px;
 }
 .article-more-link {
