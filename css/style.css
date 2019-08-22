@@ -221,6 +221,9 @@ a {
   position: relative;
   z-index: 100;
 }
+#container #mobile-nav #header .profilepic img {
+  width: 100%;
+}
 #container #mobile-nav #header .header-menu {
   height: auto;
   margin: 10px;
@@ -572,6 +575,25 @@ a {
 #header .header-menu li a {
   font-size: 14px;
   min-width: 300px;
+}
+#header .header-menu div {
+  -webkit-transition: all 0.2s ease-in;
+  padding: 0 50px;
+}
+#header .header-menu div:hover {
+  font-size: 1.2em;
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+  color: #fff;
+  background-color: #696969;
+}
+#header .header-menu div:hover a {
+  color: #fff;
+}
+#header .header-menu div:active {
+  background-color: #000;
 }
 #header .switch-area {
   position: relative;
