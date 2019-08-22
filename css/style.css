@@ -844,12 +844,51 @@ a {
   -webkit-justify-content: center;
   justify-content: center;
 }
+.waterfall {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 0;
+  -moz-column-gap: 0;
+  column-gap: 0;
+  padding: 30px 60px;
+}
+@media (max-width: 400px) {
+  .waterfall {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    padding: 5px 0px;
+  }
+}
+.item {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+/*border: 1px solid #ddd;*/
+  break-inside: avoid;
+  padding: 10px;
+}
 .sentence {
-  width: 100%;
-  max-width: 400px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+/*align-items: center;*/
   padding: 20px;
-  margin: 15px;
-  position: relative;
+  height: auto;
   border: 1px solid #ddd;
   background: #fff;
   -webkit-transition: all 0.2s ease-in;
