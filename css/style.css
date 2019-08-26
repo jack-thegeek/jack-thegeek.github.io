@@ -598,18 +598,25 @@ a {
   top: -30px;
   display: none;
 }
+#header .header-menu .cecond-content a {
+  color: #696969;
+}
 #header .header-menu .cecond-content div {
   padding: 0 0 0 10px;
-  background-color: #38598b;
   text-align: left;
   min-width: 120px;
-  max-width: 400px;
+/*max-width: 400px;*/
 }
-#header .header-menu .cecond-content a {
-  color: #fff;
+#header .header-menu .cecond-content:hover div {
+  background-color: #fff;
+}
+#header .header-menu .cecond-content:hover a {
+  color: #38598b;
+}
+#header .header-menu .cecond-content a:hover {
+  font-size: 1.2em;
 }
 #header .header-menu .second:hover .cecond-content {
-/*a{color: black;}*/
   display: block;
 }
 #header .switch-area {
