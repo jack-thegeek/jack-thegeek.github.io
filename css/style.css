@@ -620,10 +620,6 @@ a {
   font-size: 14px;
 }
 #header .switch-area .switch-wrap {
-  -webkit-transition: -webkit-transform 0.3s ease-in;
-  -moz-transition: -moz-transform 0.3s ease-in;
-  -ms-transition: -ms-transform 0.3s ease-in;
-  transition: transform 0.3s ease-in;
   position: relative;
 }
 #header .turn-left {
@@ -716,6 +712,16 @@ a {
   left: 300%;
   text-align: left;
   line-height: 30px;
+}
+@media (max-width: 400px) {
+  #header .header-menu li {
+    padding: 0;
+    display: inline;
+    cursor: default;
+  }
+  #header .header-menu li a {
+    font-size: 14px;
+  }
 }
 .archives-wrap {
   position: relative;
@@ -2423,7 +2429,8 @@ pre .javascript .function {
   border-bottom: none;
 }
 #viewer-box .viewer-box-l .viewer-div .switch-friends-link {
-  line-height: 20px;
+  display: inherit;
+  line-height: 25px;
 }
 #viewer-box .viewer-box-r {
   background: rgba(0,0,0,0);
