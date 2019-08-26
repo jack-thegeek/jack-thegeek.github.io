@@ -5,18 +5,18 @@
   
   <title>更新日志 | 无名小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2019/8/22 句子迷样式更改为瀑布流，参考自一只看夕阳的猫，致谢 修改菜单样式（电脑版），使更易用  2019/8/21 修改文章相关信息为居中  2019/8/20 新增句子迷页面 删去部分无用代码  2019/8/18 更换社交图标（原PNG）为图标字体  2019/8/17 微调主页样式  2019/8/16 添加阴影样式 更改文本选中颜色为槿紫（手动滑稽">
+  <meta name="description" content="2019/8/26 新增段子栏目 重构菜单代码  2019/8/22 句子迷样式更改为瀑布流，参考自一只看夕阳的猫，致谢 修改菜单样式（电脑版），使更易用  2019/8/21 修改文章相关信息为居中  2019/8/20 新增句子迷页面 删去部分无用代码  2019/8/18 更换社交图标（原PNG）为图标字体  2019/8/17 微调主页样式  2019/8/1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="更新日志">
 <meta property="og:url" content="https://jack-thegeek.github.io/log/index.html">
 <meta property="og:site_name" content="无名小站">
-<meta property="og:description" content="2019/8/22 句子迷样式更改为瀑布流，参考自一只看夕阳的猫，致谢 修改菜单样式（电脑版），使更易用  2019/8/21 修改文章相关信息为居中  2019/8/20 新增句子迷页面 删去部分无用代码  2019/8/18 更换社交图标（原PNG）为图标字体  2019/8/17 微调主页样式  2019/8/16 添加阴影样式 更改文本选中颜色为槿紫（手动滑稽">
+<meta property="og:description" content="2019/8/26 新增段子栏目 重构菜单代码  2019/8/22 句子迷样式更改为瀑布流，参考自一只看夕阳的猫，致谢 修改菜单样式（电脑版），使更易用  2019/8/21 修改文章相关信息为居中  2019/8/20 新增句子迷页面 删去部分无用代码  2019/8/18 更换社交图标（原PNG）为图标字体  2019/8/17 微调主页样式  2019/8/1">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/日志页.jpg">
-<meta property="og:updated_time" content="2019-08-22T08:19:19.416Z">
+<meta property="og:updated_time" content="2019-08-26T04:54:51.304Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="更新日志">
-<meta name="twitter:description" content="2019/8/22 句子迷样式更改为瀑布流，参考自一只看夕阳的猫，致谢 修改菜单样式（电脑版），使更易用  2019/8/21 修改文章相关信息为居中  2019/8/20 新增句子迷页面 删去部分无用代码  2019/8/18 更换社交图标（原PNG）为图标字体  2019/8/17 微调主页样式  2019/8/16 添加阴影样式 更改文本选中颜色为槿紫（手动滑稽">
+<meta name="twitter:description" content="2019/8/26 新增段子栏目 重构菜单代码  2019/8/22 句子迷样式更改为瀑布流，参考自一只看夕阳的猫，致谢 修改菜单样式（电脑版），使更易用  2019/8/21 修改文章相关信息为居中  2019/8/20 新增句子迷页面 删去部分无用代码  2019/8/18 更换社交图标（原PNG）为图标字体  2019/8/17 微调主页样式  2019/8/1">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/日志页.jpg">
   
     <link rel="alternative" href="/atom.xml" title="无名小站" type="application/atom+xml">
@@ -25,9 +25,9 @@
     <link rel="icon" href="/favicon.png">
   
   <link rel="stylesheet" href="/css/style.css">
-  <!-- <script src="https://use.fontawesome.com/f7aaf75d9c.js"></script> -->
   <link href="https://cdn.bootcss.com/font-awesome/5.10.0-12/css/all.min.css" rel="stylesheet">
-  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1369238_mg6xcg0vhz.css">
+  <!-- <script type="text/javascript" src="https://at.alicdn.com/t/font_1369238_mg6xcg0vhz.js"></script> -->
   <script src="https://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 </head></html>
 <body>
@@ -143,11 +143,27 @@
 				        			<div><i class="fas fa-coffee"></i>&nbsp;日志</div>
 				        		</a>
 				        	</li>
-				        	<li>
-				        		<a href="/moment/">
-				        			<div><i class="fas fa-pen"></i>&nbsp;句子</div>
-				        		</a>
+				        	<li class="second">
+					        	<div>
+					        		<a href="/moment/">
+					        			<div><i class="fas fa-pen"></i>&nbsp;句子</div>
+					        		</a>
+
+					        		<div class="cecond-content">
+					        		<a href="/moment/">
+					        			<div><i class="iconfont icon-paper"></i></i>&nbsp;句子迷</div>
+					        		</a>
+					        		<a href="/moment/jokes.html">
+					        			<div><i class="iconfont icon-happy"></i></i>&nbsp;段子</div>
+					        		</a>
+					        		<a href="/moment/">
+					        			<div><i class="iconfont icon-jingxuanyulu2"></i>&nbsp;语录</div>
+					        		</a>
+					        		</div>
+
+					        	</div>
 				        	</li>
+				        	
 				        	<li>
 				        		<a href="/album/">
 				        			<div><i class="far fa-image"></i>&nbsp;相册</div>
@@ -319,7 +335,7 @@
       <span class="post-meta-item-icon">
         <i class="fas fa-keyboard"></i>
         <span class="post-meta-item-text"> </span>
-        <span class="post-count">574字</span>
+        <span class="post-count">589字</span>
       </span>
     </span>
 
@@ -371,6 +387,10 @@
     <img src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/日志页.jpg" width="25%" usemap="#log2">
 </div>
 
+<h1 id="2019-8-26"><a href="#2019-8-26" class="headerlink" title="2019/8/26"></a>2019/8/26</h1><ul>
+<li>新增段子栏目</li>
+<li>重构菜单代码</li>
+</ul>
 <h1 id="2019-8-22"><a href="#2019-8-22" class="headerlink" title="2019/8/22"></a>2019/8/22</h1><ul>
 <li>句子迷样式更改为瀑布流，参考自<a href="https://www.cnblogs.com/a-cat/p/8618675.html" target="_blank" rel="noopener">一只看夕阳的猫</a>，致谢</li>
 <li>修改菜单样式（电脑版），使更易用</li>
@@ -451,7 +471,7 @@
     
     <div style="color: #aaa;margin-top: 10px;">
     更新于：
-    2019-08-22 16:19:19
+    2019-08-26 12:54:51
     </div>
     
       

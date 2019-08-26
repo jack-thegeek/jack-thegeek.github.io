@@ -229,6 +229,9 @@ a {
   margin: 10px;
 }
 #container #mobile-nav #header .header-menu ul {
+  margin-top: 0;
+  padding: 0;
+  overflow: hidden;
   text-align: center;
   cursor: default;
 }
@@ -569,31 +572,45 @@ a {
   -webkit-box-align: center;
 }
 #header .header-menu li {
-  display: inline;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -ms-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  padding: 0 30px;
   cursor: default;
 }
 #header .header-menu li a {
   font-size: 14px;
   min-width: 300px;
 }
-#header .header-menu div {
-  -webkit-transition: all 0.2s ease-in;
-  padding: 0 50px;
-}
-#header .header-menu div:hover {
-  font-size: 1.2em;
-  -webkit-transform: translateX(20px);
-  -moz-transform: translateX(20px);
-  -ms-transform: translateX(20px);
-  transform: translateX(20px);
-  color: #fff;
+#header .header-menu li:hover {
   background-color: #38598b;
 }
-#header .header-menu div:hover a {
+#header .header-menu li:hover a {
   color: #fff;
 }
-#header .header-menu div:active {
-  background-color: #000;
+#header .header-menu .second {
+  position: relative;
+}
+#header .header-menu .cecond-content {
+  position: absolute;
+  left: 85px;
+  top: -30px;
+  display: none;
+}
+#header .header-menu .cecond-content div {
+  padding: 0 0 0 10px;
+  background-color: #38598b;
+  text-align: left;
+  min-width: 120px;
+  max-width: 400px;
+}
+#header .header-menu .cecond-content a {
+  color: #fff;
+}
+#header .header-menu .second:hover .cecond-content {
+/*a{color: black;}*/
+  display: block;
 }
 #header .switch-area {
   position: relative;
@@ -829,6 +846,16 @@ a {
   padding-left: 8px;
   font-size: 12px;
 }
+.hid {
+  line-height: 18px;
+  opacity: 0;
+}
+.dashed {
+  text-align: center;
+  width: 100%;
+  margin: 20px 0;
+  border: 1px dashed #ccc;
+}
 .autobox {
   display: -webkit-box;
   display: -moz-box;
@@ -914,8 +941,7 @@ a {
   border: 1px solid #ddd;
   background: #fff;
   -webkit-transition: all 0.2s ease-in;
-  -webkit-box-shadow: 5px 5px 5px #ccc;
-  box-shadow: 5px 5px 5px #ccc;
+/*box-shadow: 0px 0px 5px #ccc,0px 0px 5px 5px #ccc;*/
 }
 .sentence p {
   line-height: 2em;
@@ -926,8 +952,8 @@ a {
   text-align: right;
 }
 .sentence:hover {
-  -webkit-box-shadow: 8px 8px 10px #ccc;
-  box-shadow: 8px 8px 10px #ccc;
+  -webkit-box-shadow: 0px 0px 8px #ccc, 0px 0px 8px 5px #ccc;
+  box-shadow: 0px 0px 8px #ccc, 0px 0px 8px 5px #ccc;
 }
 .article {
   margin: 30px 70px 30px 70px;
