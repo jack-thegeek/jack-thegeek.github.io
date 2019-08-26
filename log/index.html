@@ -5,18 +5,18 @@
   
   <title>更新日志 | 无名小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2019/8/26 新增段子栏目 重构菜单代码 修复移动页面菜单错乱的bug  2019/8/22 句子迷样式更改为瀑布流，参考自一只看夕阳的猫，致谢 修改菜单样式（电脑版），使更易用  2019/8/21 修改文章相关信息为居中  2019/8/20 新增句子迷页面 删去部分无用代码  2019/8/18 更换社交图标（原PNG）为图标字体  2019/8/17 微">
+  <meta name="description" content="2019/8/26 新增段子栏目 重构菜单代码 修复移动页面菜单错乱的bug 移动端页面新增全新样式的菜单，处于测试阶段。  2019/8/22 句子迷样式更改为瀑布流，参考自一只看夕阳的猫，致谢 修改菜单样式（电脑版），使更易用  2019/8/21 修改文章相关信息为居中  2019/8/20 新增句子迷页面 删去部分无用代码  2019/8/18 更换社交图标（">
 <meta property="og:type" content="website">
 <meta property="og:title" content="更新日志">
 <meta property="og:url" content="https://jack-thegeek.github.io/log/index.html">
 <meta property="og:site_name" content="无名小站">
-<meta property="og:description" content="2019/8/26 新增段子栏目 重构菜单代码 修复移动页面菜单错乱的bug  2019/8/22 句子迷样式更改为瀑布流，参考自一只看夕阳的猫，致谢 修改菜单样式（电脑版），使更易用  2019/8/21 修改文章相关信息为居中  2019/8/20 新增句子迷页面 删去部分无用代码  2019/8/18 更换社交图标（原PNG）为图标字体  2019/8/17 微">
+<meta property="og:description" content="2019/8/26 新增段子栏目 重构菜单代码 修复移动页面菜单错乱的bug 移动端页面新增全新样式的菜单，处于测试阶段。  2019/8/22 句子迷样式更改为瀑布流，参考自一只看夕阳的猫，致谢 修改菜单样式（电脑版），使更易用  2019/8/21 修改文章相关信息为居中  2019/8/20 新增句子迷页面 删去部分无用代码  2019/8/18 更换社交图标（">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/日志页.jpg">
-<meta property="og:updated_time" content="2019-08-26T09:46:41.385Z">
+<meta property="og:updated_time" content="2019-08-26T14:08:13.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="更新日志">
-<meta name="twitter:description" content="2019/8/26 新增段子栏目 重构菜单代码 修复移动页面菜单错乱的bug  2019/8/22 句子迷样式更改为瀑布流，参考自一只看夕阳的猫，致谢 修改菜单样式（电脑版），使更易用  2019/8/21 修改文章相关信息为居中  2019/8/20 新增句子迷页面 删去部分无用代码  2019/8/18 更换社交图标（原PNG）为图标字体  2019/8/17 微">
+<meta name="twitter:description" content="2019/8/26 新增段子栏目 重构菜单代码 修复移动页面菜单错乱的bug 移动端页面新增全新样式的菜单，处于测试阶段。  2019/8/22 句子迷样式更改为瀑布流，参考自一只看夕阳的猫，致谢 修改菜单样式（电脑版），使更易用  2019/8/21 修改文章相关信息为居中  2019/8/20 新增句子迷页面 删去部分无用代码  2019/8/18 更换社交图标（">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/日志页.jpg">
   
     <link rel="alternative" href="/atom.xml" title="无名小站" type="application/atom+xml">
@@ -26,9 +26,16 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link href="https://cdn.bootcss.com/font-awesome/5.10.0-12/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1369238_mg6xcg0vhz.css">
+  <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1369238_2kw3cds4drf.css">
   <!-- <script type="text/javascript" src="https://at.alicdn.com/t/font_1369238_mg6xcg0vhz.js"></script> -->
   <script src="https://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script>
+    $(document).ready(function() {
+        $("#menubtn").click(function() {
+            $(".menu").slideToggle(500);
+        });
+    });
+    </script>
 </head></html>
 <body>
   <div id="container">
@@ -135,7 +142,7 @@
 				        	</li>
 				        	<li>
 				        		<a href="/categories/杂乱">
-				        			<div><i class="far fa-file-word"></i>&nbsp;&nbsp;杂乱</div>
+				        			<div><i class="far fa-file-word"></i>&nbsp;杂乱</div>
 				        		</a>
 				        	</li>
 				        	<li>
@@ -239,7 +246,22 @@
     <div class="mid-col">
       <nav id="mobile-nav">
   	<div class="overlay">
-  		<div class="slider-trigger"></div>
+  	<div class="slider-trigger"></div>
+  	<div class="menubox">
+        <div class="inbox">
+            <div id="menubtn"><i class="iconfont icon-caidananniudianji"></i></div>
+            <ul class="menu">
+                <a href="/archives"><li><i class="far fa-folder"></i>归档</li></a>
+                <a href="/categories/技术"><li><i class="fas fa-laptop-code"></i>技术</li></a>
+                <a href="/categories/读书"><li><i class="fas fa-book"></i>读书</li></a>
+                <a href="/categories/听歌"><li><i class="fas fa-headphones-alt"></i>听歌</li></a>
+                <a href="/categories/杂乱"><li><i class="far fa-file-word"></i>杂乱</li></a>
+                <a href="/log/"><li><i class="fas fa-coffee"></i>日志</li></a>
+                <a href="/moment/"><li><i class="fas fa-pen"></i>句子</li></a>
+                <a href="/album/"><li><i class="far fa-image"></i>相册</li></a>
+            </ul>
+        </div>
+    </div>
   		<h1 class="header-author js-mobile-header hide">無名小站</h1>
   	</div>
 	<div class="intrude-less">
@@ -335,7 +357,7 @@
       <span class="post-meta-item-icon">
         <i class="fas fa-keyboard"></i>
         <span class="post-meta-item-text"> </span>
-        <span class="post-count">601字</span>
+        <span class="post-count">621字</span>
       </span>
     </span>
 
@@ -391,6 +413,7 @@
 <li>新增段子栏目</li>
 <li>重构菜单代码</li>
 <li>修复移动页面菜单错乱的bug</li>
+<li>移动端页面新增全新样式的菜单，处于测试阶段。</li>
 </ul>
 <h1 id="2019-8-22"><a href="#2019-8-22" class="headerlink" title="2019/8/22"></a>2019/8/22</h1><ul>
 <li>句子迷样式更改为瀑布流，参考自<a href="https://www.cnblogs.com/a-cat/p/8618675.html" target="_blank" rel="noopener">一只看夕阳的猫</a>，致谢</li>
@@ -472,7 +495,7 @@
     
     <div style="color: #aaa;margin-top: 10px;">
     更新于：
-    2019-08-26 17:46:41
+    2019-08-26 22:08:13
     </div>
     
       

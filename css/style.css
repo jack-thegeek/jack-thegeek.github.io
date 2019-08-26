@@ -214,7 +214,7 @@ a {
   z-index: 99;
 }
 #container #mobile-nav #header {
-  padding: 10px 0 0 0;
+  padding: 50px 0 0 0;
 }
 #container #mobile-nav #header .profilepic {
   display: block;
@@ -281,6 +281,7 @@ a {
     position: relative;
   }
   #container .header-author.fixed {
+    z-index: 103;
     position: fixed;
     top: -13px;
     width: 100%;
@@ -310,13 +311,6 @@ a {
   #container .article-header {
     border-left: none;
     padding: 0;
-/*border-bottom: 1px dotted #ddd;*/
-/*.autobox{
-        max-width: 400px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }*/
   }
   #container .article-header h1 {
     margin-bottom: 10px;
@@ -495,6 +489,69 @@ a {
   #container #footer {
     margin: 10px;
   }
+  #container .menubox {
+    width: 100%;
+/*margin: 0 auto;*/
+    position: absolute;
+    z-index: 102;
+/*bottom: 0;
+    right: 0;
+    width: 42px;*/
+    height: 42px;
+  }
+  #container .inbox {
+    background-color: #38598b;
+  }
+  #container .inbox .menu {
+    display: none;
+    padding: 0;
+    margin-top: 0;
+  }
+  #container .inbox .menu .far,
+  #container .inbox .menu .fas,
+  #container .inbox .menu .fab {
+    padding: 0px 30px 0px 0px;
+  }
+  #container .inbox .menu i {
+    width: 42px;
+  }
+  #container .inbox li {
+    -webkit-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    text-align: center;
+    list-style: none;
+    line-height: 38px;
+    border: 0.5px solid #fff;
+    background-color: #38598b;
+  }
+  #container .inbox li:hover {
+    -webkit-transition: all 0.1s ease-in;
+    -moz-transition: all 0.1s ease-in;
+    -ms-transition: all 0.1s ease-in;
+    transition: all 0.1s ease-in;
+    background-color: #fff;
+  }
+  #container .inbox a {
+    text-decoration: none;
+    color: #fff;
+  }
+  #container .inbox a:hover {
+    color: #000;
+  }
+  #container .icon-caidananniudianji {
+    color: #fff;
+    font-size: 20px;
+    padding: 0;
+    margin: 5px 5px;
+  }
+  #container #menubtn {
+    height: 18px;
+    text-align: right;
+    padding: 10px 10px;
+  }
 }
 .header-author {
   text-align: center;
@@ -516,6 +573,7 @@ a {
   color: #b0a0aa;
 }
 #header .profilepic {
+/*padding-top: 60px;*/
   text-align: center;
   display: block;
   border: 5px solid #fff;
@@ -570,6 +628,9 @@ a {
   -webkit-box-orient: horizontal;
   -webkit-box-pack: center;
   -webkit-box-align: center;
+}
+#header .header-menu i {
+  width: 20px;
 }
 #header .header-menu li {
   -webkit-transition: all 0.25s ease-in;

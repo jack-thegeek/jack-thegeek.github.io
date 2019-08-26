@@ -25,9 +25,16 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link href="https://cdn.bootcss.com/font-awesome/5.10.0-12/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1369238_mg6xcg0vhz.css">
+  <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1369238_2kw3cds4drf.css">
   <!-- <script type="text/javascript" src="https://at.alicdn.com/t/font_1369238_mg6xcg0vhz.js"></script> -->
   <script src="https://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+  <script>
+    $(document).ready(function() {
+        $("#menubtn").click(function() {
+            $(".menu").slideToggle(500);
+        });
+    });
+    </script>
 </head></html>
 <body>
   <div id="container">
@@ -134,7 +141,7 @@
 				        	</li>
 				        	<li>
 				        		<a href="/categories/杂乱">
-				        			<div><i class="far fa-file-word"></i>&nbsp;&nbsp;杂乱</div>
+				        			<div><i class="far fa-file-word"></i>&nbsp;杂乱</div>
 				        		</a>
 				        	</li>
 				        	<li>
@@ -238,7 +245,22 @@
     <div class="mid-col">
       <nav id="mobile-nav">
   	<div class="overlay">
-  		<div class="slider-trigger"></div>
+  	<div class="slider-trigger"></div>
+  	<div class="menubox">
+        <div class="inbox">
+            <div id="menubtn"><i class="iconfont icon-caidananniudianji"></i></div>
+            <ul class="menu">
+                <a href="/archives"><li><i class="far fa-folder"></i>归档</li></a>
+                <a href="/categories/技术"><li><i class="fas fa-laptop-code"></i>技术</li></a>
+                <a href="/categories/读书"><li><i class="fas fa-book"></i>读书</li></a>
+                <a href="/categories/听歌"><li><i class="fas fa-headphones-alt"></i>听歌</li></a>
+                <a href="/categories/杂乱"><li><i class="far fa-file-word"></i>杂乱</li></a>
+                <a href="/log/"><li><i class="fas fa-coffee"></i>日志</li></a>
+                <a href="/moment/"><li><i class="fas fa-pen"></i>句子</li></a>
+                <a href="/album/"><li><i class="far fa-image"></i>相册</li></a>
+            </ul>
+        </div>
+    </div>
   		<h1 class="header-author js-mobile-header hide">無名小站</h1>
   	</div>
 	<div class="intrude-less">
