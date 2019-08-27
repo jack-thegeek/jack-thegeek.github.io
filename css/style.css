@@ -494,9 +494,6 @@ a {
 /*margin: 0 auto;*/
     position: absolute;
     z-index: 102;
-/*bottom: 0;
-    right: 0;
-    width: 42px;*/
     height: 42px;
   }
   #container .inbox {
@@ -524,7 +521,8 @@ a {
     text-align: center;
     list-style: none;
     line-height: 38px;
-    border: 0.5px solid #fff;
+    border: 0 solid #fff;
+    border-bottom: 0.5px solid #fff;
     background-color: #38598b;
   }
   #container .inbox li:hover {
