@@ -509,7 +509,6 @@ a {
   }
   #container .inbox .menu {
     display: none;
-    display: block;
     padding-top: 20px;
     padding-bottom: 10px;
   }
