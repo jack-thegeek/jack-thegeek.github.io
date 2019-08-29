@@ -27,16 +27,7 @@
   <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1369238_2kw3cds4drf.css">
   <!-- <script type="text/javascript" src="https://at.alicdn.com/t/font_1369238_mg6xcg0vhz.js"></script> -->
   <script src="https://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-  <script>
-    $(document).ready(function() {
-        $("#menubtn").click(function() {
-            $(".menu").slideToggle(500);
-        });
-        $(".fa-pen").click(function() {
-            $(".icon-paper").slideToggle(500);
-        });
-    });
-    </script>
+
 </head></html>
 <body>
   <div id="container">
@@ -159,10 +150,10 @@
 
 					        		<div class="cecond-content">
 					        		<a href="/moment/">
-					        			<div><i class="iconfont icon-paper"></i></i>&nbsp;句子迷</div>
+					        			<div><i class="iconfont icon-paper"></i>&nbsp;句子迷</div>
 					        		</a>
 					        		<a href="/moment/jokes.html">
-					        			<div><i class="iconfont icon-happy"></i></i>&nbsp;段子</div>
+					        			<div><i class="iconfont icon-happy"></i>&nbsp;段子</div>
 					        		</a>
 					        		<a href="/moment/">
 					        			<div><i class="iconfont icon-jingxuanyulu2"></i>&nbsp;语录</div>
@@ -248,24 +239,30 @@
       <nav id="mobile-nav">
   	<div class="overlay">
   	<div class="slider-trigger"></div>
+  	
+  		<h1 class="header-author js-mobile-header hide">無名小站</h1>
+  	</div>
+  	<div class="menubtn"><i class="iconfont icon-caidananniudianji"></i></div>
   	<div class="menubox">
-  		<div id="menubtn"><i class="iconfont icon-caidananniudianji"></i></div>
         <div class="inbox">
-            
             <ul class="menu">
-                <a href="/archives"><li><i class="far fa-folder"></i>归档</li></a>
-                <a href="/categories/技术"><li><i class="fas fa-laptop-code"></i>技术</li></a>
-                <a href="/categories/读书"><li><i class="fas fa-book"></i>读书</li></a>
-                <a href="/categories/听歌"><li><i class="fas fa-headphones-alt"></i>听歌</li></a>
-                <a href="/categories/杂乱"><li><i class="far fa-file-word"></i>杂乱</li></a>
-                <a href="/log/"><li><i class="fas fa-coffee"></i>日志</li></a>
-                <a href=""><li><i class="fas fa-pen"></i>句子</li></a>
-                <a href="/album/"><li><i class="far fa-image"></i>相册</li></a>
+            	<li><a href="/archives"><i class="far fa-folder"></i>归档</a></li>
+            	<li><a href="/categories/技术"><i class="fas fa-laptop-code"></i>技术</a></li>
+            	<li><a href="/categories/读书"><i class="fas fa-book"></i>读书</a></li>
+            	<li><a href="/categories/听歌"><i class="fas fa-headphones-alt"></i>听歌</a></li>
+            	<li><a href="/categories/杂乱"><i class="far fa-file-word"></i>杂乱</a></li>
+            	<li><a href="/log/"><i class="fas fa-coffee"></i>日志</a></li>
+            	<li class="sub-menu"><a href="#"  class="sub-menu-btn"><i class="fas fa-pen"></i>句子</a>
+					<ul>
+						<li><a href="/moment/"><i class="iconfont icon-paper"></i>句子迷</a></li>
+						<li><a href="/moment/"><i class="iconfont icon-happy"></i>段子</a></li>
+						<li><a href="/moment/"><i class="iconfont icon-jingxuanyulu2"></i>语录</a></li>
+					</ul>
+            	</li>
+            	<li><a href="/album/"><i class="far fa-image"></i>相册</a></li>    
             </ul>
         </div>
     </div>
-  		<h1 class="header-author js-mobile-header hide">無名小站</h1>
-  	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
@@ -304,6 +301,18 @@
 		</header>				
 	</div>
 </nav>
+
+<script>
+	$(document).ready(function() {
+	    $(".menubtn").click(function() {
+	        $(".menubox").toggleClass("menu-slide");
+	        $(this).toggleClass('menubtnon');
+	        $(".sub-menu-btn").click(function() {
+	        	$(this).next().slideToggle(300);
+	        });
+	    });
+	});
+</script>
       <div class="body-wrap"><article id="moment-" class="article-type-moment" itemscope itemprop="blogPost">
    <style type="text/css">
     .cls{

@@ -489,27 +489,37 @@ a {
   #container #footer {
     margin: 10px;
   }
-  #container .menubox {
-    position: absolute;
-    background-color: #3d4444;
-    z-index: 103;
-    width: 180px;
-    height: 42px;
-    right: 0px;
-    text-align: right;
+  #container .menubtn {
+    -webkit-transition: all 0.2s ease-in;
+    z-index: 108;
+    position: fixed;
+    top: 15px;
+    right: 15px;
   }
-  #container #menubtn {
-    padding: 20px 20px 0px 0px;
-    bottom: 0px;
+  #container .menubtnon {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  #container .menubox {
+    z-index: 107;
+    overflow: auto;
+    position: fixed;
+    background-color: #3d4444;
+    width: 180px;
+    height: 100%;
+    right: -180px;
+    -webkit-transition: all 0.3s ease-in;
+  }
+  #container .menu-slide {
+    right: 0px;
   }
   #container .inbox {
-    position: relative;
-    width: 180px;
     background-color: #3d4444;
   }
   #container .inbox .menu {
-    display: none;
-    padding-top: 20px;
+    padding-top: 50px;
     padding-bottom: 10px;
   }
   #container .inbox .menu .far,
@@ -523,30 +533,28 @@ a {
   }
   #container .inbox li {
     padding-left: 20px;
-    -webkit-transition: all 0.3s ease-in;
-    -webkit-transition: all 0.3s ease-in;
-    -moz-transition: all 0.3s ease-in;
-    -ms-transition: all 0.3s ease-in;
-    transition: all 0.3s ease-in;
     text-align: left;
     list-style: none;
     line-height: 38px;
     border: 0 solid #fff;
     background-color: #3d4444;
   }
-  #container .inbox li:hover {
-    -webkit-transition: all 0s ease-in;
-    -moz-transition: all 0s ease-in;
-    -ms-transition: all 0s ease-in;
-    transition: all 0s ease-in;
-    background-color: #fff;
-  }
   #container .inbox a {
     text-decoration: none;
     color: #fff;
   }
-  #container .inbox a:hover {
+  #container .inbox li:active {
+    background-color: #fff;
+  }
+  #container .inbox a:active {
     color: #000;
+  }
+  #container .sub-menu ul {
+    display: none;
+    margin-left: 20px;
+  }
+  #container .sub-menu ul .iconfont {
+    padding: 0px 15px 0px 0px;
   }
   #container .icon-caidananniudianji {
     color: #fff;
