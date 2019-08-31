@@ -524,7 +524,8 @@ a {
   }
   #container .inbox .menu .far,
   #container .inbox .menu .fas,
-  #container .inbox .menu .fab {
+  #container .inbox .menu .fab,
+  #container .inbox .menu iconfont {
     padding: 0px 15px 0px 0px;
   }
   #container .inbox .menu i {
@@ -551,7 +552,6 @@ a {
   }
   #container .sub-menu ul {
     display: none;
-    margin-left: 20px;
   }
   #container .sub-menu ul .iconfont {
     padding: 0px 15px 0px 0px;
