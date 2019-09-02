@@ -516,24 +516,24 @@ a {
     right: 0px;
   }
   #container .inbox {
+    -webkit-transition: all 0.1s ease-in;
     background-color: #3d4444;
   }
   #container .inbox .menu {
-    padding-top: 50px;
+    padding-top: 70px;
     padding-bottom: 10px;
   }
   #container .inbox .menu .far,
   #container .inbox .menu .fas,
   #container .inbox .menu .fab,
   #container .inbox .menu iconfont {
-    padding: 0px 15px 0px 0px;
+    padding: 0px 15px 0px 25px;
   }
   #container .inbox .menu i {
     width: 42px;
     text-align: center;
   }
   #container .inbox li {
-    padding-left: 20px;
     text-align: left;
     list-style: none;
     line-height: 38px;
@@ -541,20 +541,28 @@ a {
     background-color: #3d4444;
   }
   #container .inbox a {
+    display: inline-block;
+    width: 180px;
     text-decoration: none;
     color: #fff;
   }
-  #container .inbox li:active {
-    background-color: #fff;
-  }
   #container .inbox a:active {
+    background-color: #fff;
     color: #000;
+  }
+  #container .inbox a::selection {
+    color: #fff;
+    background: #806d9e;
   }
   #container .sub-menu ul {
     display: none;
   }
   #container .sub-menu ul .iconfont {
-    padding: 0px 15px 0px 0px;
+    padding: 0px 15px 0px 25px;
+  }
+  #container .sub-menu ul i {
+    display: inline-block;
+    width: 42px;
   }
   #container .icon-caidananniudianji {
     color: #fff;
@@ -653,7 +661,7 @@ a {
   min-width: 300px;
 }
 #header .header-menu li:hover {
-  background-color: #38598b;
+  background-color: #323c3c;
 }
 #header .header-menu li:hover a {
   color: #fff;
@@ -680,7 +688,7 @@ a {
   background-color: #fff;
 }
 #header .header-menu .cecond-content:hover a {
-  color: #38598b;
+  color: #323c3c;
 }
 #header .header-menu .cecond-content a:hover {
   font-size: 1.2em;
@@ -932,12 +940,6 @@ a {
   line-height: 18px;
   opacity: 0;
 }
-.dashed {
-  text-align: center;
-  width: 100%;
-  margin: 20px 0;
-  border: 1px dashed #ccc;
-}
 .autobox {
   display: -webkit-box;
   display: -moz-box;
@@ -957,23 +959,27 @@ a {
   justify-content: center;
   padding: 30px 40px;
 }
-.autobox-inline {
-  display: -webkit-inline-box;
-  display: -moz-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-box;
-  display: inline-flex;
-  -webkit-box-lines: multiple;
-  -moz-box-lines: multiple;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+.album {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
   -moz-box-pack: center;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
+  height: auto;
+  -webkit-box-shadow: 2px 2px 10px 3px #696969;
+  box-shadow: 2px 2px 10px 3px #696969;
+  max-width: 400px;
 }
 .waterfall {
   -webkit-column-count: 2;
@@ -996,9 +1002,9 @@ a {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-/*border: 1px solid #ddd;*/
   break-inside: avoid;
   padding: 10px;
+/*box-shadow: 5px 5px 5px 5px #ccc;*/
 }
 .sentence {
   display: -webkit-box;
@@ -1017,7 +1023,6 @@ a {
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
-/*align-items: center;*/
   padding: 20px;
   height: auto;
   border: 1px solid #ddd;
