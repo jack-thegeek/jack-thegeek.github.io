@@ -5,18 +5,18 @@
   
   <title>更新日志 | 无名小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2019/9/2 修复移动端菜单样式对齐问题  2019/8/28 正式使用全新的菜单样式，希望大家喜欢 为了不影响按钮点击观感，鼠标点击效果更改为正文内  2019/8/27 绑定.top域名，以后可以使用https://www.jackthegeek.top/访问 修复移动端菜单样式边框问题  2019/8/26 新增段子栏目 重构菜单代码 修复移动页面菜单错乱的">
+  <meta name="description" content="2019/9/2 彻底移除移动端菜单点击时的背景蓝色，参看自用css去掉a标签点击时的背景色  2019/9/2 修复移动端菜单样式对齐问题  2019/8/28 正式使用全新的菜单样式，希望大家喜欢 为了不影响按钮点击观感，鼠标点击效果更改为正文内  2019/8/27 绑定.top域名，以后可以使用https://www.jackthegeek.top/访问 修复">
 <meta property="og:type" content="website">
 <meta property="og:title" content="更新日志">
 <meta property="og:url" content="https://jack-thegeek.github.io/log/index.html">
 <meta property="og:site_name" content="无名小站">
-<meta property="og:description" content="2019/9/2 修复移动端菜单样式对齐问题  2019/8/28 正式使用全新的菜单样式，希望大家喜欢 为了不影响按钮点击观感，鼠标点击效果更改为正文内  2019/8/27 绑定.top域名，以后可以使用https://www.jackthegeek.top/访问 修复移动端菜单样式边框问题  2019/8/26 新增段子栏目 重构菜单代码 修复移动页面菜单错乱的">
+<meta property="og:description" content="2019/9/2 彻底移除移动端菜单点击时的背景蓝色，参看自用css去掉a标签点击时的背景色  2019/9/2 修复移动端菜单样式对齐问题  2019/8/28 正式使用全新的菜单样式，希望大家喜欢 为了不影响按钮点击观感，鼠标点击效果更改为正文内  2019/8/27 绑定.top域名，以后可以使用https://www.jackthegeek.top/访问 修复">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/日志页.jpg">
-<meta property="og:updated_time" content="2019-09-02T15:16:52.780Z">
+<meta property="og:updated_time" content="2019-09-03T02:07:34.298Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="更新日志">
-<meta name="twitter:description" content="2019/9/2 修复移动端菜单样式对齐问题  2019/8/28 正式使用全新的菜单样式，希望大家喜欢 为了不影响按钮点击观感，鼠标点击效果更改为正文内  2019/8/27 绑定.top域名，以后可以使用https://www.jackthegeek.top/访问 修复移动端菜单样式边框问题  2019/8/26 新增段子栏目 重构菜单代码 修复移动页面菜单错乱的">
+<meta name="twitter:description" content="2019/9/2 彻底移除移动端菜单点击时的背景蓝色，参看自用css去掉a标签点击时的背景色  2019/9/2 修复移动端菜单样式对齐问题  2019/8/28 正式使用全新的菜单样式，希望大家喜欢 为了不影响按钮点击观感，鼠标点击效果更改为正文内  2019/8/27 绑定.top域名，以后可以使用https://www.jackthegeek.top/访问 修复">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/日志页.jpg">
   
     <link rel="alternative" href="/atom.xml" title="无名小站" type="application/atom+xml">
@@ -26,7 +26,7 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link href="https://cdn.bootcss.com/font-awesome/5.10.0-12/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1369238_2kw3cds4drf.css">
+  <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1369238_1mv5wxf4a2m.css">
   <!-- <script type="text/javascript" src="https://at.alicdn.com/t/font_1369238_mg6xcg0vhz.js"></script> -->
   <script src="https://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 
@@ -254,7 +254,7 @@
             	<li><a href="/categories/听歌"><i class="fas fa-headphones-alt"></i>听歌</a></li>
             	<li><a href="/categories/杂乱"><i class="far fa-file-word"></i>杂乱</a></li>
             	<li><a href="/log/"><i class="fas fa-coffee"></i>日志</a></li>
-            	<li class="sub-menu"><a href="#"  class="sub-menu-btn"><i class="fas fa-pen"></i>句子</a>
+            	<li class="sub-menu"><a href="#"  class="sub-menu-btn"><i class="fas fa-pen"></i>句子<i class="iconfont icon-menu-item-normal"></i></a>
 					<ul>
 						<li><a href="/moment/"><i class="iconfont icon-paper"></i>句子迷</a></li>
 						<li><a href="/moment/jokes.html"><i class="iconfont icon-happy"></i>段子</a></li>
@@ -310,6 +310,7 @@
 	        $(".menubox").toggleClass("menu-slide");
 	        $(this).toggleClass('menubtnon');
 	        $(".sub-menu-btn").click(function() {
+	        	$(".icon-menu-item-normal").toggleClass('menubtnon');
 	        	$(this).next().slideToggle(300);
 	        });
 	    });
@@ -349,7 +350,7 @@
       <span class="post-meta-item-icon">
         <i class="fas fa-keyboard"></i>
         <span class="post-meta-item-text"> </span>
-        <span class="post-count">713字</span>
+        <span class="post-count">749字</span>
       </span>
     </span>
 
@@ -402,6 +403,9 @@
 </div>
 
 <h1 id="2019-9-2"><a href="#2019-9-2" class="headerlink" title="2019/9/2"></a>2019/9/2</h1><ul>
+<li>彻底移除移动端菜单点击时的背景蓝色，参看自<a href="https://www.jianshu.com/p/a47e9ab58d62" target="_blank" rel="noopener">用css去掉a标签点击时的背景色</a></li>
+</ul>
+<h1 id="2019-9-2-1"><a href="#2019-9-2-1" class="headerlink" title="2019/9/2"></a>2019/9/2</h1><ul>
 <li>修复移动端菜单样式对齐问题</li>
 </ul>
 <h1 id="2019-8-28"><a href="#2019-8-28" class="headerlink" title="2019/8/28"></a>2019/8/28</h1><ul>
@@ -498,7 +502,7 @@
     
     <div style="color: #aaa;margin-top: 10px;">
     更新于：
-    2019-09-02 23:16:52
+    2019-09-03 10:07:34
     </div>
     
       

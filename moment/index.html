@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="无名小站">
 <meta property="og:description" content="句子迷             那些瞬间、那些句子                                         我打算迎来人生最大的转折点，但卖掉大提琴时，很不可思议，觉得很轻松。觉得被一直以来的束缚解放了。自己以前坚信不移的梦想，可能根本不是梦想。             --入殓师">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-22T04:55:37.845Z">
+<meta property="og:updated_time" content="2019-09-03T02:13:29.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="moment">
 <meta name="twitter:description" content="句子迷             那些瞬间、那些句子                                         我打算迎来人生最大的转折点，但卖掉大提琴时，很不可思议，觉得很轻松。觉得被一直以来的束缚解放了。自己以前坚信不移的梦想，可能根本不是梦想。             --入殓师">
@@ -24,7 +24,7 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link href="https://cdn.bootcss.com/font-awesome/5.10.0-12/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1369238_2kw3cds4drf.css">
+  <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1369238_1mv5wxf4a2m.css">
   <!-- <script type="text/javascript" src="https://at.alicdn.com/t/font_1369238_mg6xcg0vhz.js"></script> -->
   <script src="https://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 
@@ -252,7 +252,7 @@
             	<li><a href="/categories/听歌"><i class="fas fa-headphones-alt"></i>听歌</a></li>
             	<li><a href="/categories/杂乱"><i class="far fa-file-word"></i>杂乱</a></li>
             	<li><a href="/log/"><i class="fas fa-coffee"></i>日志</a></li>
-            	<li class="sub-menu"><a href="#"  class="sub-menu-btn"><i class="fas fa-pen"></i>句子</a>
+            	<li class="sub-menu"><a href="#"  class="sub-menu-btn"><i class="fas fa-pen"></i>句子<i class="iconfont icon-menu-item-normal"></i></a>
 					<ul>
 						<li><a href="/moment/"><i class="iconfont icon-paper"></i>句子迷</a></li>
 						<li><a href="/moment/jokes.html"><i class="iconfont icon-happy"></i>段子</a></li>
@@ -308,6 +308,7 @@
 	        $(".menubox").toggleClass("menu-slide");
 	        $(this).toggleClass('menubtnon');
 	        $(".sub-menu-btn").click(function() {
+	        	$(".icon-menu-item-normal").toggleClass('menubtnon');
 	        	$(this).next().slideToggle(300);
 	        });
 	    });
