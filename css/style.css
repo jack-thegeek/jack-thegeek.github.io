@@ -518,6 +518,10 @@ a {
   #container .inbox {
     -webkit-transition: all 0.1s ease-in;
     background-color: #3d4444;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    -webkit-user-select: none;
+    -moz-user-focus: none;
+    -moz-user-select: none;
   }
   #container .inbox .menu {
     padding-top: 70px;
@@ -567,6 +571,15 @@ a {
   #container .icon-caidananniudianji {
     color: #fff;
     font-size: 20px;
+  }
+  #container .icon-menu-item-normal {
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    display: inline-block;
+    width: 42px;
+    text-align: center;
   }
 }
 .header-author {
@@ -977,8 +990,8 @@ a {
   -webkit-justify-content: center;
   justify-content: center;
   height: auto;
-  -webkit-box-shadow: 2px 2px 10px 3px #696969;
-  box-shadow: 2px 2px 10px 3px #696969;
+  -webkit-box-shadow: 2px 2px 8px 3px #696969;
+  box-shadow: 2px 2px 8px 3px #696969;
   max-width: 400px;
 }
 .waterfall {
@@ -1004,7 +1017,6 @@ a {
   box-sizing: border-box;
   break-inside: avoid;
   padding: 10px;
-/*box-shadow: 5px 5px 5px 5px #ccc;*/
 }
 .sentence {
   display: -webkit-box;
