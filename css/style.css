@@ -558,6 +558,18 @@ a {
     color: #fff;
     background: #806d9e;
   }
+  #container .inbox a,
+  #container .inbox a:hover,
+  #container .inbox a:active,
+  #container .inbox a:visited,
+  #container .inbox a:link,
+  #container .inbox a:focus {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+/*background: none;*/
+    text-decoration: none;
+  }
   #container .sub-menu ul {
     display: none;
   }
