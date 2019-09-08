@@ -593,6 +593,10 @@ a {
     width: 42px;
     text-align: center;
   }
+  #container .full {
+    border: none;
+    margin: 0px;
+  }
 }
 .header-author {
   text-align: center;
