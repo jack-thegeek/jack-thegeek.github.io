@@ -966,7 +966,6 @@ a {
   font-size: 12px;
 }
 .hid {
-  line-height: 18px;
   opacity: 0;
 }
 .autobox {
@@ -1056,7 +1055,6 @@ a {
   border: 1px solid #ddd;
   background: #fff;
   -webkit-transition: all 0.2s ease-in;
-/*box-shadow: 0px 0px 5px #ccc,0px 0px 5px 5px #ccc;*/
 }
 .sentence p {
   line-height: 2em;
@@ -1082,8 +1080,8 @@ a {
   box-shadow: 5px 5px 5px #ccc;
 }
 .article:hover {
-  -webkit-box-shadow: 5px 5px 10px rgba(41,131,187,0.3);
-  box-shadow: 5px 5px 10px rgba(41,131,187,0.3);
+  -webkit-box-shadow: 5px 5px 5px 2px #ccc;
+  box-shadow: 5px 5px 5px 2px #ccc;
 }
 .article.show {
   visibility: visible;
