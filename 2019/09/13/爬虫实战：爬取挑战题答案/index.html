@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20190913212330.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20190913212715.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20190913212822.jpg">
-<meta property="og:updated_time" content="2019-09-13T13:55:59.513Z">
+<meta property="og:updated_time" content="2019-09-13T13:56:19.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫实战：爬取挑战题答案">
 <meta name="twitter:description" content="只是能用。">
@@ -458,7 +458,7 @@
 <p>于是想到了用正则表达把内容筛选出来，可以找到规律，每页答案的开头都有“相关资源如下”的字样，当然如果不介意多写入些与答案无关的内容，直接利用两个<code>&lt;p&gt;&lt;/p&gt;</code>就可以达到目的了。<br>这里主要利用开头的<code>如下</code>以及结尾处的<code>&lt;p&gt;&lt;/p&gt;</code><br>爬取2-46页的代码如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">headers=&#123;</span><br><span class="line">    <span class="string">'accept-language'</span>: <span class="string">'zh-CN,zh;q=0.9'</span>,</span><br><span class="line">    <span class="string">'cache-control'</span>: <span class="string">'no-cache'</span>,</span><br><span class="line">    <span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> number <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">47</span>):</span><br><span class="line">    url = <span class="string">'https://www.3gmfw.cn/article/html2/2019/09/09/486867_'</span> + str(number) + <span class="string">'.html'</span></span><br><span class="line">    html = requests.get(url,headers=headers)</span><br><span class="line">    html.encoding = html.apparent_encoding</span><br><span class="line">    rule = re.compile(<span class="string">'.*?如下.*?&lt;br/&gt;\\n(.*?)&lt;p&gt;&lt;/p&gt;'</span>,re.S)</span><br><span class="line">    answers=re.findall(rule,html.text)</span><br><span class="line">    <span class="comment"># print(answers)</span></span><br><span class="line">    print(<span class="string">"写入第%s页"</span>%number)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> answer <span class="keyword">in</span> answers:</span><br><span class="line">        fo = open(<span class="string">"leananswer.txt"</span>, <span class="string">"a+"</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">        fo.write(str(answer))</span><br><span class="line">        fo.close()</span><br></pre></td></tr></table></figure>
 
-<p>此时已经可用正常爬取所有答案，多余的&lt;br&gt;可用在word或者sublimetext3中查找并删除全部，这样使用就方便了。</p>
+<p>此时已经可用正常爬取所有答案，多余的&lt;br&gt;可用在word或者sublime text3中查找并删除全部，这样使用就方便了。</p>
 <p>同时也发现个问题，太慢了。<br>大概5s爬取一页，这不应该。</p>
 <p>第一反应觉得可能是请求头的问题，但是把Request Headers几乎全补上了，还是很慢，那问题就不在这了。</p>
 <p>然后觉得是正则表达的问题，但是正则表达式再慢也不应该有这么大影响。我能想到的唯一有可能有影响的是中文的GBK编码，于是改了下正则表达的开头，<code>：\\r\\n</code>,这个是“相关资源如下”后面的字符，这下没有中文了，但是很可惜，速度还是很慢。</p>
@@ -483,7 +483,7 @@
     
     <div style="color: #aaa;margin-top: 10px;">
     更新于：
-    2019-09-13 21:55:59
+    2019-09-13 21:56:19
     </div>
     
       
