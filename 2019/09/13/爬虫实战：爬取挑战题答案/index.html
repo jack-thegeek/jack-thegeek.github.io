@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>爬虫实战：爬取挑战题答案 | 无名小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="只是能用。">
+<meta name="keywords" content="爬虫 Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="爬虫实战：爬取挑战题答案">
+<meta property="og:url" content="https://jack-thegeek.github.io/2019/09/13/爬虫实战：爬取挑战题答案/index.html">
+<meta property="og:site_name" content="无名小站">
+<meta property="og:description" content="只是能用。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20190913212330.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20190913212715.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20190913212822.jpg">
+<meta property="og:updated_time" content="2019-09-13T13:37:37.649Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="爬虫实战：爬取挑战题答案">
+<meta name="twitter:description" content="只是能用。">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20190913212330.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="无名小站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://cdn.bootcss.com/font-awesome/5.10.0-12/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1369238_1mv5wxf4a2m.css">
+  <!-- <script type="text/javascript" src="https://at.alicdn.com/t/font_1369238_mg6xcg0vhz.js"></script> -->
+  <!-- <script src="https://libs.baidu.com/jquery/1.9.0/jquery.js"></script> -->
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="/img/headportrait.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">無名小站</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">欲穷千里目，更上一层楼</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+							<!-- 
+									<li><a href="/archives">归档</a></li>
+			        		
+									<li><a href="/categories/技术">技术</a></li>
+			        		
+									<li><a href="/categories/读书">读书</a></li>
+			        		
+									<li><a href="/categories/听歌">听歌</a></li>
+			        		
+									<li><a href="/categories/杂乱">杂乱</a></li>
+			        		
+									<li><a href="/log/">日志</a></li>
+			        		
+									<li><a href="/moment/">句子</a></li>
+			        		
+									<li><a href="/album/">相册</a></li>
+			        		 -->
+			        		
+				        	<li>
+				        		<a href="/archives">
+				        			<div><i class="far fa-folder"></i>&nbsp;归档</div>
+				        		</a>
+				        	</li>
+				        	<li>
+				        		<a href="/categories/技术">
+				        			<div><i class="fas fa-laptop-code"></i>&nbsp;技术</div>
+				        		</a>
+				        	</li>
+				        	<li>
+				        		<a href="/categories/读书">
+				        			<div><i class="fas fa-book"></i>&nbsp;读书</div>
+				        		</a>
+				        	</li>
+				        	<li>
+				        		<a href="/categories/听歌">
+				        			<div><i class="fas fa-headphones-alt"></i>&nbsp;听歌</div>
+				        		</a>
+				        	</li>
+				        	<li>
+				        		<a href="/categories/杂乱">
+				        			<div><i class="far fa-file-word"></i>&nbsp;杂乱</div>
+				        		</a>
+				        	</li>
+				        	<li>
+				        		<a href="/log/">
+				        			<div><i class="fas fa-coffee"></i>&nbsp;日志</div>
+				        		</a>
+				        	</li>
+				        	<li class="second">
+					        	<div>
+					        		<a href="/moment/">
+					        			<div><i class="fas fa-pen"></i>&nbsp;句子</div>
+					        		</a>
+
+					        		<div class="cecond-content">
+					        		<a href="/moment/">
+					        			<div><i class="iconfont icon-paper"></i>&nbsp;句子迷</div>
+					        		</a>
+					        		<a href="/moment/jokes.html">
+					        			<div><i class="iconfont icon-happy"></i>&nbsp;段子</div>
+					        		</a>
+					        		<a href="/moment/">
+					        			<div><i class="iconfont icon-jingxuanyulu2"></i>&nbsp;语录</div>
+					        		</a>
+					        		</div>
+
+					        	</div>
+				        	</li>
+				        	
+				        	<li>
+				        		<a href="/album/">
+				        			<div><i class="far fa-image"></i>&nbsp;相册</div>
+				        		</a>
+				        	</li>
+			        		
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a target="_blank" href="https://github.com/jack-thegeek/jack-thegeek.github.io" title="fab fa-github">
+									<i class="fab fa-github" aria-hidden="true" style="font-size: 23px;"></i>
+								</a>
+					        
+								<a target="_blank" href="/" title="fab fa-weixin">
+									<i class="fab fa-weixin" aria-hidden="true" style="font-size: 23px;"></i>
+								</a>
+					        
+								<a target="_blank" href="/" title="fab fa-telegram">
+									<i class="fab fa-telegram" aria-hidden="true" style="font-size: 23px;"></i>
+								</a>
+					        
+								<a target="_blank" href="/" title="fas fa-envelope">
+									<i class="fas fa-envelope" aria-hidden="true" style="font-size: 23px;"></i>
+								</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/magisk/" style="font-size: 10px;">magisk</a> <a href="/tags/sublime-text3/" style="font-size: 10px;">sublime text3</a> <a href="/tags/图床/" style="font-size: 10px;">图床</a> <a href="/tags/手机/" style="font-size: 10px;">手机</a> <a href="/tags/技术/" style="font-size: 15px;">技术</a> <a href="/tags/朋友/" style="font-size: 10px;">朋友</a> <a href="/tags/流量/" style="font-size: 10px;">流量</a> <a href="/tags/爬虫-Python/" style="font-size: 10px;">爬虫 Python</a> <a href="/tags/生活/" style="font-size: 15px;">生活</a> <a href="/tags/百度云/" style="font-size: 15px;">百度云</a> <a href="/tags/纯音乐/" style="font-size: 10px;">纯音乐</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/迅雷/" style="font-size: 10px;">迅雷</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ypojie.com/">易破解</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.coolapp.wang/">云库网</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.ghpym.com/">果核剥壳</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.nocmd.com/">nocmd</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.carrotchou.blog/">胡萝卜周</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.appcgn.com/">软件缘</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">不会唱、跳、Rap、篮球</div>
+				</section>
+				
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  	<div class="slider-trigger"></div>
+  	
+  		<h1 class="header-author js-mobile-header hide">無名小站</h1>
+  	</div>
+  	<div class="menubtn"><i class="iconfont icon-caidananniudianji"></i></div>
+  	<div class="menubox">
+        <div class="inbox">
+            <ul class="menu">
+            	<li><a href="/archives"><i class="far fa-folder"></i>归档</a></li>
+            	<li><a href="/categories/技术"><i class="fas fa-laptop-code"></i>技术</a></li>
+            	<li><a href="/categories/读书"><i class="fas fa-book"></i>读书</a></li>
+            	<li><a href="/categories/听歌"><i class="fas fa-headphones-alt"></i>听歌</a></li>
+            	<li><a href="/categories/杂乱"><i class="far fa-file-word"></i>杂乱</a></li>
+            	<li><a href="/log/"><i class="fas fa-coffee"></i>日志</a></li>
+            	<li class="sub-menu"><a href="#"  class="sub-menu-btn"><i class="fas fa-pen"></i>句子<i class="iconfont icon-menu-item-normal"></i></a>
+					<ul>
+						<li><a href="/moment/"><i class="iconfont icon-paper"></i>句子迷</a></li>
+						<li><a href="/moment/jokes.html"><i class="iconfont icon-happy"></i>段子</a></li>
+						<li><a href="/moment/"><i class="iconfont icon-jingxuanyulu2"></i>语录</a></li>
+					</ul>
+            	</li>
+            	<li><a href="/album/"><i class="far fa-image"></i>相册</a></li>    
+            </ul>
+        </div>
+    </div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					<img lazy-src="/img/headportrait.jpg" class="js-avatar">
+				</a>
+			</div>
+			<hgroup>
+			  <h1 class="header-author">無名小站</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">欲穷千里目，更上一层楼</p>
+			
+
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a target="_blank" href="https://github.com/jack-thegeek/jack-thegeek.github.io" title="fab fa-github">
+							<i class="fab fa-github" aria-hidden="true" style="font-size: 25px;"></i>
+						</a>
+			        
+						<a target="_blank" href="/" title="fab fa-weixin">
+							<i class="fab fa-weixin" aria-hidden="true" style="font-size: 25px;"></i>
+						</a>
+			        
+						<a target="_blank" href="/" title="fab fa-telegram">
+							<i class="fab fa-telegram" aria-hidden="true" style="font-size: 25px;"></i>
+						</a>
+			        
+						<a target="_blank" href="/" title="fas fa-envelope">
+							<i class="fas fa-envelope" aria-hidden="true" style="font-size: 25px;"></i>
+						</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+<script>
+	$(document).ready(function() {
+	    $(".menubtn").click(function() {
+	        $(".menubox").toggleClass("menu-slide");
+	        $(this).toggleClass('menubtnon');
+	        $(".sub-menu-btn").click(function() {
+	        	$(".icon-menu-item-normal").toggleClass('menubtnon');
+	        	$(this).next().slideToggle(300);
+	        });
+	    });
+	});
+</script>
+      <div class="body-wrap"><article id="post-爬虫实战：爬取挑战题答案" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+         <!--主页日期结束-->
+
+          
+            <!--文章标题-->
+            
+  
+    <h1 class="article-intitle" itemprop="name">
+      爬虫实战：爬取挑战题答案
+    </h1>
+  
+
+          
+    <div class="post-info autobox">
+      <!--文章日期-->
+      
+        
+            <a href="/2019/09/13/爬虫实战：爬取挑战题答案/" class="article-date">
+  	<time datetime="2019-09-13T02:44:21.000Z" itemprop="datePublished">2019-09-13</time>
+</a>
+        
+      <!--文章日期结束-->
+            
+        
+        <!-- 开始添加字数统计-->
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        
+          <div>
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fas fa-keyboard"></i>
+        <span class="post-meta-item-text"> </span>
+        <span class="post-count">2.1k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text"> </span>
+        <span class="post-count">8分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+         &nbsp;&nbsp;|&nbsp;&nbsp;
+        <!--显示阅读次数-->
+        
+            <div>
+              <span class="icon-sort"></span>
+              <span id="busuanzi_container_page_pv">
+              <i class="fa fa-book-open"></i> <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;</span>
+            </div>
+        
+        <!--显示阅读次数完毕-->
+      
+      </div>
+      </header>
+
+      <!-- 标签 -->
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫-Python/">爬虫 Python</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/技术/">技术</a>
+	</div>
+
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+      <!--标签结束-->
+    
+    <div class="article-entry" itemprop="articleBody">	
+      
+	  
+		
+          <p><font color="#999999">只是能用。</font></p>
+<a id="more"></a>
+<hr>
+<p>既然没精力系统地、稍微深入地学一遍Python3，那仅仅是能用也好。需要的时候，能够有得用，就足够了。所以程序基本不加错误校验。<del>其实就是懒</del></p>
+<h1 id="从头说起"><a href="#从头说起" class="headerlink" title="从头说起"></a>从头说起</h1><p>无意看到个Python爬虫的教程，看了下用现成的库实现起来还蛮简单的。爬虫算是玩编程中，为数不多的花少量精力就能获得成就感的项目吧。</p>
+<p>但是要知道的是，基础的爬虫简单，有时几行代码就够了，那是因为网站什么反爬虫机制都没加；而真正以写爬虫为工作的都是高高手，大规模的数据量，绕过复杂的验证，甚至涉及到网络安全，要学的东西太多了，现在的我还真学不来。</p>
+<p>所以看了几个教程，跟着爬了下猫眼电影Top100之类的，已经准备收手了，等以后真的需要数据的时候，把现成的代码改一下基本就能用了。<br>这时候我看到了个网站，有学习强国挑战答题的题库。<br>心想，刚好派上用场。</p>
+<h1 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a>PyCharm</h1><p>既然从头说起，那就从工具说起。<br>之前一直傻傻地用原生的Python的编辑器，我又不是大神，能大大提高效率的工具干嘛不用，花时间浪费在编辑器上面不值得，所以有个智能点的开发工具，无疑大大提高敲代码的体验。C/C++有codeblocks，Python有<a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener">PyCharm</a>。<br>这个IDE（集成开发环境）并不包含Python环境，还是需要先手动安装<a href="https://www.python.org/downloads/" target="_blank" rel="noopener">Python</a>，勾上添加到path就可以不用手动添加环境变量了。</p>
+<h1 id="引入一些库"><a href="#引入一些库" class="headerlink" title="引入一些库"></a>引入一些库</h1><p>对于库文件的引入，Python比C方便多了，在cmd中用pip包管理工具，可以轻松地直接下载安装丰富的库文件。</p>
+<p>一切都要先换源。如果用官方的源下载，几kb/s足以让你怀疑人生。<br>pip国内的一些镜像<br>阿里云：<br><a href="https://mirrors.aliyun.com/pypi/simple/" target="_blank" rel="noopener">https://mirrors.aliyun.com/pypi/simple/</a><br>中国科技大学：<br><a href="https://pypi.mirrors.ustc.edu.cn/simple/" target="_blank" rel="noopener">https://pypi.mirrors.ustc.edu.cn/simple/</a><br>豆瓣(douban)<br><a href="http://pypi.douban.com/simple/" target="_blank" rel="noopener">http://pypi.douban.com/simple/</a><br>清华大学：<br><a href="https://pypi.tuna.tsinghua.edu.cn/simple/" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple/</a><br>中国科学技术大学：<br><a href="http://pypi.mirrors.ustc.edu.cn/simple/" target="_blank" rel="noopener">http://pypi.mirrors.ustc.edu.cn/simple/</a></p>
+<p>永久更改镜像源的方法：<br>在user目录中创建一个pip目录，如：C:\Users\Jack\pip，新建文件pip.ini，内容如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">[install]</span><br><span class="line">trusted-host = https://pypi.tuna.tsinghua.edu.cn</span><br></pre></td></tr></table></figure>
+
+<img src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20190913212330.jpg">
+然后我们这次用到的一些库
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install beautifulsoup4</span><br><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
+
+<p>一些常用的pip命令：<br>更新pip：</p>
+<blockquote>
+<p>python -m pip install –upgrade pip<br>或者<br>pip install -U pip</p>
+</blockquote>
+<p>安装包：</p>
+<blockquote>
+<p>pip install SomePackage              # 最新版本<br>pip install SomePackage==1.0.4       # 指定版本</p>
+</blockquote>
+<p>卸载包：</p>
+<blockquote>
+<p>pip uninstall SomePackage</p>
+</blockquote>
+<p>查看可升级的包：</p>
+<blockquote>
+<p>pip list -o</p>
+</blockquote>
+<p>升级包：</p>
+<blockquote>
+<p>pip install –upgrade SomePackage</p>
+</blockquote>
+<h1 id="网页分析"><a href="#网页分析" class="headerlink" title="网页分析"></a>网页分析</h1><p>打开题库的第一页：<a href="https://www.3gmfw.cn/article/html2/2019/09/09/486867.html" target="_blank" rel="noopener">https://www.3gmfw.cn/article/html2/2019/09/09/486867.html</a><br>打开开发者工具，使用选择工具定位到答案内容，发现所有答案都放在一个p标签内，那就好办了，直接用BeautifulSoup select第4个p标签的内容就好了。</p>
+<img src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20190913212715.jpg">
+
+<p>爬取并保存第一页的源码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">headers=&#123;</span><br><span class="line">    <span class="string">'accept-language'</span>: <span class="string">'zh-CN,zh;q=0.9'</span>,</span><br><span class="line">    <span class="string">'cache-control'</span>: <span class="string">'no-cache'</span>,</span><br><span class="line">    <span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line">html = requests.get(<span class="string">'https://www.3gmfw.cn/article/html2/2019/09/09/486867.html'</span>,headers=headers)</span><br><span class="line">html.encoding = html.apparent_encoding</span><br><span class="line">soup = BeautifulSoup(html.text,<span class="string">'lxml'</span>)</span><br><span class="line">box = soup.find(class_=<span class="string">'NewsContent'</span>)</span><br><span class="line">answers = box.select(<span class="string">"p:nth-of-type(4)"</span>)</span><br><span class="line">print(answers)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> answer <span class="keyword">in</span> answers:</span><br><span class="line">    fo = open(<span class="string">"anwserpage1.txt"</span>, <span class="string">"a+"</span>,encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">    fo.write(str(answer))</span><br><span class="line">    fo.close()</span><br></pre></td></tr></table></figure>
+
+<p>本以为就是这么简单，用典型的循环替换页码就可以完成所有页面的爬取了。正这么操作时，出问题了，后面爬出来的类容都是空的。一看html代码发现，第二页到后面的答案，并不是放在p标签里面！<br>看看他是怎么操作的：<br><img src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20190913212822.jpg"></p>
+<p>他把答案内容放在两个空的p标签对之间，实际上是放在一个div里面，而这个div包含着很多与答案无关的文本内容，把他们全部抓下来可不是什么好方法。</p>
+<p>于是想到了用正则表达把内容筛选出来，可以找到规律，每页答案的开头都有“相关资源如下”的字样，当然如果不介意多写入些与答案无关的内容，直接利用两个<code>&lt;/p&gt;&lt;p&gt;</code>就可以达到目的了。<br>这里主要利用开头的<code>如下</code>以及结尾处的<code>&lt;/p&gt;&lt;p&gt;</code><br>爬取2-46页的代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">headers=&#123;</span><br><span class="line">    <span class="string">'accept-language'</span>: <span class="string">'zh-CN,zh;q=0.9'</span>,</span><br><span class="line">    <span class="string">'cache-control'</span>: <span class="string">'no-cache'</span>,</span><br><span class="line">    <span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> number <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">47</span>):</span><br><span class="line">    url = <span class="string">'https://www.3gmfw.cn/article/html2/2019/09/09/486867_'</span> + str(number) + <span class="string">'.html'</span></span><br><span class="line">    html = requests.get(url,headers=headers)</span><br><span class="line">    html.encoding = html.apparent_encoding</span><br><span class="line">    rule = re.compile(<span class="string">'.*?如下.*?&lt;br/&gt;\\n(.*?)&lt;/p&gt;&lt;p'</span>,re.S)</span><br><span class="line">    answers=re.findall(rule,html.text)</span><br><span class="line">    <span class="comment"># print(answers)</span></span><br><span class="line">    print(<span class="string">"写入第%s页"</span>%number)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> answer <span class="keyword">in</span> answers:</span><br><span class="line">        fo = open(<span class="string">"leananswer.txt"</span>, <span class="string">"a+"</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">        fo.write(str(answer))</span><br><span class="line">        fo.close()</span><br></pre></td></tr></table></figure>
+
+<p>此时已经可用正常爬取所有答案，多余的&lt;br&gt;可用在word或者sublimetext3中查找并删除全部，这样使用就方便了。</p>
+<p>同时也发现个问题，太慢了。<br>大概5s爬取一页，这不应该。</p>
+<p>第一反应觉得可能是请求头的问题，但是把Request Headers几乎全补上了，还是很慢，那问题就不在这了。</p>
+<p>然后觉得是正则表达的问题，但是正则表达式再慢也不应该有这么大影响。我能想到的唯一有可能有影响的是中文的GBK编码，于是改了下正则表达的开头，<code>：\\r\\n</code>,这个是“相关资源如下”后面的字符，这下没有中文了，但是很可惜，速度还是很慢。</p>
+<p>会是算法的问题吗，实际上获取数据就一个for循环，没什么好优化的。</p>
+<p>所以做了个试验看看问题到底出在哪：看看获取每个页面的速度到底有多快。把正则删掉，每次直接输出网页的html代码，结果发现输出非常快，那么问题很明显就是出在正则表达式上。</p>
+<p>于是展开了长时间的排查，一切都怪自己学艺不精，最后发现是一个问号的问题，看看菜鸟教程怎么写的：</p>
+<blockquote>
+<p>?    匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。<br>*    匹配前面的子表达式零次或多次。</p>
+</blockquote>
+<p>上面代码的基础上，只需删掉一个问号，程序就可以变得非常快了。</p>
+<p>完全意想不到，因为看过几个教程，<code>.*？</code>这样的组合实在太常见了，以为不会出问题。<br>估计这里是非贪婪的问题，正确匹配完一次之后又进行了几次尝试，所以才会这么慢。</p>
+<p>由于发现不加请求头一样可以爬取，就干脆删掉了，贴上最终的能用的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">for</span> number <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">47</span>):</span><br><span class="line">    url = <span class="string">'https://www.3gmfw.cn/article/html2/2019/09/09/486867_'</span> + str(number) + <span class="string">'.html'</span></span><br><span class="line">    html = requests.get(url)</span><br><span class="line">    html.encoding = html.apparent_encoding</span><br><span class="line">    rule = re.compile(<span class="string">'：\\r\\n(.*)&lt;/p&gt;&lt;p'</span>,re.S)</span><br><span class="line">    answers=re.findall(rule,html.text)</span><br><span class="line">    print(<span class="string">"写入第%s页"</span>%number)</span><br><span class="line">    <span class="keyword">for</span> answer <span class="keyword">in</span> answers:</span><br><span class="line">        fo = open(<span class="string">"leananswer.txt"</span>, <span class="string">"a+"</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">        fo.write(str(answer))</span><br><span class="line">        fo.close()</span><br></pre></td></tr></table></figure>
+
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>代码仅止于能用，连请求是否成功的判断都没有。</p>
+<p>本来环境配置应该分开写的，所以这篇文章非常的长。<br>但是这是事后补上的，所以还是丢失了部分细节，仅仅作为个记录，以后需要用到某些代码段方便查找罢了。</p>
+<p>其实中途还经历了长时间的抓包，企图看出为什么这么慢，但是也没看出个所以然来，所以就不记录了。</p>
+<p>至于实用性，这个题库还是挺全的，实际使用勉强满意，日后这个网站如果不再更新这个题库，估计代码也不会更新了。</p>
+<p>中秋快乐。</p>
+
+    <!--更新日期-->
+    
+    <div style="color: #aaa;margin-top: 10px;">
+    更新于：
+    2019-09-13 21:37:37
+    </div>
+    
+      
+    </div>
+    <!--主页的标签与more按钮-->
+    
+    <!--主页的标签结束-->
+  </div>
+
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/12/temp/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">temp</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+ <section id="comments" class="article" style="padding:
+20px;"> <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js"></script>
+
+<script>
+  var notify = 'false' == true ? true : false;
+  var verify = 'false' == true ? true : false;
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+
+            app_id: "CEBHurrFdOBXer38rsriXIy1-MdYXbMMI",
+            app_key: "trkUgCsG7AKRnWvNxcrzgTjS",
+            placeholder: "来玩耍呀 (●’◡’●)ﾉ",
+            guest_info: guest_info.length == 0 ? GUEST_INFO: guest_info,
+            avatar:"",
+            avatar_cdn:"https://www.gravatar.com/avatar/",
+            pageSize: "10"
+        });
+    }
+</script>
+
+ </section> 
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		 (ง •̀_•́)ง
+    	</div>
+      	<div class="footer-right">
+      		&copy; 2019 無名小站
+      	</div>
+    </div>
+  </div>
+</footer>
+  <div id="foot">
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("07/29/2019 12:00:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行"+dnum+"天"; 
+        document.getElementById("times").innerHTML = hnum + "小时" + mnum + "分" + snum + "秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+</div>
+<!--增加不蒜子统计-->
+<script  async  src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    </div>
+    
+
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+  </div>
+</body>
+</html>
+<script type="text/javascript">
+  var a_idx = 0;
+jQuery(document).ready(function($) {
+    $(".body-wrap").click(function(e) {
+        var a = new Array
+        ("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+        var $i = $("<span/>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 5,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-size": "14px",
+            //"font-weight": "bold",
+            "color": "#FF4536"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+      2000,
+      function() {
+          $i.remove();
+      });
+    });
+    setTimeout('delay()', 2000);
+});
+
+function delay() {
+    $(".buryit").removeAttr("onclick");
+}
+</script>
+
+<!--浏览器搞笑标题-->
+<script>
+ var OriginTitle = document.title;
+ var titleTime;
+ document.addEventListener('visibilitychange', function () {
+     if (document.hidden) {
+         $('[rel="icon"]').attr('href', "/favicon.png");
+         document.title = 'ヽ(●-`Д´-)ノ你丑你就走！';
+         clearTimeout(titleTime);
+     }
+     else {
+         $('[rel="icon"]').attr('href', "/favicon.png");
+         document.title = 'ヾ(Ő∀Ő3)ノ你帅就回来！';
+         titleTime = setTimeout(function () {
+             document.title = OriginTitle;
+         }, 2000);
+     }
+ });
+</script>
+
