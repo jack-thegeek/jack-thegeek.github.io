@@ -3,22 +3,23 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>微软商店无法下载应用的问题 | 无名小站</title>
+  <title>使用Fiddler进行手机抓包 | 无名小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="解决Microsoft Store不能下载的问题">
-<meta name="keywords" content="Windows">
+  <meta name="description" content="真够折腾">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微软商店无法下载应用的问题">
-<meta property="og:url" content="https://www.jackthegeek.top/2019/08/14/Microsoft-Store无法下载应用的问题/index.html">
+<meta property="og:title" content="使用Fiddler进行手机抓包">
+<meta property="og:url" content="https://www.jackthegeek.top/2019/10/02/使用Fiddler进行手机抓包/index.html">
 <meta property="og:site_name" content="无名小站">
-<meta property="og:description" content="解决Microsoft Store不能下载的问题">
+<meta property="og:description" content="真够折腾">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20190814094648.jpg">
-<meta property="og:updated_time" content="2019-08-15T03:04:16.655Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20191002235321.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20191002235230.png">
+<meta property="og:updated_time" content="2019-10-02T16:02:59.351Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微软商店无法下载应用的问题">
-<meta name="twitter:description" content="解决Microsoft Store不能下载的问题">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20190814094648.jpg">
+<meta name="twitter:title" content="使用Fiddler进行手机抓包">
+<meta name="twitter:description" content="真够折腾">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20191002235321.jpg">
   
     <link rel="alternative" href="/atom.xml" title="无名小站" type="application/atom+xml">
   
@@ -317,7 +318,7 @@
 	    });
 	});
 </script>
-      <div class="body-wrap"><article id="post-Microsoft-Store无法下载应用的问题" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-使用Fiddler进行手机抓包" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
     
@@ -331,7 +332,7 @@
             
   
     <h1 class="article-intitle" itemprop="name">
-      微软商店无法下载应用的问题
+      使用Fiddler进行手机抓包
     </h1>
   
 
@@ -340,8 +341,8 @@
       <!--文章日期-->
       
         
-            <a href="/2019/08/14/Microsoft-Store无法下载应用的问题/" class="article-date">
-  	<time datetime="2019-08-14T00:25:54.000Z" itemprop="datePublished">2019-08-14</time>
+            <a href="/2019/10/02/使用Fiddler进行手机抓包/" class="article-date">
+  	<time datetime="2019-10-02T15:25:02.000Z" itemprop="datePublished">2019-10-02</time>
 </a>
         
       <!--文章日期结束-->
@@ -355,7 +356,7 @@
       <span class="post-meta-item-icon">
         <i class="fas fa-keyboard"></i>
         <span class="post-meta-item-text"> </span>
-        <span class="post-count">709字</span>
+        <span class="post-count">450字</span>
       </span>
     </span>
 
@@ -364,7 +365,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text"> </span>
-        <span class="post-count">2分</span>
+        <span class="post-count">1分</span>
       </span>
     </span>
 </div>
@@ -389,7 +390,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/">Windows</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 	</div>
 
         
@@ -408,35 +409,23 @@
       
 	  
 		
-          <p><font color="#999999">解决Microsoft Store不能下载的问题</font></p>
+          <p><font color="#999999">真够折腾</font></p>
 <a id="more"></a>
 <hr>
-<p>这是个老问题，也是个疑难杂症。遇到过很多次，无论是自己电脑还是别人的，可以尝试的方法无非以下几个：</p>
-<ol>
-<li><p>更换114的DNS<br>也可以尝试谷歌的或者其他的国外DNS,但我觉得114上store是最稳的，用完最好换回国内的，关于DNS的问题以后会有文章专门介绍。<br>如果这能解决问题，这是最轻松的。</p>
-</li>
-<li><p>删除store缓存之一<br>官方的解决方案：用<a href="https://answers.microsoft.com/zh-hans/windows/forum/windows_10-windows_store/microsoft-store/17b4e317-46ff-4c4f-91cb-0d08f880a593?auth=1" target="_blank" rel="noopener">WSReset.exe</a></p>
-</li>
-</ol>
-<blockquote>
-<p>按“Win+R”键，在运行窗口中，键入<code>WSReset.exe</code>并点击“ 运行 ”。<br>如果问题依旧，建议您尝试以下方案重新部署您的应用商店：<br>在打开的“管理员：Windows Powershell”窗口中输入以下命令：<br><code>get-appxpackage *store* | remove-Appxpackage</code><br>再次安装：<br><code>add-appxpackage -register &quot;C:\Program Files\WindowsApps\*Store*\AppxManifest.xml&quot; -disabledevelopmentmode</code></p>
-</blockquote>
-<ol start="3">
-<li>删除store缓存之二<br>参考IT之家的教程：<a href="https://www.ithome.com/html/win10/169732.htm" target="_blank" rel="noopener">Win10商店还不能下载应用？试试这四种方法</a><br>重新登录微软帐号值得一试，<del>通常没什么用</del></li>
-</ol>
-<blockquote>
-<p>打开服务，关闭windows update<br>打开服务的方法很多，最方便的应该是win+q弹出搜索，直接搜服务，如下图<br><img src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20190814094648.jpg"><br>然后找到windows update，把它关了<br>删除C:\Windows\SoftwareDistribution<br>重新开启windows update<br>重启一下</p>
-</blockquote>
-<ol start="3">
-<li>重置网络<br>昨天给家里的台式重装了个<a href="https://www.winos.me/archives/1352.html" target="_blank" rel="noopener">精简过的系统</a>，之前一直认为，去MSDN下载官方的镜像最纯净，自然就很抵触这些修改过的系统。<br><br>现在想法又变了，看到4G多的系统精简到1.6G，释放完之后占用不到10G的硬盘（原版的安装完大概30G+），这是有水平的精简，况且目前用下来，并没有什么大问题。<br><br>4G内存跑这个系统也没啥问题，就是精简得有点过了，计算器没了得把它下载回来。上述方法都无效果，每次都是下载到一半然后失败。这时我想，能下载到一点那应该不是网络的问题了，所以一直在缓存上下手。突然看到一条评论，重置网络就好了，不抱希望地在命令行中敲入<code>netsh winsock reset</code>，重启，然后就可以下载了。</li>
-</ol>
-<p>到最后也不知是不是这句命令的功劳，这些疑难杂症就是这样，每次都是些不抱希望的操作，居然就好了，几经折腾也不懂最后到底是怎么解决的，重置网络作为一个参考吧。<br>删除文件夹跟重置网络都是“重药”，用了之后可能会有其他新的奇奇怪怪的问题，不是不能用，是不到最后还是别用的好，毕竟Windows的事情，谁说得准呢？</p>
+<p>自9.21自己跟的培训班报到以来，爬虫的学习基本就是停滞不前。</p>
+<p>终于有点空闲往下学。万万没想到一个fiddler能折腾一个晚上。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>主教程：<a href="https://mp.weixin.qq.com/s/NGOUtPIW8n1whOYwR-LQYA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/NGOUtPIW8n1whOYwR-LQYA</a><br>手机直接没网的处理方法：<a href="https://blog.csdn.net/weixin_38328865/article/details/83055428" target="_blank" rel="noopener">https://blog.csdn.net/weixin_38328865/article/details/83055428</a><br>手机无法抓取HTTPS页面的解决方法：<a href="https://blog.csdn.net/sergiojune/article/details/89838142" target="_blank" rel="noopener">https://blog.csdn.net/sergiojune/article/details/89838142</a></p>
+<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><p>跟着主教程走，一路到在手机上安装证书都没有问题。</p>
+<p>到打开https的百度主页时，开始弹出证书认证问题，每个请求弹一次；哔哩哔哩则直接打不开，很明显问题出现在系统的证书认证上。<br><img style="max-width: 300px;text-align: center;" src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20191002235321.jpg"></p>
+<p>但是很可惜，新版本的安卓系统，尤其是miui，对这方面特别多事，具体原因以及解决方法参考<a href="https://zhuanlan.zhihu.com/p/56397466" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/56397466</a><br><img style="max-width: 300px;text-align: center;" src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2019/20191002235230.png"><br>这下才发现用fiddler进行手机抓包还没那么简单，如果自己手机不是有xposed框架的环境，怕是直接放弃了。更加气人的是，使用了<a href="https://github.com/Fuzion24/JustTrustMe/releases" target="_blank" rel="noopener">JustTrustMe</a>后，还是老样子：浏览器访问HTTPS网站时弹出认证，这个多点几下下还可以接受，可是APP是完全打不开。所以又展开了一轮搜索，好在找到了另外一款解决这个问题的软件，<a href="https://github.com/ac-pm/SSLUnpinning_Xposed" target="_blank" rel="noopener">SSLUnpinning</a></p>
+<p>以为这下总算完成了，这时候新的问题又来了：via访问不了https的网页，到现在都是一头雾水，怎么这就反过来了，变得哔哩哔哩可以访问可以被抓包，浏览器反而不行了？</p>
+<p>算了，这个小问题先放着吧，咱折腾拦截篡改。结果也没成功，不是别的原因，是看不懂教程……</p>
 
     <!--更新日期-->
     
     <div style="color: #aaa;margin-top: 10px;">
     更新于：
-    2019-08-15 11:04:16
+    2019-10-03 00:02:59
     </div>
     
       
@@ -450,18 +439,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/08/15/百度云集合/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          百度云集合(持续更新)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/13/添加网站运行时间/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">添加网站运行时间</div>
+    <a href="/2019/10/02/大人物/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">大人物</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
