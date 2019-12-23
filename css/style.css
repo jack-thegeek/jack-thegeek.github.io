@@ -965,6 +965,11 @@ a {
   padding-left: 8px;
   font-size: 12px;
 }
+.explain {
+  font-size: 10px;
+  color: #ccc;
+  margin-bottom: 5px;
+}
 .hid {
   opacity: 0;
 }
