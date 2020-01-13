@@ -23,9 +23,11 @@
   <link rel="stylesheet" href="/css/style.css">
   <link href="https://cdn.bootcss.com/font-awesome/5.10.0-12/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1369238_1mv5wxf4a2m.css">
-
-  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-</head></html>
+  <!-- <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head> </html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -236,30 +238,49 @@
       <nav id="mobile-nav">
   	<div class="overlay">
   	<div class="slider-trigger"></div>
-  	
   		<h1 class="header-author js-mobile-header hide">無名小站</h1>
   	</div>
-  	<div class="menubtn"><i class="iconfont icon-caidananniudianji"></i></div>
-  	<div class="menubox">
-        <div class="inbox">
-            <ul class="menu">
-            	<li><a href="/archives"><i class="far fa-folder"></i>归档</a></li>
-            	<li><a href="/categories/技术"><i class="fas fa-laptop-code"></i>技术</a></li>
-            	<li><a href="/categories/读书"><i class="fas fa-book"></i>读书</a></li>
-            	<li><a href="/categories/听歌"><i class="fas fa-headphones-alt"></i>听歌</a></li>
-            	<li><a href="/categories/杂乱"><i class="far fa-file-word"></i>杂乱</a></li>
-            	<li><a href="/log/"><i class="fas fa-coffee"></i>日志</a></li>
-            	<li class="sub-menu"><a href="#"  class="sub-menu-btn"><i class="fas fa-pen"></i>句子<i class="iconfont icon-menu-item-normal"></i></a>
-					<ul>
-						<li><a href="/moment/"><i class="iconfont icon-paper"></i>句子迷</a></li>
-						<li><a href="/moment/jokes.html"><i class="iconfont icon-happy"></i>段子</a></li>
-						<li><a href="/moment/"><i class="iconfont icon-jingxuanyulu2"></i>语录</a></li>
-					</ul>
-            	</li>
-            	<li><a href="/album/"><i class="far fa-image"></i>相册</a></li>    
-            </ul>
-        </div>
-    </div>
+
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top mynav">
+		  <a class="navbar-brand" href="#">兴趣使然的小站</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+		    <ul class="navbar-nav">
+		      <li class="nav-item form-inline">
+		        <i class="far fa-folder"></i><a class="nav-link" href="/archives">归档</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="fas fa-laptop-code"></i><a class="nav-link" href="/categories/技术">技术</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="fas fa-book"></i><a class="nav-link" href="/categories/读书">读书</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="fas fa-headphones-alt"></i><a class="nav-link" href="/categories/听歌">听歌</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="far fa-file-word"></i><a class="nav-link" href="/categories/杂乱">杂乱</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="fas fa-coffee"></i><a class="nav-link" href="/log/">日志</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <li class="dropdown">
+				    <i class="iconfont icon-paper"></i><a class="dropdown-toggle" data-toggle="dropdown" style="color: rgba(255,255,255,0.5);">
+				      句子
+				    </a>
+				    <div class="dropdown-menu">
+				      <i class="iconfont icon-paper"></i><a class="dropdown-item" href="/moment/">句子迷</a>
+				      <i class="iconfont icon-happy"></i><a class="dropdown-item" href="/moment/jokes.html">段子</a>
+				    </div>
+			  	</li>
+		      </li>
+		    </ul>
+		  </div>  
+		</nav>
+
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">

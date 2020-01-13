@@ -15,7 +15,7 @@
 <meta property="og:description" content="h2.top_title{border-bottom:none;background:none;text-align:center;line-height:32px; font-size:20px} h2.top_title span{font-size:12px; color:#666;font-weight:500}  “你知道为什么地球会转吗？” “因为它不希望每一个人停留在原地。无论快">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200103002343.png">
-<meta property="og:updated_time" content="2020-01-02T16:24:03.199Z">
+<meta property="og:updated_time" content="2020-01-02T16:24:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019大事小事">
 <meta name="twitter:description" content="h2.top_title{border-bottom:none;background:none;text-align:center;line-height:32px; font-size:20px} h2.top_title span{font-size:12px; color:#666;font-weight:500}  “你知道为什么地球会转吗？” “因为它不希望每一个人停留在原地。无论快">
@@ -29,9 +29,11 @@
   <link rel="stylesheet" href="/css/style.css">
   <link href="https://cdn.bootcss.com/font-awesome/5.10.0-12/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1369238_1mv5wxf4a2m.css">
-
-  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-</head></html>
+  <!-- <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head> </html>
 <body>
   <div id="container">
     <div class="left-col">
@@ -242,30 +244,49 @@
       <nav id="mobile-nav">
   	<div class="overlay">
   	<div class="slider-trigger"></div>
-  	
   		<h1 class="header-author js-mobile-header hide">無名小站</h1>
   	</div>
-  	<div class="menubtn"><i class="iconfont icon-caidananniudianji"></i></div>
-  	<div class="menubox">
-        <div class="inbox">
-            <ul class="menu">
-            	<li><a href="/archives"><i class="far fa-folder"></i>归档</a></li>
-            	<li><a href="/categories/技术"><i class="fas fa-laptop-code"></i>技术</a></li>
-            	<li><a href="/categories/读书"><i class="fas fa-book"></i>读书</a></li>
-            	<li><a href="/categories/听歌"><i class="fas fa-headphones-alt"></i>听歌</a></li>
-            	<li><a href="/categories/杂乱"><i class="far fa-file-word"></i>杂乱</a></li>
-            	<li><a href="/log/"><i class="fas fa-coffee"></i>日志</a></li>
-            	<li class="sub-menu"><a href="#"  class="sub-menu-btn"><i class="fas fa-pen"></i>句子<i class="iconfont icon-menu-item-normal"></i></a>
-					<ul>
-						<li><a href="/moment/"><i class="iconfont icon-paper"></i>句子迷</a></li>
-						<li><a href="/moment/jokes.html"><i class="iconfont icon-happy"></i>段子</a></li>
-						<li><a href="/moment/"><i class="iconfont icon-jingxuanyulu2"></i>语录</a></li>
-					</ul>
-            	</li>
-            	<li><a href="/album/"><i class="far fa-image"></i>相册</a></li>    
-            </ul>
-        </div>
-    </div>
+
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top mynav">
+		  <a class="navbar-brand" href="#">兴趣使然的小站</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+		    <ul class="navbar-nav">
+		      <li class="nav-item form-inline">
+		        <i class="far fa-folder"></i><a class="nav-link" href="/archives">归档</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="fas fa-laptop-code"></i><a class="nav-link" href="/categories/技术">技术</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="fas fa-book"></i><a class="nav-link" href="/categories/读书">读书</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="fas fa-headphones-alt"></i><a class="nav-link" href="/categories/听歌">听歌</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="far fa-file-word"></i><a class="nav-link" href="/categories/杂乱">杂乱</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="fas fa-coffee"></i><a class="nav-link" href="/log/">日志</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <li class="dropdown">
+				    <i class="iconfont icon-paper"></i><a class="dropdown-toggle" data-toggle="dropdown" style="color: rgba(255,255,255,0.5);">
+				      句子
+				    </a>
+				    <div class="dropdown-menu">
+				      <i class="iconfont icon-paper"></i><a class="dropdown-item" href="/moment/">句子迷</a>
+				      <i class="iconfont icon-happy"></i><a class="dropdown-item" href="/moment/jokes.html">段子</a>
+				    </div>
+			  	</li>
+		      </li>
+		    </ul>
+		  </div>  
+		</nav>
+
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
@@ -355,7 +376,7 @@
       <span class="post-meta-item-icon">
         <i class="fas fa-keyboard"></i>
         <span class="post-meta-item-text"> </span>
-        <span class="post-count">2.1k字</span>
+        <span class="post-count">2.2k字</span>
       </span>
     </span>
 
@@ -364,7 +385,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text"> </span>
-        <span class="post-count">7分</span>
+        <span class="post-count">8分</span>
       </span>
     </span>
 </div>
@@ -428,14 +449,14 @@ h2.top_title span{font-size:12px; color:#666;font-weight:500}
     <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-picture"><img src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200103002343.png"></div>
         <div class="cd-timeline-content">
-            <p>算是中心助理第一次真正意义上的聚餐。也是第一次真正意义上喝了些白酒。</p>
+            <p>算是中心助理第一次真正意义上的聚餐,也是第一次真正意义上喝了些白酒。</p>
             <span class="cd-date">2019-12-28</span>
         </div>
     </div>
     <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-picture"></div>
         <div class="cd-timeline-content">
-            <p>美剧《硅谷》终季终集。</p>
+            <p>看完美剧《硅谷》终季终集。</p>
             <span class="cd-date">2019-12-21</span>
         </div>
     </div>
@@ -541,7 +562,7 @@ h2.top_title span{font-size:12px; color:#666;font-weight:500}
         <div class="cd-timeline-img cd-picture"></div>
         <div class="cd-timeline-content">
             <h2>教师节。</h2>
-            <p>跟明林浩杰一起去买水果，为什么这个要记下来呢，额，估计以后再也没有这样的机会了吧。也正式接手惠妍的工作，是真的不容易。</p>
+            <p>跟明林浩杰一起去买水果，估计以后再也没有这样的机会了吧。也正式接手惠妍的工作，是真的不容易。</p>
             <span class="cd-date">2019-09-10</span>
         </div>
     </div>
@@ -558,7 +579,7 @@ h2.top_title span{font-size:12px; color:#666;font-weight:500}
         <div class="cd-timeline-img cd-picture"></div>
         <div class="cd-timeline-content">
             <p>第一次到海边。</p>
-            <p>第二次到深圳，还是老汤跟总裁。这次租车自驾，最后也没被罚钱，是真的有惊无险，虽然较场尾的海很假，但总归是真海水。</p>
+            <p>第二次到深圳。依旧是老汤跟总裁。这次租车自驾，最后也没被罚钱，是真的有惊无险，虽然较场尾的海很假，但总归是真海水。</p>
             <span class="cd-date">2019-08-11</span>
         </div>
     </div>
@@ -574,7 +595,7 @@ h2.top_title span{font-size:12px; color:#666;font-weight:500}
         <div class="cd-timeline-img cd-picture"></div>
         <div class="cd-timeline-content">
             <h2>搬家</h2>    
-            <p>拆房，搬家。好好地最后看了一眼住了二十年的房子，夏天</p>
+            <p>拆房，搬家。好好地看了最后一眼这住了二十年的房子。住了二十几年的房子，当真要被拆掉的那一刻，其实心里并没有什么感慨。那晚吃饭去特地跑回去，只是想好好地看看，这个小时候趴着睡觉的客厅地板，找冰糖当糖果吃的厨房，滑了一跤至今头上还有一道疤的浴室，夏天最阴凉的房间，阳光照进来很好看的楼梯底，放风筝的楼顶阳台……</p>
             <span class="cd-date">2019-08-03</span>
         </div>
     </div>
@@ -621,7 +642,7 @@ h2.top_title span{font-size:12px; color:#666;font-weight:500}
     <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-picture"></div>
         <div class="cd-timeline-content">
-            <p>老妹高考完。我独自去宋城墙那边逛，下车的时候刚好收到她微信。</p>
+            <p>老妹高考完。我独自去宋城墙那边逛，下车的时候刚好收到她的微信消息。</p>
             <span class="cd-date">2019-06-08</span>
         </div>
     </div>
@@ -706,7 +727,7 @@ h2.top_title span{font-size:12px; color:#666;font-weight:500}
             <div>Mar</div>
         </div>
         <div class="cd-timeline-content">
-            <p>第一次宿舍充电费。</p>
+            <p>宿舍第一次要充电费。</p>
             <span class="cd-date">2019-03-31</span>
         </div>
     </div>
@@ -762,7 +783,7 @@ h2.top_title span{font-size:12px; color:#666;font-weight:500}
             <p>不是我，收到恐吓信的是老汤，看了内容后莫名的担心。从邮件到QQ，到底多大仇多大恨要专门搞一个号来对付他。对方的目的是达到了，让你疑神疑鬼，睡不稳吃不饱，连出去都不敢一个人。这件事后来也不了了之，似乎是没什么大问题了。其实真的很怕，身边的朋友就这么没了。</p>
             <span class="cd-date">2019-03-02</span>
         </div>
-    </>
+    </div>
     <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-picture">
             <div>Feb</div>
@@ -781,7 +802,7 @@ h2.top_title span{font-size:12px; color:#666;font-weight:500}
             <p>科二没过，不开心了好久。</p>
             <span class="cd-date">2019-02-19</span>
         </div>
-    </>
+    </div>
     <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-picture">
         </div>
@@ -790,7 +811,7 @@ h2.top_title span{font-size:12px; color:#666;font-weight:500}
             <p>春节前夕。依旧的整理下书本，看到书包上的锁，花了半个多小时去尝试自己能想到的密码，谁知道刚想放弃的时候误打误撞解开了。</p>
             <span class="cd-date">2019-02-04</span>
         </div>
-    </>
+    </div>
     <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-picture">
         </div>
@@ -798,7 +819,7 @@ h2.top_title span{font-size:12px; color:#666;font-weight:500}
             <p>第一次用Keep去记录运动轨迹，其实是想看看绕着湖跑一圈大概是多长。然后不小心跑了个520出来，如果不是老汤说，我都没反应过来。其实后面尝试着特有跑这个数字出来，才发现传感器有延迟，要么多了，要么少了。</p>
             <span class="cd-date">2019-02-02</span>
         </div>
-    </>
+    </div>
     <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-picture">
             <div>Jan</div>
@@ -810,7 +831,7 @@ h2.top_title span{font-size:12px; color:#666;font-weight:500}
             <span class="cd-date">2019-01-19</span>
         </div>
     </div>
-</div></div></div></div></section>
+</section>
 
 <p>本该用个更简洁的时间轴，但是发现过来的时候已经晚了，因为同时要适应电脑与手机端，所以后面打算自己写一个出来。</p>
 <p>本想每个事件一句话总结，谁知啰啰嗦嗦了这么多。幸亏一切都用onenote记录了下来，这些事有的让我觉得已经发生了很久，而其实就在不久前。</p>
@@ -819,7 +840,7 @@ h2.top_title span{font-size:12px; color:#666;font-weight:500}
 <p>2019，读书、追剧、赚钱、认识朋友、跟大家出去玩，有误解，有生气、有泄气，有担心、有伤心，有激动，有感动，也依旧会有迷茫。不管怎么说，都是精彩的一年。</p>
 <p>“你说，我写”<br>“好像也没什么期望的”<br>“如果真要说有”<br>“那就是希望家人朋友都健健康康”<br>“希望能跟着边老师做人工智能的项目”<br>“希望拿下华为的中级认证”<br>“希望可以独立做出两个系统来”<br>“希望可以找到一份心水的实习”</p>
 <p>说没什么期待的我，结果是这么的贪心。都是我很自私的愿望。</p>
-<p>希望你们，都好好地。</p>
+<p>2020，希望你们，都好好地。</p>
 
     <!--更新日期-->
     

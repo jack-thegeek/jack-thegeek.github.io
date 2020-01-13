@@ -512,8 +512,30 @@ a {
     right: -180px;
     -webkit-transition: all 0.3s ease-in;
   }
-  #container .menu-slide {
-    right: 0px;
+  #container .icon-paper {
+    width: 100px;
+  }
+  #container .mynav,
+  #container .dropdown {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  #container .mynav i,
+  #container .dropdown i {
+    width: 42px;
+    text-align: center;
+  }
+  #container .mynav .dropdown-menu i,
+  #container .dropdown .dropdown-menu i {
+    width: 42px;
+    text-align: center;
+  }
+  #container .mynav .far,
+  #container .fas,
+  #container .fab,
+  #container .iconfont {
+    padding: 0px 10px 0px 0px;
+    color: #fff;
   }
   #container .inbox {
     -webkit-transition: all 0.1s ease-in;
@@ -522,20 +544,6 @@ a {
     -webkit-user-select: none;
     -moz-user-focus: none;
     -moz-user-select: none;
-  }
-  #container .inbox .menu {
-    padding-top: 70px;
-    padding-bottom: 10px;
-  }
-  #container .inbox .menu .far,
-  #container .inbox .menu .fas,
-  #container .inbox .menu .fab,
-  #container .inbox .menu iconfont {
-    padding: 0px 15px 0px 25px;
-  }
-  #container .inbox .menu i {
-    width: 42px;
-    text-align: center;
   }
   #container .inbox li {
     text-align: left;
@@ -569,29 +577,6 @@ a {
     outline: none;
 /*background: none;*/
     text-decoration: none;
-  }
-  #container .sub-menu ul {
-    display: none;
-  }
-  #container .sub-menu ul .iconfont {
-    padding: 0px 15px 0px 25px;
-  }
-  #container .sub-menu ul i {
-    display: inline-block;
-    width: 42px;
-  }
-  #container .icon-caidananniudianji {
-    color: #fff;
-    font-size: 20px;
-  }
-  #container .icon-menu-item-normal {
-    -webkit-transition: all 0.2s ease-in;
-    -moz-transition: all 0.2s ease-in;
-    -ms-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
-    display: inline-block;
-    width: 42px;
-    text-align: center;
   }
   #container .full {
     border: none;
