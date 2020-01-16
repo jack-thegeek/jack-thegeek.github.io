@@ -203,10 +203,10 @@ a {
   display: none;
 }
 #container #mobile-nav .overlay {
-  height: 110px;
+  height: 150px;
   position: absolute;
   width: 100%;
-  background: #3d4444;
+  background: #144a74;
 }
 #container #mobile-nav .overlay.fixed {
   position: fixed;
@@ -214,7 +214,7 @@ a {
   z-index: 99;
 }
 #container #mobile-nav #header {
-  padding: 50px 0 0 0;
+  padding: 70px 0 0 0;
 }
 #container #mobile-nav #header .profilepic {
   display: block;
@@ -512,9 +512,6 @@ a {
     right: -180px;
     -webkit-transition: all 0.3s ease-in;
   }
-  #container .icon-paper {
-    width: 100px;
-  }
   #container .mynav,
   #container .dropdown {
     padding-top: 5px;
@@ -525,17 +522,15 @@ a {
     width: 42px;
     text-align: center;
   }
-  #container .mynav .dropdown-menu i,
-  #container .dropdown .dropdown-menu i {
-    width: 42px;
-    text-align: center;
-  }
   #container .mynav .far,
   #container .fas,
   #container .fab,
   #container .iconfont {
     padding: 0px 10px 0px 0px;
     color: #fff;
+  }
+  #container .icon-paper {
+    display: inline-block;
   }
   #container .inbox {
     -webkit-transition: all 0.1s ease-in;
@@ -976,6 +971,13 @@ a {
   -webkit-justify-content: center;
   justify-content: center;
   padding: 30px 40px;
+}
+.navbar-toggler-icon {
+  width: 1em;
+  height: 1em;
+}
+.navbar-brand {
+  font-size: 1rem;
 }
 .album {
   display: -webkit-box;

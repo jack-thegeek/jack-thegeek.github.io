@@ -124,15 +124,28 @@ Main components
   border-radius: 50%;
   box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
-.cd-timeline-img img {
+.cd-timeline-img .cd-small{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+}
+.cd-timeline-img div {
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
   position: relative;
-  left: 50%;
+  left: 10%;
+  top: 15%;
+  color: white;
+  font-size: 17px;
+  /*left: 50%;
   top: 50%;
   margin-left: -12px;
-  margin-top: -12px;
+  margin-top: -12px;*/
 }
 .cd-timeline-img.cd-picture {
   background: #75ce66;
@@ -153,6 +166,27 @@ Main components
     -webkit-transform: translateZ(0);
     -webkit-backface-visibility: hidden;
   }
+  .cd-timeline-img .cd-small{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+}
+  .cd-timeline-img div {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  left: 25%;
+  top: 45%;
+  margin-left: -12px;
+  margin-top: -12px;
+  color: white;
+  font-size: 27px;
+}
   .cssanimations .cd-timeline-img.is-hidden {
     visibility: hidden;
   }
@@ -179,7 +213,11 @@ Main components
   clear: both;
 }
 .cd-timeline-content h2 {
+  margin-top: 5px;
+  font-size: 15px;
   color: #303e49;
+  font-weight:bold;
+  border-bottom: none;
 }
 .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   font-size: 13px;
@@ -205,7 +243,7 @@ Main components
 a.cd-read-more:hover{text-decoration:none; background-color: #424242;  }
 .cd-timeline-content .cd-date {
   float: left;
-  padding: .8em 0;
+  padding: .2em .1em 0 0;
   opacity: .7;
 }
 .cd-timeline-content::before {

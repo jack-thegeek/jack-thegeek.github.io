@@ -124,14 +124,17 @@ Main components
   border-radius: 50%;
   box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
-.cd-timeline-img .cd-small{
+.cd-small{
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 10px;
+  left: 10px;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
+  background-color: #61649f;
+}
+.inimg{
+  border-radius:5px 5px 0 0; 
 }
 .cd-timeline-img div {
   display: block;
@@ -166,14 +169,11 @@ Main components
     -webkit-transform: translateZ(0);
     -webkit-backface-visibility: hidden;
   }
-  .cd-timeline-img .cd-small{
-  position: absolute;
-  top: 0;
-  left: 0;
+  .cd-small{
   width: 20px;
   height: 20px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+  left: 52.2%;
+  top: 15%;
 }
   .cd-timeline-img div {
   display: block;
