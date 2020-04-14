@@ -502,6 +502,10 @@ a {
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
   }
+  #container .navbar-nav li {
+    line-height: 30px !important;
+    font-weight: 300px !important;
+  }
   #container .menubox {
     z-index: 107;
     overflow: auto;
@@ -944,6 +948,18 @@ a {
   max-width: 83px;
   padding-left: 8px;
   font-size: 12px;
+}
+.mh-480 {
+  max-height: 480px !important;
+}
+.mw-320 {
+  max-width: 320px !important;
+}
+.mw-480 {
+  max-width: 480px !important;
+}
+.preface {
+  color: #999;
 }
 .explain {
   font-size: 12px;
