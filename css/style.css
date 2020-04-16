@@ -949,6 +949,9 @@ a {
   padding-left: 8px;
   font-size: 12px;
 }
+.mh-320 {
+  max-height: 320px !important;
+}
 .mh-480 {
   max-height: 480px !important;
 }

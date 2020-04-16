@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200415211941.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200415213340.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200415213743.jpg">
-<meta property="og:updated_time" content="2020-04-15T13:45:20.832Z">
+<meta property="og:updated_time" content="2020-04-15T15:14:42.705Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="coding升级后的域名绑定">
 <meta name="twitter:description" content="有够麻烦">
@@ -381,7 +381,7 @@
       <span class="post-meta-item-icon">
         <i class="fas fa-keyboard"></i>
         <span class="post-meta-item-text"> </span>
-        <span class="post-count">699字</span>
+        <span class="post-count">700字</span>
       </span>
     </span>
 
@@ -431,43 +431,41 @@
 	  
 		
           <div class="preface">有够麻烦</div>
-<a id="more"></a>
----
 
+<a id="more"></a>
+<hr>
 <h1 id="为什用coding"><a href="#为什用coding" class="headerlink" title="为什用coding"></a>为什用coding</h1><p>当初把博客同时部署到github、gitee跟coding中，后来买了个域名，github在国内经常抽风，所以就想绑定到gitee中，结果他要收费，最后只能绑定在coding中。</p>
 <p>前些天才发现<a href="http://www.jackthegeek.top不能访问了。" target="_blank" rel="noopener">www.jackthegeek.top不能访问了。</a></p>
-<p>到coding中一看，怎么访问地址变成了<a href="https://5vjry3.coding-pages.com，个性化的域名现在没有了，取而代之的是一串6位的字符串。心想，在华为云的DNS解析中，把原来的访问网址jack-the-geek.coding.me替换成新的5vjry3.coding-pages.com就好了吧，这时候才发现事情并没有那么简单。" target="_blank" rel="noopener">https://5vjry3.coding-pages.com，个性化的域名现在没有了，取而代之的是一串6位的字符串。心想，在华为云的DNS解析中，把原来的访问网址jack-the-geek.coding.me替换成新的5vjry3.coding-pages.com就好了吧，这时候才发现事情并没有那么简单。</a></p>
+<p>到coding中一看，怎么访问地址变成了<a href="https://5vjry3.coding-pages.com" target="_blank" rel="noopener">https://5vjry3.coding-pages.com</a><br>个性化的域名现在没有了，取而代之的是一串6位的字符串。心想，在华为云的DNS解析中，把原来的访问网址jack-the-geek.coding.me替换成新的5vjry3.coding-pages.com就好了吧，这时候才发现事情并没有那么简单。</p>
 <p>升级后的coding需要在持续部署-静态网站-设置中设定域名。</p>
 <h1 id="CNAME、A与TXT"><a href="#CNAME、A与TXT" class="headerlink" title="CNAME、A与TXT"></a>CNAME、A与TXT</h1><p>域名解析记录集有很多种类型，之前只接触过CNAME跟A</p>
 <ul>
 <li>CNAME 把域名指向另一个域名</li>
 <li>A 把域名指向IPv4地址</li>
 </ul>
-<p>之前的操作很简单，我只需要把<a href="http://www.jackthegeek.top指向到jack-the-geek.coding.me中，也就是只需添加一条CNAME解析。像下面这样：" target="_blank" rel="noopener">www.jackthegeek.top指向到jack-the-geek.coding.me中，也就是只需添加一条CNAME解析。像下面这样：</a></p>
-<img src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200415211323.jpg">
-
-
+<p>之前的操作很简单，我只需要把 <a href="http://www.jackthegeek.top">www.jackthegeek.top</a> 指向到 jack-the-geek.coding.me 中，也就是只需添加一条CNAME解析。像下面这样：</p>
+<img class="img-responsive border rounded mh-320" src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200415211323.jpg">
 
 <p>而现在在这个基础上同时需要在coding上进行绑定，直接绑定会有这样的问题：</p>
-<img src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200415210802.png">
+<img class="img-responsive border rounded mh-320" src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200415210802.png">
 
 <p>开始还看不懂这句话的意思，以为是要在网站的目录下新建一个文件，把内容复制进去，但如果这个文件的后缀是.com，他说txt有什么意义？所以直接联系了coding的技术支持。</p>
 <p>原来是要在域名提供商哪里，添加一个txt类型的解析记录，像下面这样：</p>
-<img src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200415211009.jpg">
+<img class="img-responsive border rounded mh-320" src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200415211009.jpg">
 
 
 
-<p>新的问题又来了，直接这样添加会提示解析记录集已经存在，因为已经存在<a href="http://www.jackthegeek.top这样的主机记录，也就是说需要把前面的那个CNAME删掉才能添加。但这个CNAME删掉了就直接没法定向到coding了，再次向技术支持求助。稍等了一会，告诉我把“www”改成“*”，即下面这样：" target="_blank" rel="noopener">www.jackthegeek.top这样的主机记录，也就是说需要把前面的那个CNAME删掉才能添加。但这个CNAME删掉了就直接没法定向到coding了，再次向技术支持求助。稍等了一会，告诉我把“www”改成“*”，即下面这样：</a></p>
-<img src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200415211941.jpg">
+<p>新的问题又来了，直接这样添加会提示解析记录集已经存在，因为已经存在 <a href="http://www.jackthegeek.top">www.jackthegeek.top</a> 这样的主机记录，也就是说需要把前面的那个CNAME删掉才能添加。但这个CNAME删掉了就直接没法定向到coding了，再次向技术支持求助。稍等了一会，告诉我把“www”改成“*”，即下面这样：</p>
+<img class="img-responsive border rounded mh-320" src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200415211941.jpg">
 
 
 
 <p>被这个操作惊到了，原来还可以填通配符。这下可以成功访问了。</p>
 <p>如果要想不带www，即直接使用jackthegeek.top访问，需要再添加一个主机记录为空的CNAME解析，最后所有记录如下：</p>
-<img src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200415213340.jpg">
+<img class="img-responsive border rounded mh-320" src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200415213340.jpg">
 
 <p>同时coding也需要绑定两个域名，设置带www的为首选域名，顺便开启了强制HTTPS。证书申请可能需要一两分钟，如果浏览器提示证书无效稍等一会便好。</p>
-<img src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200415213743.jpg">
+<img class="img-responsive border rounded mh-320" src="https://cdn.jsdelivr.net/gh/jack-thegeek/pic/2020/20200415213743.jpg">
 
 
 
@@ -477,7 +475,7 @@
     
     <div style="color: #aaa;margin-top: 10px;">
     更新于：
-    2020-04-15 21:45:20
+    2020-04-15 23:14:42
     </div>
     
       
@@ -490,6 +488,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/04/16/不夜之侯/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          不夜之侯
+        
+      </div>
+    </a>
   
   
     <a href="/2020/04/13/Typora/" id="article-nav-older" class="article-nav-link-wrap">
