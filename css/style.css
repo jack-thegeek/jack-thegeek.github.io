@@ -949,11 +949,29 @@ a {
   padding-left: 8px;
   font-size: 12px;
 }
-.mh-320 {
-  max-height: 320px !important;
+.img-circle {
+  border-radius: 50%;
 }
 .mh-480 {
   max-height: 480px !important;
+}
+.mh-320 {
+  max-height: 320px !important;
+}
+.mh-280 {
+  max-height: 280px !important;
+}
+.mh-200 {
+  max-height: 200px !important;
+}
+.mh-120 {
+  max-height: 120px !important;
+}
+.mw-120 {
+  max-width: 120px !important;
+}
+.mw-280 {
+  max-width: 280px !important;
 }
 .mw-320 {
   max-width: 320px !important;
@@ -1480,6 +1498,11 @@ a {
 }
 #toc .toc-child {
   padding-left: 1.5em;
+}
+.carousel .carousel-indicators li:before {
+  width: 0;
+  height: 0;
+  border: 0;
 }
 @-moz-keyframes cd-bounce-1 {
   0% {
