@@ -138,7 +138,7 @@ body,
 }
 body {
   font-family: "微软雅黑", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 17px;
   background: #fff;
   color: rgba(0,0,0,0.6);
   -webkit-overflow-scrolling: touch;
@@ -337,7 +337,7 @@ a {
   #container .article {
     padding: 10px;
     margin: 10px;
-    font-size: 14px;
+    font-size: 15px;
   }
   #container .article .article-entry {
     padding-left: 0;
@@ -563,7 +563,7 @@ a {
   }
   #container .inbox a::selection {
     color: #fff;
-    background: #806d9e;
+    background: #144a74;
   }
   #container .inbox a,
   #container .inbox a:hover,
@@ -1266,7 +1266,7 @@ a {
 }
 .article-entry P::selection {
   color: #fff;
-  background-color: #806d9e;
+  background-color: #144a74;
 }
 .article-entry blockquote {
   background: #ddd;
