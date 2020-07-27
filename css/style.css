@@ -976,6 +976,11 @@ a {
 .mw-320 {
   max-width: 320px !important;
 }
+@media (max-width: 400px) {
+  .mw-480 {
+    max-width: 480px !important;
+  }
+}
 .mw-480 {
   max-width: 480px !important;
 }
@@ -985,7 +990,8 @@ a {
 .explain {
   font-size: 12px;
   color: #ccc;
-  margin-bottom: 5px;
+  margin-top: 3px !important;
+  margin-bottom: 3px;
 }
 .hid {
   opacity: 0;
