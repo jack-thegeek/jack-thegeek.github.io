@@ -1278,9 +1278,11 @@ a {
 }
 .article-entry p code,
 .article-entry li code {
+  color: #333;
   padding: 1px 3px;
   margin: 0 3px;
-  background: #ddd;
+  border-radius: 3px;
+  background: #f3f4f4;
   border: 1px solid #ccc;
   font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
   word-wrap: break-word;
@@ -1912,7 +1914,7 @@ a {
   text-decoration: underline;
 }
 pre .comment {
-  color: #666;
+  color: #bbb5ac;
 }
 pre .title {
   color: #a6e22e;

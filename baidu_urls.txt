@@ -1,5 +1,5 @@
+https://www.jackthegeek.top/2020/09/20/Android开发之加载GIF/
+https://www.jackthegeek.top/2020/09/15/安卓打包时加入数据库/
+https://www.jackthegeek.top/2020/09/14/主线程网络异常/
 https://www.jackthegeek.top/2020/09/10/调用爱词霸接口/
-https://www.jackthegeek.top/2020/09/05/Two Sum/
-https://www.jackthegeek.top/2020/08/18/图片压缩新选择/
-https://www.jackthegeek.top/2020/08/10/退回旧版Edge/
-https://www.jackthegeek.top/2020/08/03/用ffmpeg合并音视频/
+https://www.jackthegeek.top/2020/09/07/Palindrome-Number/
