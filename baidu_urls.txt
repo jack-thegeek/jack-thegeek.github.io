@@ -1,4 +1,4 @@
-https://www.jackthegeek.top/2020/09/20/Android开发之加载GIF/
+https://www.jackthegeek.top/2020/09/16/Android开发之加载GIF/
 https://www.jackthegeek.top/2020/09/15/安卓打包时加入数据库/
 https://www.jackthegeek.top/2020/09/14/主线程网络异常/
 https://www.jackthegeek.top/2020/09/10/调用爱词霸接口/
