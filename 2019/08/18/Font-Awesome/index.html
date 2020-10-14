@@ -390,7 +390,7 @@
     <p><font color="#999999">日志详情：了不起的图标字体</font></p>
 <a id="more"></a>
 <hr>
-<h1 id="Font-Awesome"><a href="#Font-Awesome" class="headerlink" title="Font Awesome"></a>Font Awesome</h1><p>一直想更换放在首页的几个很模糊的社交图标，刚好前不久接触到图标字体的概念，终于有时间下手了。<br>字体图标，又或者叫图标字体，怎么称呼不重要，重要的是它以字体的格式存在，但是输出的又是图标，很佩服想出这种字体的那些人，这个想法本身就很awesome<br>优点非常明显，引用<a href="https://blog.csdn.net/weixin_41399785/article/details/79800043" target="_blank" rel="noopener">CSDN</a>中的一段</p>
+<h1><span id="font-awesome">Font Awesome</span></h1><p>一直想更换放在首页的几个很模糊的社交图标，刚好前不久接触到图标字体的概念，终于有时间下手了。<br>字体图标，又或者叫图标字体，怎么称呼不重要，重要的是它以字体的格式存在，但是输出的又是图标，很佩服想出这种字体的那些人，这个想法本身就很awesome<br>优点非常明显，引用<a href="https://blog.csdn.net/weixin_41399785/article/details/79800043" target="_blank" rel="noopener">CSDN</a>中的一段</p>
 <blockquote>
 <p>轻量级：一个图标字体要比一系列的图像要小。一旦字体加载了，图标就会马上渲染出来，不需要下载一个个图像。这样可以减少HTTP的请求数量，而且和HTML5的离线存储配合，可以对性能做出优化。</p>
 </blockquote>
@@ -405,23 +405,23 @@
 </blockquote>
 <p>至于劣势，基本是颜色渲染较为单一、版权问题，如果要自己制作维护的话比较花时间。</p>
 <p>就我目前的知识来说，除了SVG格式的矢量图，没有能跟它匹敌的图标方案，况且博客本身有些地方就引入了Font Awesome，所以愉快地敲定方案。</p>
-<h1 id="困难"><a href="#困难" class="headerlink" title="困难"></a>困难</h1><p>入门非常简单，引入css，就可以直接使用了。<br>使用教程参考<a href="http://www.fontawesome.com.cn/examples/" target="_blank" rel="noopener">中文文档案例</a><br>最方便的当然是通过CND引入，推荐使用<a href="https://www.bootcdn.cn/font-awesome/" target="_blank" rel="noopener">https://www.bootcdn.cn/font-awesome/</a><br>官网：<a href="https://fontawesome.com/" target="_blank" rel="noopener">https://fontawesome.com/</a><br>已经很久没更新的中文官网：<a href="http://www.fontawesome.com.cn/" target="_blank" rel="noopener">http://www.fontawesome.com.cn/</a></p>
+<h1><span id="困难">困难</span></h1><p>入门非常简单，引入css，就可以直接使用了。<br>使用教程参考<a href="http://www.fontawesome.com.cn/examples/" target="_blank" rel="noopener">中文文档案例</a><br>最方便的当然是通过CND引入，推荐使用<a href="https://www.bootcdn.cn/font-awesome/" target="_blank" rel="noopener">https://www.bootcdn.cn/font-awesome/</a><br>官网：<a href="https://fontawesome.com/" target="_blank" rel="noopener">https://fontawesome.com/</a><br>已经很久没更新的中文官网：<a href="http://www.fontawesome.com.cn/" target="_blank" rel="noopener">http://www.fontawesome.com.cn/</a></p>
 <p>问题我用的是Hexo框架，加上大量精简过的<a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="noopener">yelee</a>，所以要修改多个文件。</p>
-<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><h2 id="1-引入css文件"><a href="#1-引入css文件" class="headerlink" title="1.引入css文件"></a>1.引入css文件</h2><p>在\layout_partial\head.ejs中head标签的最后加入</p>
+<h1><span id="过程">过程</span></h1><h2><span id="1引入css文件">1.引入css文件</span></h2><p>在\layout_partial\head.ejs中head标签的最后加入</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"https://cdn.bootcss.com/font-awesome/5.10.0-12/css/all.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="2-left-col-ejs与mobile-nav-ejs"><a href="#2-left-col-ejs与mobile-nav-ejs" class="headerlink" title="2.left-col.ejs与mobile-nav.ejs"></a>2.left-col.ejs与mobile-nav.ejs</h2><p>在开发者工具中可以看到，负责社交图标的类名为social，直接用sublime text3搜索整个主题文件夹，可以得到三个结果，其中两个ejs文件就是要修改的模板。<br>打开layout_partial\left-col.ejs，可以看到</p>
+<h2><span id="2left-colejs与mobile-navejs">2.left-col.ejs与mobile-nav.ejs</span></h2><p>在开发者工具中可以看到，负责社交图标的类名为social，直接用sublime text3搜索整个主题文件夹，可以得到三个结果，其中两个ejs文件就是要修改的模板。<br>打开layout_partial\left-col.ejs，可以看到</p>
 <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> theme.subnav)&#123; %&gt;</span><br><span class="line">	&lt;a <span class="keyword">class</span>=<span class="string">"&lt;%= i %&gt;"</span> target=<span class="string">"_blank"</span> href=<span class="string">"&lt;%- url_for(theme.subnav[i]) %&gt;"</span> title=<span class="string">"&lt;%= i %&gt;"</span>&gt;&lt;%= i %&gt;&lt;/a&gt;</span><br><span class="line">&lt;%&#125;%&gt;</span><br></pre></td></tr></table></figure>
 
 <p>这里很巧妙，仅仅用了一个for循环来从主题_config.yml中的subnav部分读取社交图标的名称，传递到输出中，依葫芦画瓢，修改后的代码如下：</p>
 <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> theme.subnav)&#123; %&gt;</span><br><span class="line">	&lt;a target=<span class="string">"_blank"</span> href=<span class="string">"&lt;%- url_for(theme.subnav[i]) %&gt;"</span> title=<span class="string">"&lt;%= i %&gt;"</span>&gt;</span><br><span class="line">		&lt;i <span class="keyword">class</span>=<span class="string">"&lt;%= i %&gt;"</span> aria-hidden=<span class="string">"true"</span> style=<span class="string">"font-size: 23px;"</span>&gt;&lt;/i&gt;</span><br><span class="line">	&lt;/a&gt;</span><br><span class="line">&lt;%&#125;%&gt;</span><br></pre></td></tr></table></figure>
 
 <p>mobile-nav.ejs的修改是一模一样的</p>
-<h2 id="3-config-yml"><a href="#3-config-yml" class="headerlink" title="3._config.yml"></a>3._config.yml</h2><p>上述操作主要是把id字段传到i标签中，要遵循font awesome的规范，所以_config.yml中要把对应的社交图标名称更改为</p>
+<h2><span id="3_configyml">3._config.yml</span></h2><p>上述操作主要是把id字段传到i标签中，要遵循font awesome的规范，所以_config.yml中要把对应的社交图标名称更改为</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fab fa-github: &quot;https://github.com/jack-thegeek/jack-thegeek.github.io&quot;</span><br><span class="line">fab fa-weixin: &quot;&quot;</span><br></pre></td></tr></table></figure>
 
 <p>一时间我也没去深究为什么有fa，fas，fab几种，具体名称参照<a href="https://fontawesome.com/icons?d=gallery&amp;m=free" target="_blank" rel="noopener">https://fontawesome.com/icons?d=gallery&amp;m=free</a>,点开一个图标就可以看到它的插入代码，非常方便。<del>就是网站有点慢</del></p>
-<h2 id="4-main-styl"><a href="#4-main-styl" class="headerlink" title="4.main.styl"></a>4.main.styl</h2><p>上述步骤完成后，发现压根看不到图标，开发者工具中是可以看到元素已经放进去的了，但就是看不见，差点怀疑人生。<br>冷静下来想想，只有可能是样式控制那里出问题了。<br>打开\source\css_partial\main.styl,搜索social可以看到这样一段</p>
+<h2><span id="4mainstyl">4.main.styl</span></h2><p>上述步骤完成后，发现压根看不到图标，开发者工具中是可以看到元素已经放进去的了，但就是看不见，差点怀疑人生。<br>冷静下来想想，只有可能是样式控制那里出问题了。<br>打开\source\css_partial\main.styl,搜索social可以看到这样一段</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">	border-radius:50%;</span><br><span class="line">	display:-moz-inline-stack;</span><br><span class="line">	display:inline-block;</span><br><span class="line">	vertical-align:middle;</span><br><span class="line">	*vertical-align:auto;</span><br><span class="line">	zoom:1;</span><br><span class="line">	*display:inline;</span><br><span class="line">	text-indent:-9999px;</span><br><span class="line">	margin:0 8px 15px 8px;</span><br><span class="line">	opacity:0.8;</span><br><span class="line">	width:28px;</span><br><span class="line">	height:28px;</span><br><span class="line">	transition:0.3s;</span><br><span class="line">	&amp;:hover &#123;</span><br><span class="line">		opacity:1</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
 <p>有一行代码吸引了我<br><code>text-indent:-9999px;</code><br>这是个神奇的操作，作用可以参考<a href="https://blog.csdn.net/bulabulahei/article/details/89045210" target="_blank" rel="noopener">https://blog.csdn.net/bulabulahei/article/details/89045210</a><br>但在这里我们不需要，所以删掉它即可</p>
@@ -429,7 +429,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i.fa-github&#123;color: #47484c;&#125;</span><br></pre></td></tr></table></figure>
 
 <p>由于大小已经直接在第2步中统一控制了，这里只需要控制颜色。<br>至此，把所有样式补充完整，大功告成。</p>
-<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>Font Awesome是个好东西，到现在已经发展到第5个大版本，免费的图标多达1500+<br>修改模板遇到非常多的坑，但是这样一来，对模板的结构又有了更深层的了解，对后面打算重构移动页面侧边栏很有帮助。</p>
+<h1><span id="最后">最后</span></h1><p>Font Awesome是个好东西，到现在已经发展到第5个大版本，免费的图标多达1500+<br>修改模板遇到非常多的坑，但是这样一来，对模板的结构又有了更深层的了解，对后面打算重构移动页面侧边栏很有帮助。</p>
 
 
     
