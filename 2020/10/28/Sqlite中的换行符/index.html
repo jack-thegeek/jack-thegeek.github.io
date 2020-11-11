@@ -7,15 +7,18 @@
   
   <title>SQLite中的换行符 | 无名小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Android">
+  <meta name="description" content="另辟蹊径，使用Replace来实现插入和更新">
+<meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQLite中的换行符">
 <meta property="og:url" content="https://www.jackthegeek.top/2020/10/28/SQLite中的换行符/index.html">
 <meta property="og:site_name" content="无名小站">
+<meta property="og:description" content="另辟蹊径，使用Replace来实现插入和更新">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-05T16:14:32.104Z">
+<meta property="og:updated_time" content="2020-11-11T05:13:49.976Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLite中的换行符">
+<meta name="twitter:description" content="另辟蹊径，使用Replace来实现插入和更新">
   
     <link rel="alternative" href="/atom.xml" title="无名小站" type="application/atom+xml">
   
@@ -330,7 +333,7 @@
       <span class="post-meta-item-icon">
         <i class="fas fa-keyboard"></i>
         <span class="post-meta-item-text"> </span>
-        <span class="post-count">231字</span>
+        <span class="post-count">246字</span>
       </span>
     </span>
 
@@ -384,7 +387,7 @@
 	  
 		
     
-    <div class="preface"></div>
+    <div class="preface">另辟蹊径，使用Replace来实现插入和更新</div>
 
 <a id="more"></a>
 <hr>
@@ -395,7 +398,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE &apos;表名&apos; SET &apos;字段&apos; = REPLACE(&apos;字段&apos;,&apos;待替换内容&apos;,&apos;替换值&apos;);</span><br></pre></td></tr></table></figure>
 
 <p>像我想替换foot表中statement字段中所有的<code>\n</code>为换行符，可以这样写</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update foot set statement=REPLACE(statement,&apos;\n&apos;,x&apos;0a&apos;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update foot set statement = REPLACE(statement,&apos;\n&apos;,x&apos;0a&apos;);</span><br></pre></td></tr></table></figure>
 
 <p>当然，其实也可以在输出到TextView的时候，java写个代码替换\n</p>
 
