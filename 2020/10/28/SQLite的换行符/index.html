@@ -5,15 +5,20 @@
   <!-- 新 Bootstrap4 核心 CSS 文件 -->
   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   
-  <title>无名小站</title>
+  <title>SQLite的换行符 | 无名小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="无名小站">
-<meta property="og:url" content="https://www.jackthegeek.top/page/2/index.html">
+  <meta name="description" content="另辟蹊径，使用Replace来实现插入和更新">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQLite的换行符">
+<meta property="og:url" content="https://www.jackthegeek.top/2020/10/28/SQLite的换行符/index.html">
 <meta property="og:site_name" content="无名小站">
+<meta property="og:description" content="另辟蹊径，使用Replace来实现插入和更新">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-11-11T15:34:37.932Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="无名小站">
+<meta name="twitter:title" content="SQLite的换行符">
+<meta name="twitter:description" content="另辟蹊径，使用Replace来实现插入和更新">
   
     <link rel="alternative" href="/atom.xml" title="无名小站" type="application/atom+xml">
   
@@ -290,807 +295,182 @@
 	    });
 	});
 </script>
-      <div class="body-wrap">
-  
-    <article id="post-Android开发之加载GIF" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-SQLite的换行符" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
     
 
     
       <header class="article-header">
-         
-           <!--主页标题-->
-           
+         <!--主页日期结束-->
+
+          
+            <!--文章标题-->
+            
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/16/Android开发之加载GIF/">Android开发之加载GIF</a>
+    <h1 class="article-intitle" itemprop="name">
+      SQLite的换行符
     </h1>
   
-
-            <!--主页日期-->
-            
-              <div class="article-meta">
-                <a href="/2020/09/16/Android开发之加载GIF/" class="article-date">
-  	<time datetime="2020-09-16T08:30:46.000Z" itemprop="datePublished">2020-09-16</time>
-</a>
-              </div>
-            
-          <!--主页日期结束-->
 
           
     <div class="post-info autobox">
       <!--文章日期-->
+      
+        
+            <a href="/2020/10/28/SQLite的换行符/" class="article-date">
+  	<time datetime="2020-10-28T05:59:45.000Z" itemprop="datePublished">2020-10-28</time>
+</a>
+        
       <!--文章日期结束-->
             
         
+        <!-- 开始添加字数统计-->
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        
+          <div>
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fas fa-keyboard"></i>
+        <span class="post-meta-item-text"> </span>
+        <span class="post-count">246字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text"> </span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+         &nbsp;&nbsp;|&nbsp;&nbsp;
+        <!--显示阅读次数-->
+        
+            <div>
+              <span class="icon-sort"></span>
+              <span id="busuanzi_container_page_pv">
+              <i class="fa fa-book-open"></i> <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;</span>
+            </div>
+        
+        <!--显示阅读次数完毕-->
+      
       </div>
       </header>
 
       <!-- 标签 -->
       
-      <!--标签结束-->
-    
-    <div class="article-entry" itemprop="articleBody">	
-      
-        <div class="preface">安卓11都出了，结果加载个Gif动图这么麻烦，Webp格式的动图更麻烦</div>
-      
-    </div>
-    <!--主页的标签与more按钮-->
-    
-    <div class="article-info article-info-index">
-      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
 	</div>
 
-      
+        
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/学习/">学习</a>
 	</div>
 
 
 
-      
-        <p class="article-more-link">
-          <a  href="/2020/09/16/Android开发之加载GIF/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-    <!--主页的标签结束-->
-  </div>
-
-  
-</article>
-
-
-
-
-
-  
-    <article id="post-安卓打包时加入数据库" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-
-    
-      <header class="article-header">
-         
-           <!--主页标题-->
-           
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/15/安卓打包时加入数据库/">安卓打包时加入数据库</a>
-    </h1>
-  
-
-            <!--主页日期-->
-            
-              <div class="article-meta">
-                <a href="/2020/09/15/安卓打包时加入数据库/" class="article-date">
-  	<time datetime="2020-09-15T03:34:45.000Z" itemprop="datePublished">2020-09-15</time>
-</a>
-              </div>
-            
-          <!--主页日期结束-->
-
-          
-    <div class="post-info autobox">
-      <!--文章日期-->
-      <!--文章日期结束-->
-            
-        
+        <div class="clearfix"></div>
       </div>
-      </header>
-
-      <!-- 标签 -->
       
       <!--标签结束-->
     
     <div class="article-entry" itemprop="articleBody">	
       
-        <div class="preface">真能感受到安卓高版本的权限更严格</div>
-      
+	  
+		
+    
+    <div class="preface">另辟蹊径，使用Replace来实现插入和更新</div>
+
+<a id="more"></a>
+<hr>
+<p>有了MySQL的基础上手SQLite就非常轻松，值得一提的是，不像常见的客户-服务器的数据库，他不需要一个单独的服务器。</p>
+<p>最近用他来存文本，大量的文字自然需要换行，填个\r\n进去直接就给你输出\r\n了，网上的文章多数说SQLite的\r\n是<code>X&#39;0D&#39;||X&#39;0A&#39;</code></p>
+<p>结果，妥妥地给你输出X’0D’||X’0A’</p>
+<p>最后没办法，只好在DAO层写一个函数专门替换这个字符串<br>主要利用replace，语法为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE &apos;表名&apos; SET &apos;字段&apos; = REPLACE(&apos;字段&apos;,&apos;待替换内容&apos;,&apos;替换值&apos;);</span><br></pre></td></tr></table></figure>
+
+<p>像我想替换foot表中statement字段中所有的<code>\n</code>为换行符，可以这样写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update foot set statement = REPLACE(statement,&apos;\n&apos;,x&apos;0a&apos;);</span><br></pre></td></tr></table></figure>
+
+<p>当然，其实也可以在输出到TextView的时候，java写个代码替换\n</p>
+
+
+    
+
+    <!--更新日期-->
+    
+
+    
     </div>
     <!--主页的标签与more按钮-->
     
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/学习/">学习</a>
-	</div>
-
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2020/09/15/安卓打包时加入数据库/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
     <!--主页的标签结束-->
   </div>
+
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/04/顺利访问Github的更佳方法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+           顺利访问Github的更佳方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/10/26/优化APK大小/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">优化APK大小</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
   
 </article>
 
 
 
+ <section id="comments" class="article" style="padding:
+20px;"> <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js"></script>
 
-
-  
-    <article id="post-主线程网络异常" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-
-    
-      <header class="article-header">
-         
-           <!--主页标题-->
-           
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/14/主线程网络异常/">主线程网络异常</a>
-    </h1>
-  
-
-            <!--主页日期-->
-            
-              <div class="article-meta">
-                <a href="/2020/09/14/主线程网络异常/" class="article-date">
-  	<time datetime="2020-09-14T03:10:14.000Z" itemprop="datePublished">2020-09-14</time>
-</a>
-              </div>
-            
-          <!--主页日期结束-->
-
-          
-    <div class="post-info autobox">
-      <!--文章日期-->
-      <!--文章日期结束-->
-            
-        
-      </div>
-      </header>
-
-      <!-- 标签 -->
-      
-      <!--标签结束-->
-    
-    <div class="article-entry" itemprop="articleBody">	
-      
-        <div class="preface">解决android.os.NetworkOnMainThreadException</div>
-      
-    </div>
-    <!--主页的标签与more按钮-->
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/学习/">学习</a>
-	</div>
-
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2020/09/14/主线程网络异常/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-    <!--主页的标签结束-->
-  </div>
-
-  
-</article>
-
-
-
-
-
-  
-    <article id="post-调用爱词霸接口" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-
-    
-      <header class="article-header">
-         
-           <!--主页标题-->
-           
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/10/调用爱词霸接口/">调用爱词霸接口</a>
-    </h1>
-  
-
-            <!--主页日期-->
-            
-              <div class="article-meta">
-                <a href="/2020/09/10/调用爱词霸接口/" class="article-date">
-  	<time datetime="2020-09-10T14:45:51.000Z" itemprop="datePublished">2020-09-10</time>
-</a>
-              </div>
-            
-          <!--主页日期结束-->
-
-          
-    <div class="post-info autobox">
-      <!--文章日期-->
-      <!--文章日期结束-->
-            
-        
-      </div>
-      </header>
-
-      <!-- 标签 -->
-      
-      <!--标签结束-->
-    
-    <div class="article-entry" itemprop="articleBody">	
-      
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 <script>
-$(document).ready(function() {
-    $.ajax({
-        type: "get",
-        url: "http://open.iciba.com/dsapi/",
-        dataType: 'jsonp', //【jsonp进行跨域请求 只支持get】
-        success: function(data) { //【成功回调】
-            $(".en").html(data.content);
-            $(".zh").html(data.note);
-        },
-        error: function(xhr, type) { //【失败回调】
-        }
-    });
-});
+  var notify = 'false' == true ? true : false;
+  var verify = 'false' == true ? true : false;
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+
+            app_id: "CEBHurrFdOBXer38rsriXIy1-MdYXbMMI",
+            app_key: "trkUgCsG7AKRnWvNxcrzgTjS",
+            placeholder: "来玩耍呀 (●’◡’●)ﾉ",
+            guest_info: guest_info.length == 0 ? GUEST_INFO: guest_info,
+            avatar:"",
+            avatar_cdn:"https://www.gravatar.com/avatar/",
+            pageSize: "10"
+        });
+    }
 </script>
-<div class="preface">JQuery发起get请求</div>
 
-<blockquote>
-<p>爱词霸每日一句</p>
-<p class="en"></p>
-<p class="zh"></p>
-</blockquote>
-      
-    </div>
-    <!--主页的标签与more按钮-->
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
-
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2020/09/10/调用爱词霸接口/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-    <!--主页的标签结束-->
-  </div>
-
-  
-</article>
-
-
-
-
-
-  
-    <article id="post-Palindrome-Number" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-
-    
-      <header class="article-header">
-         
-           <!--主页标题-->
-           
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/07/Palindrome-Number/">Palindrome Number</a>
-    </h1>
-  
-
-            <!--主页日期-->
-            
-              <div class="article-meta">
-                <a href="/2020/09/07/Palindrome-Number/" class="article-date">
-  	<time datetime="2020-09-07T10:07:13.000Z" itemprop="datePublished">2020-09-07</time>
-</a>
-              </div>
-            
-          <!--主页日期结束-->
-
-          
-    <div class="post-info autobox">
-      <!--文章日期-->
-      <!--文章日期结束-->
-            
-        
-      </div>
-      </header>
-
-      <!-- 标签 -->
-      
-      <!--标签结束-->
-    
-    <div class="article-entry" itemprop="articleBody">	
-      
-        <div class="preface">利用取整和取余来获得首位和尾位</div>
-      
-    </div>
-    <!--主页的标签与more按钮-->
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/学习/">学习</a>
-	</div>
-
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2020/09/07/Palindrome-Number/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-    <!--主页的标签结束-->
-  </div>
-
-  
-</article>
-
-
-
-
-
-  
-    <article id="post-Climbing-Stairs" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-
-    
-      <header class="article-header">
-         
-           <!--主页标题-->
-           
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/06/Climbing-Stairs/">Climbing Stairs</a>
-    </h1>
-  
-
-            <!--主页日期-->
-            
-              <div class="article-meta">
-                <a href="/2020/09/06/Climbing-Stairs/" class="article-date">
-  	<time datetime="2020-09-06T09:56:29.000Z" itemprop="datePublished">2020-09-06</time>
-</a>
-              </div>
-            
-          <!--主页日期结束-->
-
-          
-    <div class="post-info autobox">
-      <!--文章日期-->
-      <!--文章日期结束-->
-            
-        
-      </div>
-      </header>
-
-      <!-- 标签 -->
-      
-      <!--标签结束-->
-    
-    <div class="article-entry" itemprop="articleBody">	
-      
-        <div class="preface">经典的青蛙跳楼梯问题</div>
-      
-    </div>
-    <!--主页的标签与more按钮-->
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组/">数组</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/学习/">学习</a>
-	</div>
-
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2020/09/06/Climbing-Stairs/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-    <!--主页的标签结束-->
-  </div>
-
-  
-</article>
-
-
-
-
-
-  
-    <article id="post-Three-Sum" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-
-    
-      <header class="article-header">
-         
-           <!--主页标题-->
-           
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/06/Three-Sum/">Three Sum</a>
-    </h1>
-  
-
-            <!--主页日期-->
-            
-              <div class="article-meta">
-                <a href="/2020/09/06/Three-Sum/" class="article-date">
-  	<time datetime="2020-09-06T09:00:45.000Z" itemprop="datePublished">2020-09-06</time>
-</a>
-              </div>
-            
-          <!--主页日期结束-->
-
-          
-    <div class="post-info autobox">
-      <!--文章日期-->
-      <!--文章日期结束-->
-            
-        
-      </div>
-      </header>
-
-      <!-- 标签 -->
-      
-      <!--标签结束-->
-    
-    <div class="article-entry" itemprop="articleBody">	
-      
-        <div class="preface">前后双指针夹逼</div>
-      
-    </div>
-    <!--主页的标签与more按钮-->
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组/">数组</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/学习/">学习</a>
-	</div>
-
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2020/09/06/Three-Sum/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-    <!--主页的标签结束-->
-  </div>
-
-  
-</article>
-
-
-
-
-
-  
-    <article id="post-Two Sum" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-
-    
-      <header class="article-header">
-         
-           <!--主页标题-->
-           
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/05/Two Sum/">Two Sum</a>
-    </h1>
-  
-
-            <!--主页日期-->
-            
-              <div class="article-meta">
-                <a href="/2020/09/05/Two Sum/" class="article-date">
-  	<time datetime="2020-09-05T11:43:49.000Z" itemprop="datePublished">2020-09-05</time>
-</a>
-              </div>
-            
-          <!--主页日期结束-->
-
-          
-    <div class="post-info autobox">
-      <!--文章日期-->
-      <!--文章日期结束-->
-            
-        
-      </div>
-      </header>
-
-      <!-- 标签 -->
-      
-      <!--标签结束-->
-    
-    <div class="article-entry" itemprop="articleBody">	
-      
-        <div class="preface">从今天起的LeetCode</div>
-      
-    </div>
-    <!--主页的标签与more按钮-->
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组/">数组</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/学习/">学习</a>
-	</div>
-
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2020/09/05/Two Sum/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-    <!--主页的标签结束-->
-  </div>
-
-  
-</article>
-
-
-
-
-
-  
-    <article id="post-图片压缩新选择" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-
-    
-      <header class="article-header">
-         
-           <!--主页标题-->
-           
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/18/图片压缩新选择/">图片压缩新选择</a>
-    </h1>
-  
-
-            <!--主页日期-->
-            
-              <div class="article-meta">
-                <a href="/2020/08/18/图片压缩新选择/" class="article-date">
-  	<time datetime="2020-08-18T03:06:46.000Z" itemprop="datePublished">2020-08-18</time>
-</a>
-              </div>
-            
-          <!--主页日期结束-->
-
-          
-    <div class="post-info autobox">
-      <!--文章日期-->
-      <!--文章日期结束-->
-            
-        
-      </div>
-      </header>
-
-      <!-- 标签 -->
-      
-      <!--标签结束-->
-    
-    <div class="article-entry" itemprop="articleBody">	
-      
-        <div class="preface">或许是目前最好用的图片压缩工具</div>
-      
-    </div>
-    <!--主页的标签与more按钮-->
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
-
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2020/08/18/图片压缩新选择/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-    <!--主页的标签结束-->
-  </div>
-
-  
-</article>
-
-
-
-
-
-  
-    <article id="post-退回旧版Edge" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-
-    
-      <header class="article-header">
-         
-           <!--主页标题-->
-           
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/10/退回旧版Edge/">退回旧版Edge</a>
-    </h1>
-  
-
-            <!--主页日期-->
-            
-              <div class="article-meta">
-                <a href="/2020/08/10/退回旧版Edge/" class="article-date">
-  	<time datetime="2020-08-10T07:04:49.000Z" itemprop="datePublished">2020-08-10</time>
-</a>
-              </div>
-            
-          <!--主页日期结束-->
-
-          
-    <div class="post-info autobox">
-      <!--文章日期-->
-      <!--文章日期结束-->
-            
-        
-      </div>
-      </header>
-
-      <!-- 标签 -->
-      
-      <!--标签结束-->
-    
-    <div class="article-entry" itemprop="articleBody">	
-      
-        <div class="preface">直接卸载新版edge即可</div>
-      
-    </div>
-    <!--主页的标签与more按钮-->
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
-
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2020/08/10/退回旧版Edge/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-    <!--主页的标签结束-->
-  </div>
-
-  
-</article>
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
-  
+ </section> 
 </div>
       <footer id="footer">
   <div class="outer">
