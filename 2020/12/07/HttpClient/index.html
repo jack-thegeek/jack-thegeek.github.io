@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <!-- 新 Bootstrap4 核心 CSS 文件 -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  
+  <title>HttpClient | 无名小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="HTTP通信实现库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HttpClient">
+<meta property="og:url" content="https://www.jackthegeek.top/2020/12/07/HttpClient/index.html">
+<meta property="og:site_name" content="无名小站">
+<meta property="og:description" content="HTTP通信实现库">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-02-07T13:29:29.290Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HttpClient">
+<meta name="twitter:description" content="HTTP通信实现库">
+  
+    <link rel="alternative" href="/atom.xml" title="无名小站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://cdn.bootcss.com/font-awesome/5.10.0-12/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1369238_1mv5wxf4a2m.css">
+  <!-- <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head> </html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/img/headportrait.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">無名小站</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">欲穷千里目，更上一层楼</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="navbar bg-light header-menu">
+					  <ul class="navbar-nav">
+					  	<li class="nav-item">
+					      <a class="nav-link" href="/archives"><div><i class="far fa-folder"></i>&nbsp;归档</div></a>
+					    </li>
+					    <li class="nav-item">
+					      <a class="nav-link" href="/categories/技术"><div><i class="fas fa-laptop-code"></i>&nbsp;技术</div></a>
+					    </li>
+					    <li class="nav-item">
+					      <a class="nav-link" href="/categories/学习"><div><i class="fa fa-code" aria-hidden="true"></i>&nbsp;学习</div></a>
+					    </li>
+					    <li class="nav-item">
+					      <a class="nav-link" href="/categories/读书"><div><i class="fas fa-book"></i>&nbsp;读书</div></a>
+					    </li>
+					    <li class="nav-item">
+					      <a class="nav-link" href="/categories/听歌"><div><i class="fas fa-headphones-alt"></i>&nbsp;听歌</div></a>
+					    </li>
+					    <li class="nav-item">
+					      <a class="nav-link" href="/categories/杂乱"><div><i class="far fa-file-word"></i>&nbsp;杂乱</div></a>
+					    </li>
+					    <li class="nav-item">
+					      <a class="nav-link" href="/moment"><div><i class="fas fa-pen"></i>&nbsp;句子</div></a>
+					    </li>
+					    <li class="nav-item">
+					      <a class="nav-link" href="/album"><div><i class="far fa-image"></i>&nbsp;相册</div></a>
+					    </li>
+					    <li class="nav-item">
+					      <a class="nav-link" href="/log"><div><i class="fas fa-coffee"></i>&nbsp;日志</div></a>
+					    </li>
+					  </ul>
+					</nav>
+
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a target="_blank" href="https://github.com/jack-thegeek/jack-thegeek.github.io" title="fab fa-github">
+									<i class="fab fa-github" aria-hidden="true" style="font-size: 23px;"></i>
+								</a>
+					        
+								<a target="_blank" href="/" title="fab fa-weixin">
+									<i class="fab fa-weixin" aria-hidden="true" style="font-size: 23px;"></i>
+								</a>
+					        
+								<a target="_blank" href="/" title="fab fa-telegram">
+									<i class="fab fa-telegram" aria-hidden="true" style="font-size: 23px;"></i>
+								</a>
+					        
+								<a target="_blank" href="/" title="fas fa-envelope">
+									<i class="fas fa-envelope" aria-hidden="true" style="font-size: 23px;"></i>
+								</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/5G/" style="font-size: 10px;">5G</a> <a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/Android/" style="font-size: 18px;">Android</a> <a href="/tags/Excel/" style="font-size: 10px;">Excel</a> <a href="/tags/GIF/" style="font-size: 14px;">GIF</a> <a href="/tags/GitHub/" style="font-size: 14px;">GitHub</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 18px;">Hexo</a> <a href="/tags/IDEA/" style="font-size: 12px;">IDEA</a> <a href="/tags/IDM/" style="font-size: 10px;">IDM</a> <a href="/tags/LeetCode/" style="font-size: 16px;">LeetCode</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MIUI/" style="font-size: 10px;">MIUI</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/PDF/" style="font-size: 10px;">PDF</a> <a href="/tags/PS/" style="font-size: 16px;">PS</a> <a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/Windows/" style="font-size: 20px;">Windows</a> <a href="/tags/chrome插件/" style="font-size: 14px;">chrome插件</a> <a href="/tags/javascript/" style="font-size: 12px;">javascript</a> <a href="/tags/java基础/" style="font-size: 12px;">java基础</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/magisk/" style="font-size: 10px;">magisk</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/office/" style="font-size: 10px;">office</a> <a href="/tags/sublime-text3/" style="font-size: 12px;">sublime text3</a> <a href="/tags/古龙/" style="font-size: 10px;">古龙</a> <a href="/tags/图床/" style="font-size: 12px;">图床</a> <a href="/tags/外国文学/" style="font-size: 10px;">外国文学</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/快捷键/" style="font-size: 12px;">快捷键</a> <a href="/tags/恋爱/" style="font-size: 12px;">恋爱</a> <a href="/tags/手工/" style="font-size: 12px;">手工</a> <a href="/tags/手机/" style="font-size: 10px;">手机</a> <a href="/tags/技术/" style="font-size: 12px;">技术</a> <a href="/tags/播放器/" style="font-size: 10px;">播放器</a> <a href="/tags/数组/" style="font-size: 14px;">数组</a> <a href="/tags/朋友/" style="font-size: 10px;">朋友</a> <a href="/tags/李玉刚/" style="font-size: 10px;">李玉刚</a> <a href="/tags/流量/" style="font-size: 10px;">流量</a> <a href="/tags/爬虫/" style="font-size: 14px;">爬虫</a> <a href="/tags/生活/" style="font-size: 20px;">生活</a> <a href="/tags/百度云/" style="font-size: 12px;">百度云</a> <a href="/tags/纯音乐/" style="font-size: 10px;">纯音乐</a> <a href="/tags/装机/" style="font-size: 10px;">装机</a> <a href="/tags/调试/" style="font-size: 10px;">调试</a> <a href="/tags/软件/" style="font-size: 16px;">软件</a> <a href="/tags/迅雷/" style="font-size: 10px;">迅雷</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.ypojie.com/">易破解</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.coolapp.wang/">云库网</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.ghpym.com/">果核剥壳</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.nocmd.com/">nocmd</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.carrotchou.blog/">胡萝卜周</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://www.appcgn.com/">软件缘</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">不会唱、跳、Rap、篮球</div>
+				</section>
+				
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  	<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">無名小站</h1>
+  	</div>
+
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top mynav">
+		  <a class="navbar-brand" href="#">兴趣使然的小站</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+		    <ul class="navbar-nav">
+		      <li class="nav-item form-inline">
+		        <i class="far fa-folder"></i><a class="nav-link" href="/archives">归档</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="fas fa-laptop-code"></i><a class="nav-link" href="/categories/技术">技术</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="fa fa-code" aria-hidden="true"></i><a class="nav-link" href="/categories/学习">学习</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="fas fa-book"></i><a class="nav-link" href="/categories/读书">读书</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="fas fa-headphones-alt"></i><a class="nav-link" href="/categories/听歌">听歌</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="far fa-file-word"></i><a class="nav-link" href="/categories/杂乱">杂乱</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="fas fa-coffee"></i><a class="nav-link" href="/log/">日志</a>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <li class="dropdown">
+				    <i class="iconfont icon-paper"></i><a class="dropdown-toggle" data-toggle="dropdown" style="color: rgba(255,255,255,0.5);">
+				      句子
+				    </a>
+				    <div class="dropdown-menu">
+				      <i class="iconfont icon-paper"></i><a class="dropdown-item" href="/moment/">句子迷</a>
+				      <i class="iconfont icon-happy"></i><a class="dropdown-item" href="/moment/jokes.html">段子</a>
+				    </div>
+			  	</li>
+		      </li>
+		      <li class="nav-item form-inline">
+		        <i class="far fa-image"></i><a class="nav-link" href="/album/">相册</a>
+		      </li>
+		    </ul>
+		  </div>  
+		</nav>
+
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<a href="/">
+					<img lazy-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/img/headportrait.jpg" class="js-avatar">
+				</a>
+			</div>
+			<hgroup>
+			  <h1 class="header-author">無名小站</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">欲穷千里目，更上一层楼</p>
+			
+
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a target="_blank" href="https://github.com/jack-thegeek/jack-thegeek.github.io" title="fab fa-github">
+							<i class="fab fa-github" aria-hidden="true" style="font-size: 25px;"></i>
+						</a>
+			        
+						<a target="_blank" href="/" title="fab fa-weixin">
+							<i class="fab fa-weixin" aria-hidden="true" style="font-size: 25px;"></i>
+						</a>
+			        
+						<a target="_blank" href="/" title="fab fa-telegram">
+							<i class="fab fa-telegram" aria-hidden="true" style="font-size: 25px;"></i>
+						</a>
+			        
+						<a target="_blank" href="/" title="fas fa-envelope">
+							<i class="fas fa-envelope" aria-hidden="true" style="font-size: 25px;"></i>
+						</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+<script>
+	$(document).ready(function() {
+	    $(".menubtn").click(function() {
+	        $(".menubox").toggleClass("menu-slide");
+	        $(this).toggleClass('menubtnon');
+	        $(".sub-menu-btn").click(function() {
+	        	$(".icon-menu-item-normal").toggleClass('menubtnon');
+	        	$(this).next().slideToggle(300);
+	        });
+	    });
+	});
+</script>
+      <div class="body-wrap"><article id="post-HttpClient" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+         <!--主页日期结束-->
+
+          
+            <!--文章标题-->
+            
+  
+    <h1 class="article-intitle" itemprop="name">
+      HttpClient
+    </h1>
+  
+
+          
+    <div class="post-info autobox">
+      <!--文章日期-->
+      
+        
+            <a href="/2020/12/07/HttpClient/" class="article-date">
+  	<time datetime="2020-12-07T09:36:24.000Z" itemprop="datePublished">2020-12-07</time>
+</a>
+        
+      <!--文章日期结束-->
+            
+        
+        <!-- 开始添加字数统计-->
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        
+          <div>
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fas fa-keyboard"></i>
+        <span class="post-meta-item-text"> </span>
+        <span class="post-count">1.2k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text"> </span>
+        <span class="post-count">6分</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+         &nbsp;&nbsp;|&nbsp;&nbsp;
+        <!--显示阅读次数-->
+        
+            <div>
+              <span class="icon-sort"></span>
+              <span id="busuanzi_container_page_pv">
+              <i class="fa fa-book-open"></i> <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;</span>
+            </div>
+        
+        <!--显示阅读次数完毕-->
+      
+      </div>
+      </header>
+
+      <!-- 标签 -->
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/学习/">学习</a>
+	</div>
+
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+      <!--标签结束-->
+    
+    <div class="article-entry" itemprop="articleBody">	
+      
+	  
+		
+    
+    <div class="preface">HTTP通信实现库</div>
+
+<a id="more"></a>
+<hr>
+<p>框架的好处是方便，webmagic让我们快速地就写出个“有模有样”的爬虫程序，但也带来框架共有的自由度限制。<br>对于一些难搞的网站，依旧需要使用okhttp、httpclient等发起http请求。所谓难搞，就是单单用webmagic发起的请求没法返回我们想要的页面，如重定向页面要同一个请求发起两次，如需要Cookies。</p>
+<p>maven依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.httpcomponents<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>httpclient<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.5.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2><span id="无参get请求">无参get请求</span></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> RequestConfig requestConfig = RequestConfig.custom()</span><br><span class="line">            <span class="comment">// 设置连接超时时间(单位毫秒)</span></span><br><span class="line">            .setConnectTimeout(<span class="number">5000</span>)</span><br><span class="line">            <span class="comment">// 设置请求超时时间(单位毫秒)</span></span><br><span class="line">            .setConnectionRequestTimeout(<span class="number">5000</span>)</span><br><span class="line">            <span class="comment">// socket读写超时时间(单位毫秒)</span></span><br><span class="line">            .setSocketTimeout(<span class="number">5000</span>)</span><br><span class="line">            <span class="comment">// 设置是否允许重定向(默认为true)</span></span><br><span class="line">            .setRedirectsEnabled(<span class="keyword">true</span>).build();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">doGetHtml</span><span class="params">(String url)</span> </span>&#123;</span><br><span class="line">    CloseableHttpClient httpClient = HttpClientBuilder.create().build();</span><br><span class="line">    CloseableHttpResponse response = <span class="keyword">null</span>;</span><br><span class="line">    HttpGet httpGet = <span class="keyword">new</span> HttpGet(url);</span><br><span class="line">    httpGet.setConfig(requestConfig);</span><br><span class="line">    httpGet.setHeader(<span class="string">"User-Agent"</span>, <span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1"</span>);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        response = httpClient.execute(httpGet);</span><br><span class="line">        HttpEntity entity = response.getEntity();</span><br><span class="line">        <span class="keyword">if</span> (entity != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> EntityUtils.toString(entity,<span class="string">"gb2312"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (response != <span class="keyword">null</span>) &#123;</span><br><span class="line">                response.close();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (httpClient != <span class="keyword">null</span>) &#123;</span><br><span class="line">                httpClient.close();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2><span id="带参get请求">带参get请求</span></h2><p>感觉有点多此一举？<br>这不是直接写个url就好了，如果参数会变用replace处理不就行了？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">URIBuilder builder = <span class="keyword">new</span> URIBuilder(<span class="string">"https://bid.yimei180.com/"</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> page = <span class="number">1</span>;page &lt; <span class="number">5</span>;page++)&#123;</span><br><span class="line">    builder.setParameter(<span class="string">"jsessionid"</span>,<span class="string">"6B3EB5A0981C01DD0B4BF36537D7C302"</span>)</span><br><span class="line">            .setParameter(<span class="string">"pageNo"</span>,<span class="string">"2"</span>)</span><br><span class="line">            .setParameter(<span class="string">"pageSize"</span>,<span class="string">"10"</span>);</span><br><span class="line">    String html = doGet(builder.build().toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2><span id="post的表单模式">post的表单模式</span></h2><p>用<code>List&lt;NameValuePair&gt;</code>传参</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">List&lt;NameValuePair&gt; params = <span class="keyword">new</span> ArrayList&lt;NameValuePair&gt;();</span><br><span class="line">params.add(<span class="keyword">new</span> BasicNameValuePair(<span class="string">"currentPage"</span>,<span class="string">"2"</span>));</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">doPost</span><span class="params">(String url, List&lt;NameValuePair&gt; params)</span> <span class="keyword">throws</span> UnsupportedEncodingException </span>&#123;</span><br><span class="line">    CloseableHttpClient httpClient = HttpClientBuilder.create().build();</span><br><span class="line">    HttpPost httpPost = <span class="keyword">new</span> HttpPost(url);</span><br><span class="line">    httpPost.setConfig(requestConfig);</span><br><span class="line">    httpPost.setHeader(<span class="string">"User-Agent"</span>, <span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1"</span>);</span><br><span class="line">    UrlEncodedFormEntity formEntity = <span class="keyword">new</span> UrlEncodedFormEntity(params,<span class="string">"UTF-8"</span>);</span><br><span class="line">    httpPost.setEntity(formEntity);</span><br><span class="line">    CloseableHttpResponse response = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        response = httpClient.execute(httpPost);</span><br><span class="line">        <span class="keyword">if</span>(response.getStatusLine().getStatusCode()==<span class="number">200</span>)&#123;</span><br><span class="line">            HttpEntity entity = response.getEntity();</span><br><span class="line">            <span class="keyword">if</span> (entity!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> EntityUtils.toString(entity,<span class="string">"UTF-8"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (response != <span class="keyword">null</span>) &#123;</span><br><span class="line">                response.close();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (httpClient != <span class="keyword">null</span>) &#123;</span><br><span class="line">                httpClient.close();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"error"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2><span id="post的json模式">post的json模式</span></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">StringEntity jsonEntity = <span class="keyword">new</span> StringEntity(json, <span class="string">"UTF-8"</span>);</span><br><span class="line">httpPost.setEntity(jsonEntity);</span><br></pre></td></tr></table></figure>
+
+<h2><span id="post的xml模式">post的xml模式</span></h2><p>同上，使用StringEntity</p>
+<h2><span id="使用同一个httpclient发起两次请求">使用同一个httpclient发起两次请求</span></h2><p>用于解决window.location重定向</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">(String url)</span> </span>&#123;</span><br><span class="line">    CloseableHttpClient httpClient = <span class="keyword">null</span>;</span><br><span class="line">    CloseableHttpResponse response = <span class="keyword">null</span>;</span><br><span class="line">    CloseableHttpResponse response2 = <span class="keyword">null</span>;</span><br><span class="line">    String result = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        httpClient = getHttpClient(<span class="keyword">false</span>, <span class="keyword">true</span>);</span><br><span class="line">        HttpGet httpGet = <span class="keyword">new</span> HttpGet(url);</span><br><span class="line">        httpGet.setHeader(<span class="string">"Accept"</span>, <span class="string">"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"</span>);</span><br><span class="line">        httpGet.setHeader(<span class="string">"User-Agent"</span>, <span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1"</span>);</span><br><span class="line">        httpGet.setHeader(<span class="string">"Connection"</span>, <span class="string">"close"</span>);</span><br><span class="line">        RequestConfig config = RequestConfig.custom().setConnectionRequestTimeout(<span class="number">10</span> * <span class="number">1000</span>).setConnectTimeout(<span class="number">10</span> * <span class="number">1000</span>).setSocketTimeout(<span class="number">15</span> * <span class="number">1000</span>).build();</span><br><span class="line">        httpGet.setConfig(config);</span><br><span class="line">        response = httpClient.execute(httpGet);</span><br><span class="line">        response.setHeader(<span class="string">"Connection"</span>, <span class="string">"close"</span>);</span><br><span class="line">        <span class="keyword">if</span> (response.getStatusLine().getStatusCode() == <span class="number">200</span>) &#123;</span><br><span class="line">            result = EntityUtils.toString(response.getEntity(), <span class="string">"UTF-8"</span>);</span><br><span class="line">            <span class="keyword">if</span> (result.contains(<span class="string">"跳转中"</span>))&#123;</span><br><span class="line">                String newUrl = result.substring(result.indexOf(<span class="string">"/channel"</span>),result.lastIndexOf(<span class="string">"\""</span>));</span><br><span class="line">                newUrl = <span class="string">"http://www.ynys.gov.cn"</span> + newUrl;</span><br><span class="line">                HttpGet httpGet2 = <span class="keyword">new</span> HttpGet(newUrl);</span><br><span class="line">                httpGet2.setHeader(<span class="string">"Accept"</span>, <span class="string">"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"</span>);</span><br><span class="line">                httpGet2.setHeader(<span class="string">"User-Agent"</span>, <span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1"</span>);</span><br><span class="line">                httpGet2.setHeader(<span class="string">"Connection"</span>, <span class="string">"close"</span>);</span><br><span class="line">                httpGet2.setConfig(config);</span><br><span class="line">                response2 = httpClient.execute(httpGet2);</span><br><span class="line">                response2.setHeader(<span class="string">"Connection"</span>, <span class="string">"close"</span>);</span><br><span class="line">                <span class="keyword">if</span> (response.getStatusLine().getStatusCode() == <span class="number">200</span>) &#123;</span><br><span class="line">                    result = EntityUtils.toString(response2.getEntity(), <span class="string">"UTF-8"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (response != <span class="keyword">null</span>) &#123;</span><br><span class="line">                response.close();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (httpClient != <span class="keyword">null</span>) &#123;</span><br><span class="line">                httpClient.close();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">             e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2><span id="获取并设置cookie">获取并设置cookie</span></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getCookie</span><span class="params">(String url)</span> </span>&#123;</span><br><span class="line">    String cookie = <span class="string">""</span>;</span><br><span class="line">    BasicCookieStore cookieStore = <span class="keyword">new</span> BasicCookieStore();</span><br><span class="line">    CloseableHttpClient client = HttpClientBuilder.create().build();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        HttpGet get = <span class="keyword">new</span> HttpGet(url);</span><br><span class="line">        client = HttpClients.custom().setDefaultCookieStore(cookieStore).build();</span><br><span class="line">        RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(<span class="number">10</span> * <span class="number">1000</span>).setSocketTimeout(<span class="number">30</span> * <span class="number">1000</span>).build();</span><br><span class="line">        get.setConfig(requestConfig);</span><br><span class="line">        client.execute(get);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cookieStore.getCookies().size(); i++) &#123;</span><br><span class="line">            String name = cookieStore.getCookies().get(i).getName();</span><br><span class="line">            String value = cookieStore.getCookies().get(i).getValue();</span><br><span class="line">            cookie += name + <span class="string">"="</span> + value + <span class="string">";"</span>;</span><br><span class="line">            <span class="comment">//System.out.println("cookie==" + name + "=" + value + ";");</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (cookie.endsWith(<span class="string">";"</span>)) &#123;</span><br><span class="line">            cookie = cookie.substring(<span class="number">0</span>, cookie.length() - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cookie;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">(String path)</span> </span>&#123;</span><br><span class="line">    String respStr = <span class="string">""</span>;</span><br><span class="line">    String cookie = getCookie();</span><br><span class="line">    CloseableHttpClient client = <span class="keyword">null</span>;</span><br><span class="line">    CloseableHttpResponse res = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        client = getHttpClient(<span class="keyword">true</span>, <span class="keyword">false</span>);</span><br><span class="line">        HttpGet httpGet = <span class="keyword">new</span> HttpGet(path);</span><br><span class="line">        httpGet.addHeader(<span class="string">"User-Agent"</span>, <span class="string">"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"</span>);</span><br><span class="line">        httpGet.addHeader(<span class="string">"Content-type"</span>, <span class="string">"text/html"</span>);</span><br><span class="line">        httpGet.addHeader(<span class="string">"Accept"</span>, <span class="string">"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"</span>);</span><br><span class="line">        <span class="keyword">if</span> (!<span class="string">""</span>.equals(cookie)) &#123;</span><br><span class="line">            httpGet.addHeader(<span class="string">"Cookie"</span>, cookie);</span><br><span class="line">        &#125;</span><br><span class="line">        RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(<span class="number">30</span> * <span class="number">1000</span>).setConnectionRequestTimeout(<span class="number">30</span> * <span class="number">1000</span>).setSocketTimeout(<span class="number">30</span> * <span class="number">1000</span>)</span><br><span class="line">                .setRedirectsEnabled(<span class="keyword">false</span>)</span><br><span class="line">                .build();</span><br><span class="line">        httpGet.setConfig(requestConfig);</span><br><span class="line">        res = client.execute(httpGet);</span><br><span class="line">        respStr = EntityUtils.toString(res.getEntity(), <span class="string">"utf-8"</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (res != <span class="keyword">null</span>) &#123;</span><br><span class="line">                res.close();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (client != <span class="keyword">null</span>) &#123;</span><br><span class="line">                client.close();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> respStr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    
+
+    <!--更新日期-->
+    
+
+    
+    </div>
+    <!--主页的标签与more按钮-->
+    
+    <!--主页的标签结束-->
+  </div>
+
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/12/04/Webmagic/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Webmagic</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+ <section id="comments" class="article" style="padding:
+20px;"> <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js"></script>
+
+<script>
+  var notify = 'false' == true ? true : false;
+  var verify = 'false' == true ? true : false;
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+
+            app_id: "CEBHurrFdOBXer38rsriXIy1-MdYXbMMI",
+            app_key: "trkUgCsG7AKRnWvNxcrzgTjS",
+            placeholder: "来玩耍呀 (●’◡’●)ﾉ",
+            guest_info: guest_info.length == 0 ? GUEST_INFO: guest_info,
+            avatar:"",
+            avatar_cdn:"https://www.gravatar.com/avatar/",
+            pageSize: "10"
+        });
+    }
+</script>
+
+ </section> 
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		 (ง •̀_•́)ง
+    	</div>
+      	<div class="footer-right">
+      		&copy; 2021 無名小站
+      	</div>
+    </div>
+  </div>
+</footer>
+  <div id="foot">
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("07/29/2019 12:00:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行"+dnum+"天"; 
+        document.getElementById("times").innerHTML = hnum + "小时" + mnum + "分" + snum + "秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+</div>
+<!--增加不蒜子统计-->
+<script  async  src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    </div>
+    
+
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+  </div>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>
+<script type="text/javascript">
+  var a_idx = 0;
+jQuery(document).ready(function($) {
+    $(".body-wrap").click(function(e) {
+        var a = new Array
+        ("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+        var $i = $("<span/>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 5,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-size": "14px",
+            //"font-weight": "bold",
+            "color": "#FF4536"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+      2000,
+      function() {
+          $i.remove();
+      });
+    });
+    setTimeout('delay()', 2000);
+});
+
+function delay() {
+    $(".buryit").removeAttr("onclick");
+}
+</script>
+
+<!--浏览器搞笑标题-->
+<script>
+ var OriginTitle = document.title;
+ var titleTime;
+ document.addEventListener('visibilitychange', function () {
+     if (document.hidden) {
+         $('[rel="icon"]').attr('href', "/favicon.png");
+         document.title = 'ヽ(●-`Д´-)ノ你丑你就走！';
+         clearTimeout(titleTime);
+     }
+     else {
+         $('[rel="icon"]').attr('href', "/favicon.png");
+         document.title = 'ヾ(Ő∀Ő3)ノ你帅就回来！';
+         titleTime = setTimeout(function () {
+             document.title = OriginTitle;
+         }, 2000);
+     }
+ });
+</script>
+
