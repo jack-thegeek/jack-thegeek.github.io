@@ -1010,9 +1010,6 @@ a {
   margin-top: 3px !important;
   margin-bottom: 3px;
 }
-.hid {
-  opacity: 0;
-}
 .autobox {
   display: -webkit-box;
   display: -moz-box;
@@ -1040,25 +1037,7 @@ a {
   font-size: 1rem;
 }
 .album {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  height: auto;
-/*box-shadow: 2px 2px 8px 3px #696969;*/
-  max-width: 400px;
+  padding: 20px;
 }
 .waterfall {
   -webkit-column-count: 2;
@@ -1118,6 +1097,14 @@ a {
 .sentence:hover {
   -webkit-box-shadow: 0px 0px 8px #ccc, 0px 0px 8px 5px #ccc;
   box-shadow: 0px 0px 8px #ccc, 0px 0px 8px 5px #ccc;
+}
+.dashed {
+  padding: 5px;
+  margin-top: 5px;
+  border: dashed #ddd;
+}
+.hid {
+  opacity: 0;
 }
 .article {
   margin: 30px 70px 30px 70px;
