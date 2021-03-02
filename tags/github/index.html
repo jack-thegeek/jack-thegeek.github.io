@@ -437,3 +437,62 @@ function delay() {
  });
 </script>
 
+t&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>
+<!-- <script type="text/javascript">
+  var a_idx = 0;
+jQuery(document).ready(function($) {
+    $(".body-wrap").click(function(e) {
+        var a = new Array
+        ("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+        var $i = $("<span/>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 5,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-size": "14px",
+            //"font-weight": "bold",
+            "color": "#FF4536"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+      2000,
+      function() {
+          $i.remove();
+      });
+    });
+    setTimeout('delay()', 2000);
+});
+
+function delay() {
+    $(".buryit").removeAttr("onclick");
+}
+</script> -->
+
+<!--浏览器搞笑标题-->
+<script>
+ var OriginTitle = document.title;
+ var titleTime;
+ document.addEventListener('visibilitychange', function () {
+     if (document.hidden) {
+         $('[rel="icon"]').attr('href', "/favicon.png");
+         document.title = 'ヽ(●-`Д´-)ノ你丑你就走！';
+         clearTimeout(titleTime);
+     }
+     else {
+         $('[rel="icon"]').attr('href', "/favicon.png");
+         document.title = 'ヾ(Ő∀Ő3)ノ你帅就回来！';
+         titleTime = setTimeout(function () {
+             document.title = OriginTitle;
+         }, 2000);
+     }
+ });
+</script>
+
